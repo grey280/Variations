@@ -10,7 +10,7 @@ import Foundation
 
 /// A grid on which Conway's Game of Life can play out
 class Grid{
-    // MARK: Global Stuff
+    // MARK: Grid Interactions
     /// The array of cells in the grid. Indexed as cells[x][y]
     private var cells: [[Bool]]
     
@@ -35,7 +35,7 @@ class Grid{
         cells = [[Bool]](repeating: [Bool](repeating: false, count: y), count: x)
     }
     
-    // MARK:- Cell Interactions
+    // MARK: - Cell Interactions
     
     /// Toggle the 'live' value of the cell at the given coordinates.
     ///

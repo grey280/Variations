@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A grid on which Conway's Game of Life can play out
 class Grid{
     // MARK: Global Stuff
     /// The array of cells in the grid. Indexed as cells[x][y]

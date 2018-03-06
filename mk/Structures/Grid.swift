@@ -9,8 +9,9 @@
 import Foundation
 
 class Grid{
+    // MARK: Global Stuff
     /// The array of cells in the grid. Indexed as cells[x][y]
-    var cells: [[Cell]]
+    var cells: [[Bool]]
     
     /// The width of the grid
     var width: Int{
@@ -30,6 +31,17 @@ class Grid{
         if (x <= 0 || y <= 0){
             return nil
         }
-        cells = [[Cell]](repeating: [Cell](repeating: Cell(), count: y), count: x)
+        cells = [[Bool]](repeating: [Bool](repeating: false, count: y), count: x)
+    }
+    
+    // MARK:- Cell Interactions
+    
+    /// Toggle the 'live' value of the cell at the given coordinates.
+    ///
+    /// - Parameters:
+    ///   - x: x-coordinate to use. Zero-based.
+    ///   - y: y-coordinate to use. Zero-based.
+    func toggleCell(x: Int, y: Int){
+        cells[x][y] = !cells[x][y]
     }
 }

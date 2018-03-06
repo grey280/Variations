@@ -21,6 +21,11 @@ class Grid{
         return cells[0].count
     }
     
+    /// Iterate the grid using the standard rules of cellular automata/Conway's Game of Life
+    func iterate(){
+        
+    }
+    
     init?(x: Int, y: Int){
         if (x <= 0 || y <= 0){
             return nil

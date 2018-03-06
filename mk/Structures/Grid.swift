@@ -11,7 +11,7 @@ import Foundation
 class Grid{
     // MARK: Global Stuff
     /// The array of cells in the grid. Indexed as cells[x][y]
-    var cells: [[Bool]]
+    private var cells: [[Bool]]
     
     /// The width of the grid
     var width: Int{
@@ -43,5 +43,26 @@ class Grid{
     ///   - y: y-coordinate to use. Zero-based.
     func toggleCell(x: Int, y: Int){
         cells[x][y] = !cells[x][y]
+    }
+    
+    /// Get the value of the cell at the given coordinates.
+    ///
+    /// - Parameters:
+    ///   - x: x-coordinate to use. Zero-based.
+    ///   - y: y-coordinate to use. Zero-based.
+    /// - Returns: whether or not the cell at the given coordinates is 'alive'
+    func cell(x: Int, y: Int) -> Bool{
+        return cells[x][y]
+    }
+    
+    
+    /// Set a cell to the specified 'life' status.
+    ///
+    /// - Parameters:
+    ///   - x: x-coordinate to use. Zero-based.
+    ///   - y: y-coordinate to use. Zero-based.
+    ///   - alive: true if you're setting the cell to be 'alive', false otherwise
+    func cell(x: Int, y: Int, alive: Bool){
+        cells[x][y] = alive
     }
 }

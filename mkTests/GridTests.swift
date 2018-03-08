@@ -13,21 +13,20 @@ class GridTests: XCTestCase {
     
     var grid: Grid!
     
+    /// Prep for the tests! We'll be using a 5x5 grid.
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         grid = Grid(x: 5, y: 5, wrap: true)
     }
     
+    /// Reset for each consecutive test. Mostly just resetting the grid.
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
         grid = Grid(x: 5, y: 5, wrap: true)
     }
     
+    /// Test [this blinker](https://en.wikipedia.org/wiki/File:Game_of_life_blinker.gif)
     func testBasicBlinker() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
         grid.cell(x: 2, y: 1, alive: true)
         grid.cell(x: 2, y: 2, alive: true)
         grid.cell(x: 2, y: 3, alive: true)
@@ -37,5 +36,11 @@ class GridTests: XCTestCase {
         XCTAssert(grid.cell(x: 3, y: 2))
         XCTAssert(!grid.cell(x: 2, y: 1))
         XCTAssert(!grid.cell(x: 2, y: 3))
+        grid.iterate()
+        XCTAssert(!grid.cell(x: 1, y: 2))
+        XCTAssert(grid.cell(x: 2, y: 2))
+        XCTAssert(!grid.cell(x: 3, y: 2))
+        XCTAssert(grid.cell(x: 2, y: 1))
+        XCTAssert(grid.cell(x: 2, y: 3))
     }
 }

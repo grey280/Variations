@@ -124,13 +124,13 @@ class Grid{
     func cell(x: Int, y: Int) -> Bool{
         var nX = x, nY = y
         if wrap{
-            if x>width{
+            if x>=width{
                 nX = 0
             }
             if x<0{
                 nX = width-1
             }
-            if y>height{
+            if y>=height{
                 nY = 0
             }
             if y<0{

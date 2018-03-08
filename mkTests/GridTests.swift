@@ -11,7 +11,7 @@ import XCTest
 
 class GridTests: XCTestCase {
     
-    var grid: Grid!
+    private var grid: Grid!
     
     /// Prep for the tests! We'll be using a 5x5 grid.
     override func setUp() {

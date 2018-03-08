@@ -14,6 +14,9 @@ class Grid{
     /// The array of cells in the grid. Indexed as cells[x][y]
     private var cells: [[Bool]]
     
+    /// Whether or not the grid wraps. If the grid doesn't wrap, then values outside the grid are treated as false.
+    private var wrap: Bool
+    
     /// The width of the grid
     var width: Int{
         return cells.count
@@ -33,6 +36,17 @@ class Grid{
             return nil
         }
         cells = [[Bool]](repeating: [Bool](repeating: false, count: y), count: x)
+        
+        wrap = true
+    }
+    
+    init?(x: Int, y: Int, wrap doWrap: Bool){
+        if (x <= 0 || y <= 0){
+            return nil
+        }
+        cells = [[Bool]](repeating: [Bool](repeating: false, count: y), count: x)
+        
+        wrap = doWrap
     }
     
     // MARK: - Cell Interactions
@@ -53,7 +67,26 @@ class Grid{
     ///   - y: y-coordinate to use. Zero-based.
     /// - Returns: whether or not the cell at the given coordinates is 'alive'
     func cell(x: Int, y: Int) -> Bool{
-        return cells[x][y]
+        var nX = x, nY = y
+        if wrap{
+            if x>width{
+                nX = 0
+            }
+            if x<0{
+                nX = width-1
+            }
+            if y>height{
+                nY = 0
+            }
+            if y<0{
+                nY = height-1
+            }
+        }else{
+            if (x>width || x<0 || y>height || y<0){
+                return false
+            }
+        }
+        return cells[nX][nY]
     }
     
     

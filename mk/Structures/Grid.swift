@@ -28,6 +28,61 @@ class Grid{
     
     /// Iterate the grid using the standard rules of cellular automata/Conway's Game of Life
     func iterate(){
+        var newCells = [[Bool]](repeating: [Bool](repeating: false, count: height), count: width)
+        for x in 0..<newCells.count{
+            for y in 0..<newCells[x].count{
+                newCells[x][y] = iteratedCellState(x: x, y: y)
+            }
+        }
+        
+        cells = newCells
+    }
+    
+    /// Calculates the state of a cell on the next iteration
+    ///
+    /// - Parameters:
+    ///   - x: x-coordinate to use. Zero-based.
+    ///   - y: y-coordinate to use. Zero-based.
+    /// - Returns: whether or not the cell will be 'alive' in the next iteration
+    private func iteratedCellState(x: Int, y: Int) -> Bool{
+        var neighborLiveCount = 0
+        let currentState = cell(x: x, y: y)
+        
+        if cell(x: x-1, y: y-1){
+            neighborLiveCount += 1
+        }
+        if cell(x: x, y: y-1){
+            neighborLiveCount += 1
+        }
+        if cell(x: x+1, y: y-1){
+            neighborLiveCount += 1
+        }
+        if cell(x: x-1, y: y){
+            neighborLiveCount += 1
+        }
+        if cell(x: x+1, y: y){
+            neighborLiveCount += 1
+        }
+        if cell(x: x-1, y: y+1){
+            neighborLiveCount += 1
+        }
+        if cell(x: x, y: y+1){
+            neighborLiveCount += 1
+        }
+        if cell(x: x+1, y: y+1){
+            neighborLiveCount += 1
+        }
+        
+        switch neighborLiveCount {
+        case 0,1: // If they have fewer than two neighbors, they die of starvation
+            return false
+        case 2: // If they have two neighbors and are alive, they stay alive
+            return currentState
+        case 3: // If they have three neighbors, they either stay alive or one is 'born' there.
+            return true
+        default: // If they have more than three neighbors, they die of overpopulation
+            return false
+        }
         
     }
     

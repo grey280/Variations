@@ -24,16 +24,36 @@ class GridView: UIView{
     
     var grid: Grid
     var gridColor = UIColor.red
+    fileprivate var stack: UIStackView!
     
     init(frame: CGRect, grid: Grid) {
         self.grid = grid
         super.init(frame: frame)
+        
+        var stacks = [UIStackView]()
+        for _ in 0..<grid.width{
+            var thisStack = [GridViewTile]()
+            for _ in 0..<grid.height{
+                let tile = GridViewTile(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+                tile.tileColor = gridColor
+                thisStack.append(tile)
+            }
+            let thisStackView = UIStackView(arrangedSubviews: thisStack)
+            thisStackView.axis = .vertical
+            thisStackView.distribution = .fillEqually
+            thisStackView.spacing = 5.0
+            stacks.append(thisStackView)
+        }
+        
+        stack = UIStackView(arrangedSubviews: stacks)
+        stack.frame = self.frame
+        stack.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        self.addSubview(stack)
     }
     
-    init(frame: CGRect, grid: Grid, color: UIColor){
-        self.grid = grid
+    convenience init(frame: CGRect, grid: Grid, color: UIColor){
+        self.init(frame: frame, grid: grid)
         self.gridColor = color
-        super.init(frame: frame)
     }
     
     

@@ -17,7 +17,11 @@ class GridView: UIView{
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        guard let newGrid = aDecoder.value(forKey: "grid") as? Grid else{
+            fatalError("init(coder:) failed to load a grid")
+        }
+        self.grid = newGrid
+        super.init(coder: aDecoder)
     }
     
     fileprivate var gridWidthMultiple: CGFloat

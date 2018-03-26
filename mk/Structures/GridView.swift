@@ -44,15 +44,12 @@ class GridView: UIView{
         return bounds.height/CGFloat(gridHeightMultiple)
     }
     
-    fileprivate var gridCenter: CGPoint {
-        return CGPoint(x: bounds.midX, y: bounds.midY)
-    }
-    
     fileprivate func drawGrid(){
         let path = UIBezierPath()
         path.lineWidth = 5.0
         
-        UIColor.black.setStroke()
+        UIColor.red.setStroke()
+        UIColor.clear.setFill()
         
         for index in 1...Int(gridWidthMultiple) - 1{
             let start = CGPoint(x: CGFloat(index) * gridWidth, y: 0)
@@ -60,9 +57,20 @@ class GridView: UIView{
             path.move(to: start)
             path.addLine(to: end)
         }
+        path.stroke()
     }
     
     override func draw(_ rect: CGRect) {
         drawGrid()
+        let path = UIBezierPath()
+        path.lineWidth = 1.2
+        UIColor.blue.setStroke()
+        UIColor.clear.setFill()
+        path.move(to: CGPoint(x: 0, y: 0))
+        path.addLine(to: CGPoint(x: 10, y: 10))
+        path.stroke()
+        
+        print("Width: \(bounds.width) height: \(bounds.height)")
+        print("Dimensions: \(grid.height) high by \(grid.width) wide")
     }
 }

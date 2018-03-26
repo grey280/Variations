@@ -10,11 +10,15 @@ import UIKit
 import AudioKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var testGrid: GridView!
+    
+    var testGrid: GridView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testGrid = GridView(frame: testGrid.frame, grid: Grid(x: 10, y: 10)!)
+        testGrid = GridView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height/2), grid: Grid(x: 10, y: 10)!)
+        self.view.addSubview(testGrid)
+        testGrid.backgroundColor = UIColor.clear
+        testGrid.setNeedsDisplay()
     }
 
     override func didReceiveMemoryWarning() {

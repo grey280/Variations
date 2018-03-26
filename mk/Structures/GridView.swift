@@ -33,6 +33,7 @@ class GridView: UIView{
     init(frame: CGRect, grid: Grid) {
         self.grid = grid
         super.init(frame: frame)
+        self.backgroundColor = UIColor.clear
         
         var stacks = [UIStackView]()
         for _ in 0..<grid.width{

@@ -15,10 +15,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testGrid = GridView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height/2), grid: Grid(x: 10, y: 10)!)
+        let tempGrid = Grid(x: 10, y: 10)!
+        for _ in 0..<15{
+            tempGrid.cell(x: Int(arc4random_uniform(10)), y: Int(arc4random_uniform(10)), alive: true)
+        }
+        testGrid = GridView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height/2), grid: tempGrid)
         self.view.addSubview(testGrid)
-        testGrid.backgroundColor = UIColor.clear
-        testGrid.setNeedsDisplay()
+//        testGrid.setNeedsDisplay()
     }
 
     override func didReceiveMemoryWarning() {

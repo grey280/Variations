@@ -26,11 +26,11 @@ class GridView: UIView{
     
     fileprivate var gridWidthMultiple: CGFloat
     {
-        return 10
+        return CGFloat(grid.width)
     }
     fileprivate var gridHeightMultiple : CGFloat
     {
-        return 20
+        return CGFloat(grid.height)
     }
     
     fileprivate var gridWidth: CGFloat
@@ -52,6 +52,8 @@ class GridView: UIView{
         let path = UIBezierPath()
         path.lineWidth = 5.0
         
+        UIColor.black.setStroke()
+        
         for index in 1...Int(gridWidthMultiple) - 1
         {
             let start = CGPoint(x: CGFloat(index) * gridWidth, y: 0)
@@ -59,5 +61,9 @@ class GridView: UIView{
             path.move(to: start)
             path.addLine(to: end)
         }
+    }
+    
+    override func draw(_ rect: CGRect) {
+        drawGrid()
     }
 }

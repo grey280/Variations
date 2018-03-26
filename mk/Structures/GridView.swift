@@ -46,6 +46,10 @@ class GridView: UIView{
         }
         
         stack = UIStackView(arrangedSubviews: stacks)
+        stack.axis = .horizontal
+        stack.distribution = .fillEqually
+        stack.spacing = 5.0
+        
         stack.frame = self.frame
         stack.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         self.addSubview(stack)

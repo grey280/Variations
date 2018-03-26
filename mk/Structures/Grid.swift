@@ -27,7 +27,7 @@ class Grid{
     }
     
     /// Iterate the grid using the standard rules of cellular automata/Conway's Game of Life
-    func iterate(){
+    func iterate(completion: ()->()){
         var newCells = [[Bool]](repeating: [Bool](repeating: false, count: height), count: width)
         for x in 0..<newCells.count{
             for y in 0..<newCells[x].count{
@@ -36,6 +36,7 @@ class Grid{
         }
         
         cells = newCells
+        completion()
     }
     
     /// Calculates the state of a cell on the next iteration

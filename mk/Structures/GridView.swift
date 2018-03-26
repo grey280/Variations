@@ -9,12 +9,15 @@
 import UIKit
 
 class GridView: UIView{
+    /// Provides helper functions on top of UIView for drawing grid tiles
     class GridViewTile: UIView{
+        /// Convenient way to set the color of the tile
         var tileColor = UIColor.red{
             didSet{
                 self.backgroundColor = tileColor
             }
         }
+        /// Set the opacity of the tile; hopefully to be used for animations at some point
         var opacity = 1.0{
             didSet{
                 self.backgroundColor = self.backgroundColor?.withAlphaComponent(CGFloat(opacity))
@@ -24,6 +27,7 @@ class GridView: UIView{
     
     var grid: Grid
     var gridColor = UIColor.red
+    /// The stack in which we're storing everything; indexed as [x][y]
     fileprivate var stack: UIStackView!
     
     init(frame: CGRect, grid: Grid) {
@@ -52,12 +56,40 @@ class GridView: UIView{
         
         stack.frame = self.frame
         stack.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        for x in 0..<grid.width{
+            for y in 0..<grid.height{
+                cell(x: x, y: y, live: grid.cell(x: x, y: y))
+            }
+        }
+        
+        
         self.addSubview(stack)
     }
     
     convenience init(frame: CGRect, grid: Grid, color: UIColor){
         self.init(frame: frame, grid: grid)
         self.gridColor = color
+    }
+    
+    /// Set a tile to live or not
+    ///
+    /// - Parameters:
+    ///   - x: x-coordinate of tile
+    ///   - y: y-coordinate of tile
+    ///   - live: whether the tile is live or not
+    func cell(x: Int, y: Int, live: Bool){
+        guard let yAxis = stack.arrangedSubviews[x] as? UIStackView else{
+            return
+        }
+        guard let tile = yAxis.arrangedSubviews[y] as? GridViewTile else{
+            return
+        }
+        if live{
+            tile.opacity = 1.0
+        }else{
+            tile.opacity = 0.0
+        }
     }
     
     

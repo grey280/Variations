@@ -24,6 +24,11 @@ class GridView: UIView{
         super.init(coder: aDecoder)
     }
     
+    override func encode(with aCoder: NSCoder) {
+        super.encode(with: aCoder)
+        aCoder.encode(grid, forKey: "grid")
+    }
+    
     fileprivate var gridWidthMultiple: CGFloat{
         return CGFloat(grid.width)
     }

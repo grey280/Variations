@@ -58,11 +58,7 @@ class GridView: UIView{
         stack.frame = self.frame
         stack.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
-        for x in 0..<grid.width{
-            for y in 0..<grid.height{
-                cell(x: x, y: y, live: grid.cell(x: x, y: y))
-            }
-        }
+        iterationComplete()
         
         
         self.addSubview(stack)
@@ -93,6 +89,14 @@ class GridView: UIView{
         }
     }
     
+    /// Run when a `Grid` iteration completes to keep the view in line with the model
+    func iterationComplete(){
+        for x in 0..<grid.width{
+            for y in 0..<grid.height{
+                cell(x: x, y: y, live: grid.cell(x: x, y: y))
+            }
+        }
+    }
     
     
     

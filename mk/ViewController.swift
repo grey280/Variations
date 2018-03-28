@@ -16,6 +16,9 @@ class ViewController: UIViewController {
         return true
     }
     
+    /// The list of grids that will be displayed on-screen
+    var grids = [GridView]()
+    
     // Test code
     var testGrid: GridView!
     var testGrid2: GridView!
@@ -40,6 +43,26 @@ class ViewController: UIViewController {
             tempGrid.cell(x: Int(arc4random_uniform(UInt32(dimension))), y: Int(arc4random_uniform(UInt32(dimension))), alive: true)
         }
         return tempGrid
+    }
+    
+    /// Iterate all grids at once, including randomization
+    func iterate(){
+        // tweak a couple of the grids
+        let random1 = Int(arc4random_uniform(UInt32(grids.count)))
+        let random2 = Int(arc4random_uniform(UInt32(grids.count)))
+        let random1x = Int(arc4random_uniform(UInt32(grids[random1].grid.width)))
+        let random1y = Int(arc4random_uniform(UInt32(grids[random1].grid.height)))
+        let random2x = Int(arc4random_uniform(UInt32(grids[random2].grid.width)))
+        let random2y = Int(arc4random_uniform(UInt32(grids[random2].grid.height)))
+        grids[random1].grid.toggleCell(x: random1x, y: random1y)
+        grids[random2].grid.toggleCell(x: random2x, y: random2y)
+        
+        // ... and then run the iteration
+        for gridView in grids{
+            gridView.grid.iterate {
+                gridView.iterationComplete()
+            }
+        }
     }
     
     override func viewDidLoad() {

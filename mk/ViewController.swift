@@ -27,6 +27,10 @@ class ViewController: UIViewController {
         }
     }
     
+    /// Generate a random square grid with the given dimension
+    ///
+    /// - Parameter dimension: the size of the grid to generate
+    /// - Returns: an instance of `Grid` with a randomly-generated beginning state
     private func randomGrid(_ dimension: Int) -> Grid{
         let tempGrid = Grid(x: dimension, y: dimension)!
         for _ in 0..<Int(1.5*dimension){

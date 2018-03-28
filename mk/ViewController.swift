@@ -11,6 +11,10 @@ import AudioKit
 
 class ViewController: UIViewController {
     
+    override var prefersStatusBarHidden: Bool{ // Hide the status bar, it looks dumb otherwise
+        return true
+    }
+    
     var testGrid: GridView!
     var testGrid2: GridView!
     
@@ -50,7 +54,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 

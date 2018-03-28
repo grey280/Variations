@@ -71,6 +71,18 @@ class ViewController: UIViewController {
         return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
     }
     
+    /// Reset grids to a freshly randomized state
+    @objc private func resetGrids(){
+        for i in 0..<grids.count{
+            grids[i].removeFromSuperview()
+            let tempGrid = randomGrid(Int(arc4random_uniform(25))+1)
+            let tempGridView = GridView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height), grid: tempGrid)
+            tempGridView.gridColor = randomColor()
+            grids[i] = tempGridView
+            self.view.addSubview(<#T##view: UIView##UIView#>)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -84,6 +96,10 @@ class ViewController: UIViewController {
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
         self.view.addGestureRecognizer(tapRecognizer)
+        
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.resetGrids))
+        swipeRecognizer.direction = .down
+        self.view.addGestureRecognizer(swipeRecognizer)
     }
 }
 

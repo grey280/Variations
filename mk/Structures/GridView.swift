@@ -13,6 +13,10 @@ class GridView: UIView{
     struct GVConstants{
         /// Color to highlight rows/columns with
         static let highlightColor = UIColor.yellow.withAlphaComponent(0.5)
+        /// Opacity level to use when a tile is being displayed
+        static let opacityLevelOn = 0.7
+        /// Opacity level to use when a tile is not being displayed
+        static let opacityLevelOff = 0.0
     }
     
     /// Provides helper functions on top of UIView for drawing grid tiles
@@ -24,7 +28,7 @@ class GridView: UIView{
             }
         }
         /// Set the opacity of the tile; hopefully to be used for animations at some point
-        var opacity = 1.0{
+        var opacity = GVConstants.opacityLevelOn{
             didSet{
                 self.backgroundColor = self.backgroundColor?.withAlphaComponent(CGFloat(opacity))
             }
@@ -97,9 +101,9 @@ class GridView: UIView{
             return
         }
         if live{
-            tile.opacity = 1.0
+            tile.opacity = GVConstants.opacityLevelOn
         }else{
-            tile.opacity = 0.0
+            tile.opacity = GVConstants.opacityLevelOff
         }
     }
     
@@ -118,9 +122,9 @@ class GridView: UIView{
         }
         tile.tileColor = color
         if grid.cell(x: x, y: y){
-            tile.opacity = 1.0
+            tile.opacity = GVConstants.opacityLevelOn
         }else{
-            tile.opacity = 0.0
+            tile.opacity = GVConstants.opacityLevelOff
         }
     }
     

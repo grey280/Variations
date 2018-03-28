@@ -71,28 +71,31 @@ class ViewController: UIViewController {
         return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
     }
     
-    /// Reset grids to a freshly randomized state
+    /// Wrapper for `buildGrids`
     @objc private func resetGrids(){
-        for i in 0..<grids.count{
-            grids[i].removeFromSuperview()
-            let tempGrid = randomGrid(Int(arc4random_uniform(25))+1)
-            let tempGridView = GridView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height), grid: tempGrid)
-            tempGridView.gridColor = randomColor()
-            grids[i] = tempGridView
-            self.view.addSubview(<#T##view: UIView##UIView#>)
-        }
+        buildGrids(8)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        for _ in 0..<8{
+    /// Build the given number of grids
+    ///
+    /// - Parameter number: number of grids to build
+    private func buildGrids(_ number: Int){
+        for i in 0..<grids.count{
+            grids[i].removeFromSuperview()
+        }
+        for _ in 0..<number{
             let tempGrid = randomGrid(Int(arc4random_uniform(25))+1)
             let tempGridView = GridView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height), grid: tempGrid)
             tempGridView.gridColor = randomColor()
             grids.append(tempGridView)
             self.view.addSubview(tempGridView)
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        buildGrids(8)
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
         self.view.addGestureRecognizer(tapRecognizer)

@@ -26,6 +26,14 @@ class Grid{
         return cells[0].count
     }
     
+    /// The current active column
+    var activeColumn: Int{
+        return _activeColumn
+    }
+    
+    /// The current active column; internal use only
+    private var _activeColumn = 0
+    
     /// Iterate the grid using the standard rules of cellular automata/Conway's Game of Life
     func iterate(completion: ()->()){
         var newCells = [[Bool]](repeating: [Bool](repeating: false, count: height), count: width)
@@ -34,7 +42,7 @@ class Grid{
                 newCells[x][y] = iteratedCellState(x: x, y: y)
             }
         }
-        
+        _activeColumn = (_activeColumn + 1) % width
         cells = newCells
         completion()
     }

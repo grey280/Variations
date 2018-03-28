@@ -20,10 +20,6 @@ class ViewController: UIViewController {
     var grids = [GridView]()
     
     // Test code
-    var testGrid: GridView!
-    var testGrid2: GridView!
-    
-    // Test code
     @objc func handleTap(){
         iterate()
     }
@@ -42,35 +38,49 @@ class ViewController: UIViewController {
     
     /// Iterate all grids at once, including randomization
     func iterate(){
-        // tweak a couple of the grids
-        let random1 = Int(arc4random_uniform(UInt32(grids.count)))
-        let random2 = Int(arc4random_uniform(UInt32(grids.count)))
-        let random1x = Int(arc4random_uniform(UInt32(grids[random1].grid.width)))
-        let random1y = Int(arc4random_uniform(UInt32(grids[random1].grid.height)))
-        let random2x = Int(arc4random_uniform(UInt32(grids[random2].grid.width)))
-        let random2y = Int(arc4random_uniform(UInt32(grids[random2].grid.height)))
-        grids[random1].grid.toggleCell(x: random1x, y: random1y)
-        grids[random2].grid.toggleCell(x: random2x, y: random2y)
-        
-        // ... and then run the iteration
+        iterate(2)
+    }
+    
+    
+    /// Iterate all grids at once, including the given number of randomly flipped tiles
+    ///
+    /// - Parameter randoms: the number of tiles to flip (random grid, random tile, each time)
+    func iterate(_ randoms: Int){
         for gridView in grids{
-            gridView.grid.iterate {
+            gridView.grid.iterate{
                 gridView.iterationComplete()
             }
         }
+        
+        for _ in 0..<randoms{
+            let gridTweak = Int(arc4random_uniform(UInt32(grids.count)))
+            let gridX = Int(arc4random_uniform(UInt32(grids[gridTweak].grid.width)))
+            let gridY = Int(arc4random_uniform(UInt32(grids[gridTweak].grid.height)))
+            grids[gridTweak].grid.toggleCell(x: gridX, y: gridY)
+        }
+    }
+    
+    /// Generates a random color
+    ///
+    /// - Returns: a randomized UIColor
+    private func randomColor() -> UIColor{
+        let hue : CGFloat = CGFloat(arc4random() % 256) / 256 // use 256 to get full range from 0.0 to 1.0
+        let saturation : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from white
+        let brightness : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from black
+        
+        return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Testing code!
-        let tempGrid = randomGrid(10)
-        let tempGrid2 = randomGrid(8)
-        testGrid = GridView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height/2), grid: tempGrid)
-        testGrid2 = GridView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height/2), grid: tempGrid2)
-        testGrid2.gridColor = UIColor.blue
-        self.view.addSubview(testGrid)
-        self.view.addSubview(testGrid2)
+        for _ in 0..<8{
+            let tempGrid = randomGrid(Int(arc4random_uniform(25))+1)
+            let tempGridView = GridView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height), grid: tempGrid)
+            tempGridView.gridColor = randomColor()
+            grids.append(tempGridView)
+            self.view.addSubview(tempGridView)
+        }
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
         self.view.addGestureRecognizer(tapRecognizer)

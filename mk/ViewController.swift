@@ -25,12 +25,7 @@ class ViewController: UIViewController {
     
     // Test code
     @objc func handleTap(){
-        testGrid.grid.iterate {
-            testGrid.iterationComplete()
-        }
-        testGrid2.grid.iterate {
-            testGrid2.iterationComplete()
-        }
+        iterate()
     }
     
     /// Generate a random square grid with the given dimension

@@ -12,21 +12,35 @@ import AudioKit
 class ViewController: UIViewController {
     
     var testGrid: GridView!
+    var testGrid2: GridView!
     
     @objc func handleTap(){
         testGrid.grid.iterate {
             testGrid.iterationComplete()
         }
+        testGrid2.grid.iterate {
+            testGrid2.iterationComplete()
+        }
+    }
+    
+    private func randomGrid(_ dimension: Int) -> Grid{
+        let tempGrid = Grid(x: dimension, y: dimension)!
+        for _ in 0..<Int(1.5*dimension){
+            tempGrid.cell(x: Int(arc4random_uniform(UInt32(dimension))), y: Int(arc4random_uniform(UInt32(dimension))), alive: true)
+        }
+        return tempGrid
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tempGrid = Grid(x: 10, y: 10)!
-        for _ in 0..<15{
-            tempGrid.cell(x: Int(arc4random_uniform(10)), y: Int(arc4random_uniform(10)), alive: true)
-        }
+        
+        let tempGrid = randomGrid(10)
+        let tempGrid2 = randomGrid(8)
         testGrid = GridView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height/2), grid: tempGrid)
+        testGrid2 = GridView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height/2), grid: tempGrid2)
+        testGrid2.gridColor = UIColor.blue
         self.view.addSubview(testGrid)
+        self.view.addSubview(testGrid2)
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
         self.view.addGestureRecognizer(tapRecognizer)

@@ -26,7 +26,15 @@ class GridView: UIView{
     }
     
     var grid: Grid
-    var gridColor = UIColor.red
+    var gridColor = UIColor.red{
+        didSet{
+            for x in 0..<grid.width{
+                for y in 0..<grid.height{
+                    cell(x: x, y: y, color: gridColor)
+                }
+            }
+        }
+    }
     /// The stack in which we're storing everything; indexed as [x][y]
     fileprivate var stack: UIStackView!
     
@@ -83,6 +91,27 @@ class GridView: UIView{
             return
         }
         if live{
+            tile.opacity = 1.0
+        }else{
+            tile.opacity = 0.0
+        }
+    }
+    
+    /// Set a tile's background color
+    ///
+    /// - Parameters:
+    ///   - x: x-coordinate of tile
+    ///   - y: y-coordinate of tile
+    ///   - color: color to set the tile to
+    func cell(x: Int, y: Int, color: UIColor){
+        guard let yAxis = stack.arrangedSubviews[x] as? UIStackView else{
+            return
+        }
+        guard let tile = yAxis.arrangedSubviews[y] as? GridViewTile else{
+            return
+        }
+        tile.tileColor = color
+        if grid.cell(x: x, y: y){
             tile.opacity = 1.0
         }else{
             tile.opacity = 0.0

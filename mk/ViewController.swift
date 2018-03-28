@@ -11,13 +11,16 @@ import AudioKit
 
 class ViewController: UIViewController {
     
-    override var prefersStatusBarHidden: Bool{ // Hide the status bar, it looks dumb otherwise
+    /// Hide the status bar; it doesn't look super good with it displayed, after all.
+    override var prefersStatusBarHidden: Bool{
         return true
     }
     
+    // Test code
     var testGrid: GridView!
     var testGrid2: GridView!
     
+    // Test code
     @objc func handleTap(){
         testGrid.grid.iterate {
             testGrid.iterationComplete()
@@ -42,6 +45,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Testing code!
         let tempGrid = randomGrid(10)
         let tempGrid2 = randomGrid(8)
         testGrid = GridView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height/2), grid: tempGrid)
@@ -53,11 +57,5 @@ class ViewController: UIViewController {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
         self.view.addGestureRecognizer(tapRecognizer)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
 

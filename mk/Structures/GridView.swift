@@ -124,32 +124,6 @@ class GridView: UIView{
         }
     }
     
-    /// Choose the column to highlight
-    ///
-    /// - Parameter x: which column to highlight. 0-based.
-    func column(_ x: Int){
-        for i in 0..<grid.width{
-            column(i, live: false)
-        }
-        column(x, live: true)
-    }
-    
-    /// Set whether a column is highlighted or not.
-    ///
-    /// - Parameters:
-    ///   - x: which column to highlight. 0-based.
-    ///   - live: whether the column is highlighted or not
-    func column(_ x: Int, live: Bool){
-        guard let yAxis = stack.arrangedSubviews[x] as? UIStackView else{
-            return
-        }
-        if live{
-            yAxis.backgroundColor = GVConstants.highlightColor
-        }else{
-            yAxis.backgroundColor = UIColor.clear
-        }
-    }
-    
     /// Run when a `Grid` iteration completes to keep the view in line with the model
     func iterationComplete(){
         for x in 0..<grid.width{

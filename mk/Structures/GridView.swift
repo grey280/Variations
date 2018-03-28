@@ -9,6 +9,12 @@
 import UIKit
 
 class GridView: UIView{
+    /// Global constants for the grid view stuff
+    struct GVConstants{
+        /// Color to highlight rows/columns with
+        static let highlightColor = UIColor.yellow.withAlphaComponent(0.5)
+    }
+    
     /// Provides helper functions on top of UIView for drawing grid tiles
     class GridViewTile: UIView{
         /// Convenient way to set the color of the tile
@@ -115,6 +121,32 @@ class GridView: UIView{
             tile.opacity = 1.0
         }else{
             tile.opacity = 0.0
+        }
+    }
+    
+    /// Choose the column to highlight
+    ///
+    /// - Parameter x: which column to highlight. 0-based.
+    func column(_ x: Int){
+        for i in 0..<grid.width{
+            column(i, live: false)
+        }
+        column(x, live: true)
+    }
+    
+    /// Set whether a column is highlighted or not.
+    ///
+    /// - Parameters:
+    ///   - x: which column to highlight. 0-based.
+    ///   - live: whether the column is highlighted or not
+    func column(_ x: Int, live: Bool){
+        guard let yAxis = stack.arrangedSubviews[x] as? UIStackView else{
+            return
+        }
+        if live{
+            yAxis.backgroundColor = GVConstants.highlightColor
+        }else{
+            yAxis.backgroundColor = UIColor.clear
         }
     }
     

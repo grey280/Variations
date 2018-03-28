@@ -17,12 +17,16 @@ class ViewController: UIViewController {
     
     var testGrid: GridView!
     var testGrid2: GridView!
+    var liveNumber = 0
     
     @objc func handleTap(){
+        liveNumber = liveNumber + 1
         testGrid.grid.iterate {
+            testGrid.column(liveNumber % testGrid.grid.width)
             testGrid.iterationComplete()
         }
         testGrid2.grid.iterate {
+            testGrid2.column(liveNumber % testGrid2.grid.width)
             testGrid2.iterationComplete()
         }
     }

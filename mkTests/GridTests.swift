@@ -44,5 +44,23 @@ class GridTests: XCTestCase {
         XCTAssert(grid.cell(x: 2, y: 3))
     }
     
+    /// Test that the parity functions are working properly
+    func testParityFunctions(){
+        grid.cell(x: 2, y: 1, alive: true)
+        grid.cell(x: 2, y: 2, alive: true)
+        grid.cell(x: 2, y: 3, alive: true)
+        
+        XCTAssert(grid.parity())
+        XCTAssert(!grid.columnParity(0))
+        XCTAssert(!grid.columnParity(1))
+        XCTAssert(grid.columnParity(2))
+        XCTAssert(!grid.columnParity(3))
+        XCTAssert(!grid.columnParity(4))
+        XCTAssert(!grid.rowParity(0))
+        XCTAssert(grid.rowParity(1))
+        XCTAssert(grid.rowParity(2))
+        XCTAssert(grid.rowParity(3))
+        XCTAssert(!grid.rowParity(4))
+    }
     
 }

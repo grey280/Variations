@@ -20,6 +20,11 @@ class ViewController: UIViewController {
     /// The list of grids that will be displayed on-screen
     var grids = [GridView]()
     
+    /// The list of oscillators that's used to generate audio
+    var oscillators = [AKPolyphonicNode]()
+    
+    var mixerNode = AKMixer()
+    
     // Test code
     /// Iterate the grids when the screen is tapped
     @objc func handleTap(){
@@ -78,20 +83,80 @@ class ViewController: UIViewController {
         buildGrids(8)
     }
     
-    /// Build the given number of grids
+    /// Create a random AKTable
+    ///
+    /// - Returns: an AKTAble with a randomly-selected type
+    private func randomTableType() -> AKTable{
+        let choice = Int(arc4random_uniform(8))
+        switch choice {
+        case 0:
+            return AKTable(.positiveSawtooth)
+        case 1:
+            return AKTable(.triangle)
+        case 2:
+            return AKTable(.square)
+        case 3:
+            return AKTable(.sawtooth)
+        case 4:
+            return AKTable(.positiveSine)
+        case 5:
+            return AKTable(.positiveTriangle)
+        case 6:
+            return AKTable(.positiveSquare)
+        default:
+            return AKTable(.sine)
+        }
+    }
+    
+    private func tableFrom(_ input: Double) -> AKTable{
+        let choice = Int(input * 10) % 8
+        switch choice {
+        case 0:
+            return AKTable(.positiveSawtooth)
+        case 1:
+            return AKTable(.triangle)
+        case 2:
+            return AKTable(.square)
+        case 3:
+            return AKTable(.sawtooth)
+        case 4:
+            return AKTable(.positiveSine)
+        case 5:
+            return AKTable(.positiveTriangle)
+        case 6:
+            return AKTable(.positiveSquare)
+        default:
+            return AKTable(.sine)
+        }
+    }
+    
+    /// Build the given number of grids, including configuring the oscillators
     ///
     /// - Parameter number: number of grids to build
     private func buildGrids(_ number: Int){
         for i in 0..<grids.count{
             grids[i].removeFromSuperview()
         }
+        for i in 0..<oscillators.count{ // TODO: Verify that this is actually detaching all the nodes from the mixer like it's supposed to be, otherwise that could be both a heck of a memory leak *and* a nice mismash of sound
+            oscillators[i].detach()
+        }
         for _ in 0..<number{
             let tempGrid = randomGrid(Int(arc4random_uniform(25))+1)
             let tempGridView = GridView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height), grid: tempGrid)
             tempGridView.gridColor = randomColor()
             grids.append(tempGridView)
+            
+            var hue: CGFloat = 0
+            var saturation: CGFloat = 0
+            var brightness: CGFloat = 0
+            tempGridView.gridColor.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: nil)
+            
+            let oscillator = AKOscillatorBank(waveform: tableFrom(Double(hue)), attackDuration: Double(saturation)/5, releaseDuration: Double(brightness)/5)
+            oscillators.append(oscillator)
+            mixerNode.connect(input: oscillator)
             self.view.addSubview(tempGridView)
         }
+        
     }
     
     /// Set up the view to run
@@ -106,6 +171,9 @@ class ViewController: UIViewController {
         let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.resetGrids))
         swipeRecognizer.direction = .down
         self.view.addGestureRecognizer(swipeRecognizer)
+        
+        AudioKit.output = mixerNode
+        AudioKit.start()
     }
 }
 

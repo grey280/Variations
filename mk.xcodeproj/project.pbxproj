@@ -19,6 +19,8 @@
 		2D4A0F212012C65900E4E526 /* AudioKitUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4A0F1F2012C65900E4E526 /* AudioKitUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2D4A707C2051F0A8000B81CD /* GridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4A707B2051F0A8000B81CD /* GridTests.swift */; };
 		2DD56B7520697E2500BC35AF /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD56B7420697E2500BC35AF /* GridView.swift */; };
+		2DF59000206EADB100EA6EBF /* GridConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF58FFF206EADB100EA6EBF /* GridConverter.swift */; };
+		2DF59002206ECBE800EA6EBF /* GridConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF59001206ECBE800EA6EBF /* GridConverterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		2D4A0F1F2012C65900E4E526 /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKitUI.framework; sourceTree = "<group>"; };
 		2D4A707B2051F0A8000B81CD /* GridTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTests.swift; sourceTree = "<group>"; };
 		2DD56B7420697E2500BC35AF /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		2DF58FFF206EADB100EA6EBF /* GridConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridConverter.swift; sourceTree = "<group>"; };
+		2DF59001206ECBE800EA6EBF /* GridConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridConverterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 			children = (
 				2D1040ED204F48F30053475F /* Grid.swift */,
 				2DD56B7420697E2500BC35AF /* GridView.swift */,
+				2DF58FFF206EADB100EA6EBF /* GridConverter.swift */,
 			);
 			path = Structures;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 			children = (
 				2D4A0F122012C39D00E4E526 /* Info.plist */,
 				2D4A707B2051F0A8000B81CD /* GridTests.swift */,
+				2DF59001206ECBE800EA6EBF /* GridConverterTests.swift */,
 			);
 			path = mkTests;
 			sourceTree = "<group>";
@@ -239,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DF59000206EADB100EA6EBF /* GridConverter.swift in Sources */,
 				2D4A0EFE2012C39D00E4E526 /* ViewController.swift in Sources */,
 				2D4A0EFC2012C39D00E4E526 /* AppDelegate.swift in Sources */,
 				2DD56B7520697E2500BC35AF /* GridView.swift in Sources */,
@@ -250,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DF59002206ECBE800EA6EBF /* GridConverterTests.swift in Sources */,
 				2D4A707C2051F0A8000B81CD /* GridTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

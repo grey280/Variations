@@ -120,6 +120,44 @@ class Grid{
         wrap = doWrap
     }
     
+    /// Gets the parity of the grid as a whole
+    ///
+    /// - Returns: true if the grid has an odd number of active cells
+    func parity() -> Bool{
+        var activeCount = 0
+        for outer in cells{
+            for cell in outer{
+                if cell{
+                    activeCount = activeCount + 1
+                }
+            }
+        }
+        activeCount = activeCount % 2
+        return activeCount == 0 ? false : true
+    }
+    
+    /// Wrapper on `rowParity(_:)` to quickly access the parity of the current row
+    ///
+    /// - Returns: true if the current row has an odd number of active cells
+    func rowParity() -> Bool{
+        return rowParity(activeRow)
+    }
+    
+    func rowParity(_ row: Int) -> Bool{
+        
+    }
+    
+    /// Wrapper on `columnParity(_:)` to quickly access the parity of the current column
+    ///
+    /// - Returns: true if the current column has an odd number of active cells
+    func columnParity() -> Bool{
+        return columnParity(activeColumn)
+    }
+    
+    func columnParity(_ column: Int) -> Bool{
+        
+    }
+    
     // MARK: - Cell Interactions
     
     /// Toggle the 'live' value of the cell at the given coordinates.

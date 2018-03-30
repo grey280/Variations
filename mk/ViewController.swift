@@ -83,31 +83,10 @@ class ViewController: UIViewController {
         buildGrids(8)
     }
     
-    /// Create a random AKTable
+    /// Create a table from a given input
     ///
-    /// - Returns: an AKTAble with a randomly-selected type
-    private func randomTableType() -> AKTable{
-        let choice = Int(arc4random_uniform(8))
-        switch choice {
-        case 0:
-            return AKTable(.positiveSawtooth)
-        case 1:
-            return AKTable(.triangle)
-        case 2:
-            return AKTable(.square)
-        case 3:
-            return AKTable(.sawtooth)
-        case 4:
-            return AKTable(.positiveSine)
-        case 5:
-            return AKTable(.positiveTriangle)
-        case 6:
-            return AKTable(.positiveSquare)
-        default:
-            return AKTable(.sine)
-        }
-    }
-    
+    /// - Parameter input: a double; assumes roughly in the range 0.0-1.0, but not required
+    /// - Returns: an AKTable instance with a waveform chosen based on the input
     private func tableFrom(_ input: Double) -> AKTable{
         let choice = Int(input * 10) % 8
         switch choice {
@@ -156,7 +135,6 @@ class ViewController: UIViewController {
             mixerNode.connect(input: oscillator)
             self.view.addSubview(tempGridView)
         }
-        
     }
     
     /// Set up the view to run

@@ -96,11 +96,12 @@ class GridConverter{
         var output = [Int]()
         let bases = chordBases(chord)
         let displace = baseDisplacement(input.count)
-        
-        
         for i in 0..<input.count{
             if input[i]{
-                output.append(bases[i%3]+12*(i/3))
+                let theBase = bases[i%3]
+                let localDisplace: Int = (i/3) + displace
+                let res = theBase + localDisplace * 12
+                output.append(res)
             }
         }
         return output

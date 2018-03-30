@@ -10,7 +10,7 @@ import Foundation
 
 /// Handles the conversions between the various data types we need
 class GridConverter{
-    /// The chords in a major key
+    /// Which chord are we looking at?
     ///
     /// - I: Tonic
     /// - ii: Supertonic
@@ -19,7 +19,7 @@ class GridConverter{
     /// - V: Dominant
     /// - vi: Submediant
     /// - viio: Leading tone
-    enum majorKey{
+    public enum chord{
         case I
         case ii
         case iii
@@ -28,44 +28,30 @@ class GridConverter{
         case vi
         case viio
     }
-    /// The chords in a minor key
+    // Eb major: Eb, F, G, Ab, Bb, C, D
+    /// The base notes of the scale; to get them in higher octaves, add multiples of 12
+    private let baseNotes = [3, 5, 7, 8, 10, 12, 14]
+    
+    /// Convert a grid column into a collection of MIDI numbers, utilizing only chord tones from the given chord
     ///
-    /// - i: Tonic
-    /// - iio: Supertonic
-    /// - III: Mediant
-    /// - iv: Subdominant
-    /// - v: Dominant (minor)
-    /// - V: Dominant
-    /// - VI: Submediant
-    /// - VII: Subtonic
-    /// - viio: Leading tone
-    enum minorKey{
-        case i
-        case iio
-        case III
-        case iv
-        case v
-        case V
-        case VI
-        case VII
-        case viio
-    }
-    /// Major or minor key?
-    ///
-    /// - major: A major key
-    /// - minor: A minor key
-    enum key{
-        case major
-        case minor
+    /// - Parameters:
+    ///   - input: a grid column output, or any other boolean array
+    ///   - chord: the chord to stay within
+    /// - Returns: an array of MIDI note numbers
+    func convert(_ input: [Bool], chord: chord) -> [Int]{
+        var output = [Int]()
+        
+        return output
     }
     
-    /// The specific type of chord that's active
+    /// Convert a grid column into a collection of MIDI numbers, utilizing only tones in the key
     ///
-    /// - major: A chord in a major key
-    /// - minor: A chord in a minor key
-    enum chord{
-        case major(majorKey)
-        case minor(minorKey)
+    /// - Parameter input: a grid column output, or any other boolean array
+    /// - Returns: an array of MIDI note numbers
+    func convert(_ input: [Bool]) -> [Int]{
+        var output = [Int]()
+        
+        return output
     }
     
     /// Whether or not the output is 'free'. True means output is limited only to tones in the key; false limits the output to tones in the current chord.

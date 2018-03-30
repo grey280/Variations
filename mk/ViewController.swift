@@ -11,19 +11,17 @@ import AudioKit
 
 /// The main ViewController for everything; honestly this is gonna be a Massive View Controller deal probably, but I'm okay with that
 class ViewController: UIViewController {
-    
-    /// Hide the status bar; it doesn't look super good with it displayed, after all.
-    override var prefersStatusBarHidden: Bool{
-        return true
-    }
-    
+    // MARK: Variables
     /// The list of grids that will be displayed on-screen
     var grids = [GridView]()
     
     /// The list of oscillators that's used to generate audio
     var oscillators = [AKPolyphonicNode]()
     
+    /// The primary mixer node; outputs to AudioKit out, so it's the audio out for everything
     var mixerNode = AKMixer()
+    
+    // MARK: - Helper Functions
     
     // Test code
     /// Iterate the grids when the screen is tapped
@@ -43,30 +41,6 @@ class ViewController: UIViewController {
         return tempGrid
     }
     
-    /// Iterate all grids at once, including randomization
-    func iterate(){
-        iterate(2)
-    }
-    
-    
-    /// Iterate all grids at once, including the given number of randomly flipped tiles
-    ///
-    /// - Parameter randoms: the number of tiles to flip (random grid, random tile, each time)
-    func iterate(_ randoms: Int){
-        for gridView in grids{
-            gridView.grid.iterate{
-                gridView.iterationComplete()
-            }
-        }
-        
-        for _ in 0..<randoms{
-            let gridTweak = Int(arc4random_uniform(UInt32(grids.count)))
-            let gridX = Int(arc4random_uniform(UInt32(grids[gridTweak].grid.width)))
-            let gridY = Int(arc4random_uniform(UInt32(grids[gridTweak].grid.height)))
-            grids[gridTweak].grid.toggleCell(x: gridX, y: gridY)
-        }
-    }
-    
     /// Generates a random color
     ///
     /// - Returns: a randomized UIColor
@@ -76,11 +50,6 @@ class ViewController: UIViewController {
         let brightness : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from black
         
         return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
-    }
-    
-    /// Wrapper for `buildGrids`
-    @objc private func resetGrids(){
-        buildGrids(8)
     }
     
     /// Create a table from a given input
@@ -107,6 +76,38 @@ class ViewController: UIViewController {
         default:
             return AKTable(.sine)
         }
+    }
+    
+    // MARK: - Grid Interactions
+    
+    /// Iterate all grids at once, including randomization
+    func iterate(){
+        iterate(2)
+    }
+    
+    /// Iterate all grids at once, including the given number of randomly flipped tiles
+    ///
+    /// - Parameter randoms: the number of tiles to flip (random grid, random tile, each time)
+    func iterate(_ randoms: Int){
+        for gridView in grids{
+            gridView.grid.iterate{
+                gridView.iterationComplete()
+            }
+        }
+        
+        for _ in 0..<randoms{
+            let gridTweak = Int(arc4random_uniform(UInt32(grids.count)))
+            let gridX = Int(arc4random_uniform(UInt32(grids[gridTweak].grid.width)))
+            let gridY = Int(arc4random_uniform(UInt32(grids[gridTweak].grid.height)))
+            grids[gridTweak].grid.toggleCell(x: gridX, y: gridY)
+        }
+    }
+    
+    // MARK: - Configuration
+    
+    /// Wrapper for `buildGrids`
+    @objc private func resetGrids(){
+        buildGrids(8)
     }
     
     /// Build the given number of grids, including configuring the oscillators
@@ -137,6 +138,8 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: - ViewController Globals
+    
     /// Set up the view to run
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -152,6 +155,11 @@ class ViewController: UIViewController {
         
         AudioKit.output = mixerNode
         AudioKit.start()
+    }
+    
+    /// Hide the status bar; it doesn't look super good with it displayed, after all.
+    override var prefersStatusBarHidden: Bool{
+        return true
     }
 }
 

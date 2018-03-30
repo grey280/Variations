@@ -20,12 +20,19 @@ class GridConverter{
     /// - vi: Submediant
     /// - viio: Leading tone
     public enum chord{
+        /// Tonic
         case I
+        /// Supertonic
         case ii
+        /// Mediant
         case iii
+        /// Subdominant
         case IV
+        /// Dominant
         case V
+        /// Submediant
         case vi
+        /// Leading tone
         case viio
     }
     // Eb major: Eb, F, G, Ab, Bb, C, D

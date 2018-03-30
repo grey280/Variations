@@ -49,7 +49,6 @@ class GridTests: XCTestCase {
         grid.cell(x: 2, y: 1, alive: true)
         grid.cell(x: 2, y: 2, alive: true)
         grid.cell(x: 2, y: 3, alive: true)
-        
         XCTAssert(grid.parity())
         XCTAssert(!grid.columnParity(0))
         XCTAssert(!grid.columnParity(1))
@@ -62,5 +61,4 @@ class GridTests: XCTestCase {
         XCTAssert(grid.rowParity(3))
         XCTAssert(!grid.rowParity(4))
     }
-    
 }

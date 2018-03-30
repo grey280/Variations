@@ -32,6 +32,29 @@ class GridConverter{
     /// The base notes of the scale; to get them in higher octaves, add multiples of 12
     private let baseNotes = [3, 5, 7, 8, 10, 12, 14]
     
+    /// Gets the base numbers for a given chord
+    ///
+    /// - Parameter start: the chord to start with
+    /// - Returns: the three chord tones to use as base numbers for other math
+    private func chordBases(_ start: chord) -> [Int]{
+        switch start {
+        case .I:
+            return [baseNotes[0], baseNotes[2], baseNotes[4]]
+        case .ii:
+            return [baseNotes[1], baseNotes[3], baseNotes[5]]
+        case .iii:
+            return [baseNotes[2], baseNotes[4], baseNotes[6]]
+        case .IV:
+            return [baseNotes[3], baseNotes[5], baseNotes[0]+12]
+        case .V:
+            return [baseNotes[4], baseNotes[6], baseNotes[1]+12]
+        case .vi:
+            return [baseNotes[5], baseNotes[0]+12, baseNotes[2]+12]
+        case .viio:
+            return [baseNotes[6], baseNotes[1]+12, baseNotes[3]+12]
+        }
+    }
+    
     /// Convert a grid column into a collection of MIDI numbers, utilizing only chord tones from the given chord
     ///
     /// - Parameters:

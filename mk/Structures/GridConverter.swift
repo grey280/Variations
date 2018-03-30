@@ -113,7 +113,15 @@ class GridConverter{
     /// - Returns: an array of MIDI note numbers
     func convert(_ input: [Bool]) -> [Int]{
         var output = [Int]()
-        
+        let displace = baseDisplacement(input.count, chordLimited: false)
+        for i in 0..<input.count{
+            if input[i]{
+                let theBase = baseNotes[i%7]
+                let localDisplace: Int = (i/7) + displace
+                let res = theBase + localDisplace * 12
+                output.append(res)
+            }
+        }
         return output
     }
 }

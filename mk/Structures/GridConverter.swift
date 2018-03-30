@@ -58,4 +58,16 @@ class GridConverter{
         case major
         case minor
     }
+    
+    /// The specific type of chord that's active
+    ///
+    /// - major: A chord in a major key
+    /// - minor: A chord in a minor key
+    enum chord{
+        case major(majorKey)
+        case minor(minorKey)
+    }
+    
+    /// Whether or not the output is 'free'. True means output is limited only to tones in the key; false limits the output to tones in the current chord.
+    var free = false
 }

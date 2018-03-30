@@ -115,7 +115,4 @@ class GridConverter{
         
         return output
     }
-    
-    /// Whether or not the output is 'free'. True means output is limited only to tones in the key; false limits the output to tones in the current chord.
-    var free = false
 }

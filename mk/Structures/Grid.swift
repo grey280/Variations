@@ -144,7 +144,14 @@ class Grid{
     }
     
     func rowParity(_ row: Int) -> Bool{
-        
+        var activeCount = 0
+        for i in 0..<width{
+            if cells[i][row]{
+                activeCount = activeCount + 1
+            }
+        }
+        activeCount = activeCount % 2
+        return activeCount == 0 ? false : true
     }
     
     /// Wrapper on `columnParity(_:)` to quickly access the parity of the current column
@@ -155,7 +162,14 @@ class Grid{
     }
     
     func columnParity(_ column: Int) -> Bool{
-        
+        var activeCount = 0
+        for i in 0..<height{
+            if cells[column][i]{
+                activeCount = activeCount + 1
+            }
+        }
+        activeCount = activeCount % 2
+        return activeCount == 0 ? false : true
     }
     
     // MARK: - Cell Interactions

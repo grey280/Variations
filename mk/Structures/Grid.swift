@@ -102,6 +102,11 @@ class Grid{
         
     }
     
+    /// Build a grid of dimension x by y
+    ///
+    /// - Parameter x: width of the grid. Must be greater than 0.
+    /// - Parameter y: height of the grid. Must be greater than 0.
+    /// - Returns: an x by y grid filled with all inactive cell
     init?(x: Int, y: Int){
         if (x <= 0 || y <= 0){
             return nil
@@ -111,6 +116,12 @@ class Grid{
         wrap = true
     }
     
+    /// Build a grid of dimension x by y with wrapping, if you'd like
+    ///
+    /// - Parameter x: width of the grid. Must be greater than 0.
+    /// - Parameter y: height of the grid. Must be greater than 0.
+    /// - Parameter wrap: whether or not the grid wraps
+    /// - Returns: an x by y grid with or without wrapping, filled with all inactive cells
     init?(x: Int, y: Int, wrap doWrap: Bool){
         if (x <= 0 || y <= 0){
             return nil
@@ -143,6 +154,10 @@ class Grid{
         return rowParity(activeRow)
     }
     
+    /// Gets the parity of a specific row
+    ///
+    /// - Parameter row: The row to check the parity of
+    /// - Returns: true if the row has an odd number of active cells
     func rowParity(_ row: Int) -> Bool{
         var activeCount = 0
         for i in 0..<width{
@@ -161,6 +176,10 @@ class Grid{
         return columnParity(activeColumn)
     }
     
+    /// Gets the parity of a specific column
+    ///
+    /// - Parameter column: The column to check the parity of
+    /// - Returns: true if the column has an odd number of active cells
     func columnParity(_ column: Int) -> Bool{
         var activeCount = 0
         for i in 0..<height{

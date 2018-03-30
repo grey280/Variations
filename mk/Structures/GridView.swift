@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Display a `Grid`
 class GridView: UIView{
     /// Global constants for the grid view stuff
     struct GVConstants{
@@ -35,7 +36,9 @@ class GridView: UIView{
         }
     }
     
+    /// The `Grid` used as the backing model
     var grid: Grid
+    /// The color of the cells in the grid
     var gridColor = UIColor.red{
         didSet{
             for x in 0..<grid.width{
@@ -48,6 +51,11 @@ class GridView: UIView{
     /// The stack in which we're storing everything; indexed as [x][y]
     fileprivate var stack: UIStackView!
     
+    /// Create a GridView
+    ///
+    /// - Parameters:
+    ///   - frame: the frame in which the GridView will be displayed
+    ///   - grid: an instance of `Grid` to be used as the model; will automatically fill settings based on that
     init(frame: CGRect, grid: Grid) {
         self.grid = grid
         super.init(frame: frame)
@@ -82,6 +90,12 @@ class GridView: UIView{
         self.addSubview(stack)
     }
     
+    /// Create a GridView with a given color
+    ///
+    /// - Parameters:
+    ///   - frame: the frame in which the GridView will be displayed
+    ///   - grid: an instance of `Grid` to be used as the model; will automatically fill settings based on that
+    ///   - color: the color that all the tiles should have
     convenience init(frame: CGRect, grid: Grid, color: UIColor){
         self.init(frame: frame, grid: grid)
         self.gridColor = color
@@ -138,7 +152,9 @@ class GridView: UIView{
     }
     
     
-    
+    /// Initialize from an encoded version
+    ///
+    /// - Parameter aDecoder: an instance of `NSCoder` to use for decoding
     required init?(coder aDecoder: NSCoder) {
         guard let newGrid = aDecoder.value(forKey: "grid") as? Grid else{
             fatalError("init(coder:) failed to load a grid")
@@ -147,6 +163,9 @@ class GridView: UIView{
         super.init(coder: aDecoder)
     }
     
+    /// Encode the GridView; required by UIKit
+    ///
+    /// - Parameter aCoder: an instance of `NSCoder` to use for encoding
     override func encode(with aCoder: NSCoder) {
         super.encode(with: aCoder)
         aCoder.encode(grid, forKey: "grid")

@@ -9,6 +9,7 @@
 import UIKit
 import AudioKit
 
+/// The main ViewController for everything; honestly this is gonna be a Massive View Controller deal probably, but I'm okay with that
 class ViewController: UIViewController {
     
     /// Hide the status bar; it doesn't look super good with it displayed, after all.
@@ -20,6 +21,7 @@ class ViewController: UIViewController {
     var grids = [GridView]()
     
     // Test code
+    /// Iterate the grids when the screen is tapped
     @objc func handleTap(){
         iterate()
     }
@@ -92,6 +94,7 @@ class ViewController: UIViewController {
         }
     }
     
+    /// Set up the view to run
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -55,34 +55,6 @@
       "symbol": "AppDelegate.applicationWillTerminate(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
-    },
-    {
-      "file": "/Users/greypatterson/Documents/More/Bitbucket/mk/mk/Structures/Grid.swift",
-      "line": 31,
-      "symbol": "Grid.init(x:y:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/greypatterson/Documents/More/Bitbucket/mk/mk/ViewController.swift",
-      "line": 12,
-      "symbol": "ViewController",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/greypatterson/Documents/More/Bitbucket/mk/mk/ViewController.swift",
-      "line": 14,
-      "symbol": "ViewController.viewDidLoad()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/greypatterson/Documents/More/Bitbucket/mk/mk/ViewController.swift",
-      "line": 19,
-      "symbol": "ViewController.didReceiveMemoryWarning()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/greypatterson/Documents/More/Bitbucket/mk"

@@ -55,6 +55,37 @@ class GridConverter{
         }
     }
     
+    /// Gets the base displacement to use
+    ///
+    /// - Parameters:
+    ///   - inputSize: the size of the input boolean array
+    ///   - chordLimited: true if you're limiting to only chord tones, false if in 'free' mode
+    /// - Returns: the number of octaves to displace by
+    private func baseDisplacement(_ inputSize: Int, chordLimited: Bool = true) -> Int{
+        if chordLimited{
+            if inputSize > 20{
+                return 0
+            }
+            if inputSize > 14{
+                return 1
+            }
+            if inputSize > 8{
+                return 2
+            }
+        }else{
+            if inputSize > 48{
+                return 0
+            }
+            if inputSize > 34{
+                return 1
+            }
+            if inputSize > 20{
+                return 2
+            }
+        }
+        return 3
+    }
+    
     /// Convert a grid column into a collection of MIDI numbers, utilizing only chord tones from the given chord
     ///
     /// - Parameters:
@@ -63,7 +94,15 @@ class GridConverter{
     /// - Returns: an array of MIDI note numbers
     func convert(_ input: [Bool], chord: chord) -> [Int]{
         var output = [Int]()
+        let bases = chordBases(chord)
+        let displace = baseDisplacement(input.count)
         
+        
+        for i in 0..<input.count{
+            if input[i]{
+                output.append(bases[i%3]+12*(i/3))
+            }
+        }
         return output
     }
     

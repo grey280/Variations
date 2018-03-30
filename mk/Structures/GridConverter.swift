@@ -64,26 +64,26 @@ class GridConverter{
     private func baseDisplacement(_ inputSize: Int, chordLimited: Bool = true) -> Int{
         if chordLimited{
             if inputSize > 20{
-                return 0
-            }
-            if inputSize > 14{
                 return 1
             }
-            if inputSize > 8{
+            if inputSize > 14{
                 return 2
+            }
+            if inputSize > 8{
+                return 3
             }
         }else{
             if inputSize > 48{
-                return 0
-            }
-            if inputSize > 34{
                 return 1
             }
-            if inputSize > 20{
+            if inputSize > 34{
                 return 2
             }
+            if inputSize > 20{
+                return 3
+            }
         }
-        return 3
+        return 4
     }
     
     /// Convert a grid column into a collection of MIDI numbers, utilizing only chord tones from the given chord

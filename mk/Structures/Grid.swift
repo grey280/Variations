@@ -10,7 +10,7 @@ import Foundation
 
 /// A grid on which Conway's Game of Life can play out
 class Grid{
-    // MARK: Grid Interactions
+    // MARK: Variables
     /// The array of cells in the grid. Indexed as cells[x][y]
     private var cells: [[Bool]]
     
@@ -28,11 +28,18 @@ class Grid{
     
     /// The current active column
     var activeColumn: Int{
-        return _activeColumn
+        return _active % width
     }
     
-    /// The current active column; internal use only
-    private var _activeColumn = 0
+    /// The current active location
+    private var _active = 0
+    
+    /// The current active row
+    var activeRow: Int{
+        return _active % height
+    }
+    
+    // MARK: Grid Interactions
     
     /// Iterate the grid using the standard rules of cellular automata/Conway's Game of Life
     func iterate(completion: ()->()){
@@ -42,7 +49,7 @@ class Grid{
                 newCells[x][y] = iteratedCellState(x: x, y: y)
             }
         }
-        _activeColumn = (_activeColumn + 1) % width
+        _active = _active + 1
         cells = newCells
         completion()
     }

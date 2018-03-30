@@ -45,13 +45,13 @@ class GridConverter{
         case .iii:
             return [baseNotes[2], baseNotes[4], baseNotes[6]]
         case .IV:
-            return [baseNotes[3], baseNotes[5], baseNotes[0]+12]
+            return [baseNotes[3], baseNotes[5], baseNotes[0]]
         case .V:
-            return [baseNotes[4], baseNotes[6], baseNotes[1]+12]
+            return [baseNotes[4], baseNotes[6], baseNotes[1]]
         case .vi:
-            return [baseNotes[5], baseNotes[0]+12, baseNotes[2]+12]
+            return [baseNotes[5], baseNotes[0], baseNotes[2]]
         case .viio:
-            return [baseNotes[6], baseNotes[1]+12, baseNotes[3]+12]
+            return [baseNotes[6], baseNotes[1], baseNotes[3]]
         }
     }
     

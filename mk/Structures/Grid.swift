@@ -39,7 +39,7 @@ class Grid{
         return _active % height
     }
     
-    // MARK: Grid Interactions
+    // MARK: - Grid Interactions
     
     /// Iterate the grid using the standard rules of cellular automata/Conway's Game of Life
     func iterate(completion: (()->())? = nil){
@@ -240,5 +240,25 @@ class Grid{
     ///   - alive: true if you're setting the cell to be 'alive', false otherwise
     func cell(x: Int, y: Int, alive: Bool){
         cells[x][y] = alive
+    }
+    
+    // MARK: - Output functions
+    /// Returns the current active column
+    ///
+    /// - Returns: an array of booleans consisting of the active states of the cells in the current column
+    func column() -> [Bool]{
+        return column(activeColumn)
+    }
+    
+    /// Returns the column
+    ///
+    /// - Parameter col: the column to get
+    /// - Returns: an array of booleans consisting of the active states of the cells in the column
+    func column(_ col: Int) -> [Bool]{
+        var output = [Bool]()
+        for y in 0..<height{
+            output.append(cells[col][y])
+        }
+        return output
     }
 }

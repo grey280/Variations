@@ -21,6 +21,9 @@ class ViewController: UIViewController {
     /// The primary mixer node; outputs to AudioKit out, so it's the audio out for everything
     var mixerNode = AKMixer()
     
+    /// A global instance of GridConverter for use everywhere
+    let gc = GridConverter()
+    
     // MARK: - Helper Functions
     
     // Test code
@@ -103,6 +106,46 @@ class ViewController: UIViewController {
         }
     }
     
+    /// Which chord should we be playing?
+    ///
+    /// - Returns: the chord we're currently playing
+    func getChord() -> GridConverter.chord{
+        // let freeMode = false // Later we'll need this as a setting so we can have chords other than I IV V I
+        let gridParity = grids[0].grid.parity() // TODO: Error handling
+        // in case this function is called before grids has been initialized properly
+        let columnParity = grids[0].grid.columnParity()
+        if gridParity && columnParity{
+            return .I
+        } else if gridParity{
+            return .IV
+        } else if columnParity{
+            return .V
+        }
+        return .I
+    }
+    
+    /// Fire a 'tick' on all the grids at once, and switch the oscillators to playing the new notes
+    func tick(){
+        var currentChord = getChord()
+        for i in 1..<grids.count{ // Start at 1, as grids[0] is the one powering the chord selection
+            let actives = grids[i].grid.column()
+            let activeNotes = gc.convert(actives, chord: currentChord)
+            grids[i].grid.tick()
+            for note in activeNotes{ // Stop the playing notes
+                oscillators[i].stop(noteNumber: MIDINoteNumber(note))
+            }
+        }
+        grids[0].grid.tick()
+        currentChord = getChord()
+        for i in 1..<grids.count{
+            let actives = grids[i].grid.column()
+            let activeNotes = gc.convert(actives, chord: currentChord)
+            for note in activeNotes{
+                oscillators[i].play(noteNumber: MIDINoteNumber(note), velocity: 80) // TODO: Magic number (80)
+            }
+        }
+    }
+    
     // MARK: - Configuration
     
     /// Wrapper for `buildGrids`
@@ -117,7 +160,8 @@ class ViewController: UIViewController {
         for i in 0..<grids.count{
             grids[i].removeFromSuperview()
         }
-        for i in 0..<oscillators.count{ // TODO: Verify that this is actually detaching all the nodes from the mixer like it's supposed to be, otherwise that could be both a heck of a memory leak *and* a nice mismash of sound
+        for i in 0..<oscillators.count{ // TODO: Avoid potential memory leak
+            // Verify that this is actually detaching all the nodes from the mixer like it's supposed to be, otherwise that could be both a heck of a memory leak *and* a nice mismash of sound
             oscillators[i].detach()
         }
         for _ in 0..<number{

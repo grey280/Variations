@@ -49,7 +49,6 @@ class Grid{
                 newCells[x][y] = iteratedCellState(x: x, y: y)
             }
         }
-        _active = _active + 1
         cells = newCells
         completion?()
     }
@@ -100,6 +99,11 @@ class Grid{
             return false
         }
         
+    }
+    
+    /// Perform a 'tick' - move the active counter
+    func tick(){
+        _active = _active + 1
     }
     
     /// Build a grid of dimension x by y

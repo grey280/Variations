@@ -197,6 +197,10 @@ class ViewController: UIViewController {
         swipeRecognizer.direction = .down
         self.view.addGestureRecognizer(swipeRecognizer)
         
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
+            self.tick()
+        }
+        
         AudioKit.output = mixerNode
         AudioKit.start()
     }

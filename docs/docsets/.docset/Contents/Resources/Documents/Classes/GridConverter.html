@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>AppDelegate Class Reference</title>
+    <title>GridConverter Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/AppDelegate" class="dashAnchor"></a>
-    <a title="AppDelegate Class Reference"></a>
+    <a name="//apple_ref/swift/Class/GridConverter" class="dashAnchor"></a>
+    <a title="GridConverter Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (100% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        AppDelegate Class Reference
+        GridConverter Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -61,14 +61,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>AppDelegate</h1>
+            <h1>GridConverter</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AppDelegate</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">UIApplicationDelegate</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">GridConverter</span></code></pre>
 
                 </div>
               </div>
-            <p>The AppDelegate! It&rsquo;s important, I assume.</p>
+            <p>Handles the conversions between the various data types we need</p>
 
           </section>
           <section class="section task-group-section">
@@ -77,9 +77,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@mk@objc(cs)AppDelegate(py)window"></a>
-                    <a name="//apple_ref/swift/Property/window" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@mk@objc(cs)AppDelegate(py)window">window</a>
+                    <a name="/s:2mk13GridConverterC5chordO"></a>
+                    <a name="//apple_ref/swift/Enum/chord" class="dashAnchor"></a>
+                    <a class="token" href="#/s:2mk13GridConverterC5chordO">chord</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -87,14 +87,25 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>the window</p>
+                        <p>Which chord are we looking at?</p>
 
+<ul>
+<li>I: Tonic</li>
+<li>ii: Supertonic</li>
+<li>iii: Mediant</li>
+<li>IV: Subdominant</li>
+<li>V: Dominant</li>
+<li>vi: Submediant</li>
+<li>viio: Leading tone</li>
+</ul>
+
+                        <a href="../Classes/GridConverter/chord.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">window</span><span class="p">:</span> <span class="kt">UIWindow</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="n">chord</span></code></pre>
 
                         </div>
                       </div>
@@ -104,9 +115,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@mk@objc(cs)AppDelegate(im)application:didFinishLaunchingWithOptions:"></a>
-                    <a name="//apple_ref/swift/Method/application(_:didFinishLaunchingWithOptions:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@mk@objc(cs)AppDelegate(im)application:didFinishLaunchingWithOptions:">application(_:didFinishLaunchingWithOptions:)</a>
+                    <a name="/s:2mk13GridConverterC9baseNotes33_A8E39BDA813C79576BD6F576D1459E64LLSaySiGv"></a>
+                    <a name="//apple_ref/swift/Property/baseNotes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:2mk13GridConverterC9baseNotes33_A8E39BDA813C79576BD6F576D1459E64LLSaySiGv">baseNotes</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -114,14 +125,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Override point for customization after application launch</p>
+                        <p>The base notes of the scale; to get them in higher octaves, add multiples of 12</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">let</span> <span class="nv">baseNotes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:2mk13GridConverterC10chordBases33_A8E39BDA813C79576BD6F576D1459E64LLSaySiGAC0D0OF"></a>
+                    <a name="//apple_ref/swift/Method/chordBases(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:2mk13GridConverterC10chordBases33_A8E39BDA813C79576BD6F576D1459E64LLSaySiGAC0D0OF">chordBases(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets the base numbers for a given chord</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">chordBases</span><span class="p">(</span><span class="n">_</span> <span class="nv">start</span><span class="p">:</span> <span class="n"><a href="../Classes/GridConverter/chord.html">chord</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
@@ -132,24 +170,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>application</em>
+                                <em>start</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>the UIApplication instance</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>launchOptions</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>any launch options you want to throw at it</p>
+                                  <p>the chord to start with</p>
                                 </div>
                               </td>
                             </tr>
@@ -158,7 +184,7 @@
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>true</p>
+                        <p>the three chord tones to use as base numbers for other math</p>
                       </div>
                     </section>
                   </div>
@@ -166,9 +192,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@mk@objc(cs)AppDelegate(im)applicationWillResignActive:"></a>
-                    <a name="//apple_ref/swift/Method/applicationWillResignActive(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@mk@objc(cs)AppDelegate(im)applicationWillResignActive:">applicationWillResignActive(_:)</a>
+                    <a name="/s:2mk13GridConverterC16baseDisplacement33_A8E39BDA813C79576BD6F576D1459E64LLS2i_Sb12chordLimitedtF"></a>
+                    <a name="//apple_ref/swift/Method/baseDisplacement(_:chordLimited:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:2mk13GridConverterC16baseDisplacement33_A8E39BDA813C79576BD6F576D1459E64LLS2i_Sb12chordLimitedtF">baseDisplacement(_:chordLimited:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -176,14 +202,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Handle if the application is going to move to background. Hint: not doing anything here.</p>
+                        <p>Gets the base displacement to use</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">applicationWillResignActive</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">baseDisplacement</span><span class="p">(</span><span class="n">_</span> <span class="nv">inputSize</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">chordLimited</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -194,17 +220,33 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>application</em>
+                                <em>inputSize</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>the UIApplication instance</p>
+                                  <p>the size of the input boolean array</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>chordLimited</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>true if you&rsquo;re limiting to only chord tones, false if in &lsquo;free&rsquo; mode</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the number of octaves to displace by</p>
                       </div>
                     </section>
                   </div>
@@ -212,9 +254,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@mk@objc(cs)AppDelegate(im)applicationDidEnterBackground:"></a>
-                    <a name="//apple_ref/swift/Method/applicationDidEnterBackground(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@mk@objc(cs)AppDelegate(im)applicationDidEnterBackground:">applicationDidEnterBackground(_:)</a>
+                    <a name="/s:2mk13GridConverterC7convertSaySiGSaySbG_AC5chordOAGtF"></a>
+                    <a name="//apple_ref/swift/Method/convert(_:chord:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:2mk13GridConverterC7convertSaySiGSaySbG_AC5chordOAGtF">convert(_:chord:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -222,14 +264,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Handle if the application went into the background. Hint: not doing anything here.</p>
+                        <p>Convert a grid column into a collection of MIDI numbers, utilizing only chord tones from the given chord</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">applicationDidEnterBackground</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">convert</span><span class="p">(</span><span class="n">_</span> <span class="nv">input</span><span class="p">:</span> <span class="p">[</span><span class="kt">Bool</span><span class="p">],</span> <span class="nv">chord</span><span class="p">:</span> <span class="n"><a href="../Classes/GridConverter/chord.html">chord</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
@@ -240,17 +282,33 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>application</em>
+                                <em>input</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>the UIApplication instance</p>
+                                  <p>a grid column output, or any other boolean array</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>chord</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the chord to stay within</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an array of MIDI note numbers</p>
                       </div>
                     </section>
                   </div>
@@ -258,9 +316,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@mk@objc(cs)AppDelegate(im)applicationWillEnterForeground:"></a>
-                    <a name="//apple_ref/swift/Method/applicationWillEnterForeground(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@mk@objc(cs)AppDelegate(im)applicationWillEnterForeground:">applicationWillEnterForeground(_:)</a>
+                    <a name="/s:2mk13GridConverterC7convertSaySiGSaySbGF"></a>
+                    <a name="//apple_ref/swift/Method/convert(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:2mk13GridConverterC7convertSaySiGSaySbGF">convert(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -268,14 +326,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Handle if the application will resume from background. Hint: not doing anything here</p>
+                        <p>Convert a grid column into a collection of MIDI numbers, utilizing only tones in the key</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">applicationWillEnterForeground</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">convert</span><span class="p">(</span><span class="n">_</span> <span class="nv">input</span><span class="p">:</span> <span class="p">[</span><span class="kt">Bool</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
@@ -286,109 +344,21 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>application</em>
+                                <em>input</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>the UIApplication instance</p>
+                                  <p>a grid column output, or any other boolean array</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@mk@objc(cs)AppDelegate(im)applicationDidBecomeActive:"></a>
-                    <a name="//apple_ref/swift/Method/applicationDidBecomeActive(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@mk@objc(cs)AppDelegate(im)applicationDidBecomeActive:">applicationDidBecomeActive(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Handle if the application is resuming from background. Hint: not doing anything here.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">applicationDidBecomeActive</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span></code></pre>
-
-                        </div>
                       </div>
                       <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>application</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>the UIApplication instance</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@mk@objc(cs)AppDelegate(im)applicationWillTerminate:"></a>
-                    <a name="//apple_ref/swift/Method/applicationWillTerminate(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@mk@objc(cs)AppDelegate(im)applicationWillTerminate:">applicationWillTerminate(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Handle if the application is going to terminate. Hint: not doing anything here</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">applicationWillTerminate</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>application</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>the UIApplication instance</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
+                        <h4>Return Value</h4>
+                        <p>an array of MIDI note numbers</p>
                       </div>
                     </section>
                   </div>

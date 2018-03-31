@@ -14,7 +14,7 @@
     <a title="AppDelegate Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (85% documented)</p>
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -35,6 +35,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Grid.html">Grid</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GridConverter.html">GridConverter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GridConverter/chord.html">– chord</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/GridView.html">GridView</a>
@@ -62,7 +68,7 @@
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p>The AppDelegate! It&rsquo;s important, I assume.</p>
 
           </section>
           <section class="section task-group-section">
@@ -81,7 +87,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>the window</p>
 
                       </div>
                       <div class="declaration">
@@ -108,7 +114,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Override point for customization after application launch</p>
 
                       </div>
                       <div class="declaration">
@@ -118,6 +124,41 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>application</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the UIApplication instance</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>launchOptions</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>any launch options you want to throw at it</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>true</p>
                       </div>
                     </section>
                   </div>
@@ -135,7 +176,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Handle if the application is going to move to background. Hint: not doing anything here.</p>
 
                       </div>
                       <div class="declaration">
@@ -145,6 +186,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">applicationWillResignActive</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>application</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the UIApplication instance</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -162,7 +222,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Handle if the application went into the background. Hint: not doing anything here.</p>
 
                       </div>
                       <div class="declaration">
@@ -172,6 +232,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">applicationDidEnterBackground</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>application</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the UIApplication instance</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -189,7 +268,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Handle if the application will resume from background. Hint: not doing anything here</p>
 
                       </div>
                       <div class="declaration">
@@ -199,6 +278,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">applicationWillEnterForeground</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>application</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the UIApplication instance</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -216,7 +314,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Handle if the application is resuming from background. Hint: not doing anything here.</p>
 
                       </div>
                       <div class="declaration">
@@ -226,6 +324,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">applicationDidBecomeActive</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>application</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the UIApplication instance</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -243,7 +360,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Handle if the application is going to terminate. Hint: not doing anything here</p>
 
                       </div>
                       <div class="declaration">
@@ -253,6 +370,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">applicationWillTerminate</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>application</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the UIApplication instance</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

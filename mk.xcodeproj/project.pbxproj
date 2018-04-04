@@ -13,14 +13,11 @@
 		2D4A0F012012C39D00E4E526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D4A0EFF2012C39D00E4E526 /* Main.storyboard */; };
 		2D4A0F032012C39D00E4E526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D4A0F022012C39D00E4E526 /* Assets.xcassets */; };
 		2D4A0F062012C39D00E4E526 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D4A0F042012C39D00E4E526 /* LaunchScreen.storyboard */; };
-		2D4A0F1C2012C65000E4E526 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4A0F1B2012C65000E4E526 /* AudioKit.framework */; };
-		2D4A0F1D2012C65000E4E526 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4A0F1B2012C65000E4E526 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2D4A0F202012C65900E4E526 /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4A0F1F2012C65900E4E526 /* AudioKitUI.framework */; };
-		2D4A0F212012C65900E4E526 /* AudioKitUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4A0F1F2012C65900E4E526 /* AudioKitUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2D4A707C2051F0A8000B81CD /* GridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4A707B2051F0A8000B81CD /* GridTests.swift */; };
 		2DD56B7520697E2500BC35AF /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD56B7420697E2500BC35AF /* GridView.swift */; };
 		2DF59000206EADB100EA6EBF /* GridConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF58FFF206EADB100EA6EBF /* GridConverter.swift */; };
 		2DF59002206ECBE800EA6EBF /* GridConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF59001206ECBE800EA6EBF /* GridConverterTests.swift */; };
+		2DFE56E4207577A500809D20 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFE56E2207577A500809D20 /* AudioKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +37,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2D4A0F212012C65900E4E526 /* AudioKitUI.framework in Embed Frameworks */,
-				2D4A0F1D2012C65000E4E526 /* AudioKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,12 +54,12 @@
 		2D4A0F072012C39D00E4E526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D4A0F0C2012C39D00E4E526 /* mkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D4A0F122012C39D00E4E526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2D4A0F1B2012C65000E4E526 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
-		2D4A0F1F2012C65900E4E526 /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKitUI.framework; sourceTree = "<group>"; };
 		2D4A707B2051F0A8000B81CD /* GridTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTests.swift; sourceTree = "<group>"; };
 		2DD56B7420697E2500BC35AF /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		2DF58FFF206EADB100EA6EBF /* GridConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridConverter.swift; sourceTree = "<group>"; };
 		2DF59001206ECBE800EA6EBF /* GridConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridConverterTests.swift; sourceTree = "<group>"; };
+		2DFE56E2207577A500809D20 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = ../Frameworks/AudioKit.framework; sourceTree = "<group>"; };
+		2DFE56E3207577A500809D20 /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKitUI.framework; path = ../Frameworks/AudioKitUI.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D4A0F202012C65900E4E526 /* AudioKitUI.framework in Frameworks */,
-				2D4A0F1C2012C65000E4E526 /* AudioKit.framework in Frameworks */,
+				2DFE56E4207577A500809D20 /* AudioKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,11 +94,10 @@
 		2D4A0EEF2012C39D00E4E526 = {
 			isa = PBXGroup;
 			children = (
-				2D4A0F1F2012C65900E4E526 /* AudioKitUI.framework */,
-				2D4A0F1B2012C65000E4E526 /* AudioKit.framework */,
 				2D4A0EFA2012C39D00E4E526 /* mk */,
 				2D4A0F0F2012C39D00E4E526 /* mkTests */,
 				2D4A0EF92012C39D00E4E526 /* Products */,
+				2DFE56E1207577A500809D20 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +132,15 @@
 				2DF59001206ECBE800EA6EBF /* GridConverterTests.swift */,
 			);
 			path = mkTests;
+			sourceTree = "<group>";
+		};
+		2DFE56E1207577A500809D20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2DFE56E2207577A500809D20 /* AudioKit.framework */,
+				2DFE56E3207577A500809D20 /* AudioKitUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,9 +416,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/greypatterson/Documents/More/Bitbucket/Frameworks,
 				);
 				INFOPLIST_FILE = mk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = net.twoeighty.mk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -433,9 +437,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/greypatterson/Documents/More/Bitbucket/Frameworks,
 				);
 				INFOPLIST_FILE = mk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = net.twoeighty.mk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

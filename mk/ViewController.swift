@@ -202,7 +202,12 @@ class ViewController: UIViewController {
         }
         
         AudioKit.output = mixerNode
-        try! AudioKit.start() // AudioKit can now throw an error! And if it throws an error just go ahead and crash because I'm not dealing with that
+        AKSettings.playbackWhileMuted = true // We don't want to force the user to flip the mute switch to hear anything
+        do{
+            try AudioKit.start()
+        }catch{
+            fatalError("AudioKit failed to start")
+        }
     }
     
     /// Hide the status bar; it doesn't look super good with it displayed, after all.

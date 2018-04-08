@@ -126,18 +126,14 @@ class ViewController: UIViewController {
     
     /// Fire a 'tick' on all the grids at once, and switch the oscillators to playing the new notes
     func tick(){
-        var currentChord = getChord()
-        for i in 1..<grids.count{ // Start at 1, as grids[0] is the one powering the chord selection
-            let actives = grids[i].grid.column()
-            let activeNotes = gc.convert(actives, chord: currentChord)
+        for i in 0..<grids.count{
             grids[i].grid.tick()
-            for note in activeNotes{ // Stop the playing notes
-                oscillators[i].stop(noteNumber: MIDINoteNumber(note))
-            }
         }
-        grids[0].grid.tick()
-        currentChord = getChord()
+        let currentChord = getChord()
         for i in 1..<grids.count{
+            for j in 0..<128{ // Stop playing *all* notes, not just the ones that you *think* were already playing. Fixes the bug that cropped up from iterations happening between ticks.
+                oscillators[i].stop(noteNumber: MIDINoteNumber(j))
+            }
             let actives = grids[i].grid.column()
             let activeNotes = gc.convert(actives, chord: currentChord)
             for note in activeNotes{

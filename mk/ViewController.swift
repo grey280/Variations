@@ -131,7 +131,12 @@ class ViewController: UIViewController {
     ///   - current: the current active column of the grid in question
     /// - Returns: the MIDI note velocity to use
     func velocity(width: Int, current: Int) -> MIDIVelocity{
-        return MIDIVelocity((width / current) * 100)
+        let perc = Double(current) / Double(width)
+        let temp = (perc - 0.5) * 3
+        var temp2 = (1/sqrt(2*Double.pi))
+        let temp3 = -0.5 * temp * temp
+        temp2 = temp2 * exp(temp3)
+        return MIDIVelocity(temp2*100)
     }
     
     /// Fire a 'tick' on all the grids at once, and switch the oscillators to playing the new notes

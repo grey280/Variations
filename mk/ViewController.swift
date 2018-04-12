@@ -136,7 +136,7 @@ class ViewController: UIViewController {
         var temp2 = (1/sqrt(2*Double.pi))
         let temp3 = -0.5 * temp * temp
         temp2 = temp2 * exp(temp3)
-        return MIDIVelocity(temp2*100)
+        return MIDIVelocity(temp2*150)
     }
     
     /// Fire a 'tick' on all the grids at once, and switch the oscillators to playing the new notes

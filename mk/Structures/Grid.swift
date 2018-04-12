@@ -39,10 +39,16 @@ class Grid{
         return _active % height
     }
     
+    /// Whether or not the grid is enabled
+    var enabled = false
+    
     // MARK: - Grid Interactions
     
     /// Iterate the grid using the standard rules of cellular automata/Conway's Game of Life
     func iterate(completion: (()->())? = nil){
+        if !enabled{
+            return
+        }
         var newCells = [[Bool]](repeating: [Bool](repeating: false, count: height), count: width)
         for x in 0..<newCells.count{
             for y in 0..<newCells[x].count{
@@ -103,7 +109,9 @@ class Grid{
     
     /// Perform a 'tick' - move the active counter
     func tick(){
-        _active = _active + 1
+        if enabled{
+            _active = _active + 1
+        }
     }
     
     /// Build a grid of dimension x by y
@@ -232,7 +240,7 @@ class Grid{
                 return false
             }
         }
-        return cells[nX][nY]
+        return enabled && cells[nX][nY]
     }
     
     
@@ -260,6 +268,9 @@ class Grid{
     /// - Returns: an array of booleans consisting of the active states of the cells in the column
     func column(_ col: Int) -> [Bool]{
         var output = [Bool]()
+        if !enabled{
+            return output
+        }
         for y in 0..<height{
             output.append(cells[col][y])
         }

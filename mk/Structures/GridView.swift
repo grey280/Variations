@@ -18,6 +18,8 @@ class GridView: UIView{
         static let opacityLevelOn = 0.7
         /// Opacity level to use when a tile is not being displayed
         static let opacityLevelOff = 0.0
+        /// Duration of animations
+        static let animationDuration = 0.1
     }
     
     /// Provides helper functions on top of UIView for drawing grid tiles
@@ -67,6 +69,7 @@ class GridView: UIView{
             for _ in 0..<grid.height{
                 let tile = GridViewTile(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
                 tile.tileColor = gridColor
+                tile.isOpaque = false
                 thisStack.append(tile)
             }
             let thisStackView = UIStackView(arrangedSubviews: thisStack)
@@ -135,7 +138,7 @@ class GridView: UIView{
             return
         }
         tile.tileColor = color
-        if grid.cell(x: x, y: y){
+        if self.grid.cell(x: x, y: y){
             tile.opacity = GVConstants.opacityLevelOn
         }else{
             tile.opacity = GVConstants.opacityLevelOff

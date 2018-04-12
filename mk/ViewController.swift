@@ -124,10 +124,37 @@ class ViewController: UIViewController {
         return .I
     }
     
+    /// Determines the MIDI note velocity based on how far in the grid you are
+    ///
+    /// - Parameters:
+    ///   - width: the width of the grid in question
+    ///   - current: the current active column of the grid in question
+    /// - Returns: the MIDI note velocity to use
+    func velocity(width: Int, current: Int) -> MIDIVelocity{
+        let perc = Double(current) / Double(width)
+        let temp = (perc - 0.5) * 3
+        var temp2 = (1/sqrt(2*Double.pi))
+        let temp3 = -0.5 * temp * temp
+        temp2 = temp2 * exp(temp3)
+        return MIDIVelocity(temp2*150)
+    }
+    
+    /// Counter for the additive synthesis system
+    private var addSynthCount = 0
+    
     /// Fire a 'tick' on all the grids at once, and switch the oscillators to playing the new notes
     func tick(){
         for i in 0..<grids.count{
             grids[i].grid.tick()
+        }
+        addSynthCount += 1
+        if addSynthCount < grids.count{
+            for i in 0..<addSynthCount{
+                if !grids[i].grid.enabled{
+                    grids[i].grid.enabled = true
+                    grids[i].iterationComplete()
+                }
+            }
         }
         let currentChord = getChord()
         for i in 1..<grids.count{
@@ -137,7 +164,7 @@ class ViewController: UIViewController {
             let actives = grids[i].grid.column()
             let activeNotes = gc.convert(actives, chord: currentChord)
             for note in activeNotes{
-                oscillators[i].play(noteNumber: MIDINoteNumber(note), velocity: 80) // TODO: Magic number (80)
+                oscillators[i].play(noteNumber: MIDINoteNumber(note), velocity: velocity(width: grids[i].grid.width, current: grids[i].grid.activeColumn))
             }
         }
     }
@@ -176,6 +203,8 @@ class ViewController: UIViewController {
             mixerNode.connect(input: oscillator)
             self.view.addSubview(tempGridView)
         }
+        addSynthCount = 0
+        grids[0].grid.enabled = true
     }
     
     // MARK: - ViewController Globals

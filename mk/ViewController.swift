@@ -139,6 +139,7 @@ class ViewController: UIViewController {
         return MIDIVelocity(temp2*150)
     }
     
+    /// Counter for the additive synthesis system
     private var addSynthCount = 0
     
     /// Fire a 'tick' on all the grids at once, and switch the oscillators to playing the new notes

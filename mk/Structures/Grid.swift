@@ -268,6 +268,9 @@ class Grid{
     /// - Returns: an array of booleans consisting of the active states of the cells in the column
     func column(_ col: Int) -> [Bool]{
         var output = [Bool]()
+        if !enabled{
+            return output
+        }
         for y in 0..<height{
             output.append(cells[col][y])
         }

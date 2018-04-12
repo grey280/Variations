@@ -139,10 +139,21 @@ class ViewController: UIViewController {
         return MIDIVelocity(temp2*150)
     }
     
+    private var addSynthCount = 0
+    
     /// Fire a 'tick' on all the grids at once, and switch the oscillators to playing the new notes
     func tick(){
         for i in 0..<grids.count{
             grids[i].grid.tick()
+        }
+        addSynthCount += 1
+        if addSynthCount < grids.count{
+            for i in 0..<addSynthCount{
+                if !grids[i].grid.enabled{
+                    grids[i].grid.enabled = true
+                    grids[i].iterationComplete()
+                }
+            }
         }
         let currentChord = getChord()
         for i in 1..<grids.count{
@@ -191,6 +202,8 @@ class ViewController: UIViewController {
             mixerNode.connect(input: oscillator)
             self.view.addSubview(tempGridView)
         }
+        addSynthCount = 0
+        grids[0].grid.enabled = true
     }
     
     // MARK: - ViewController Globals

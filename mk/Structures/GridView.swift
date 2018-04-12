@@ -69,6 +69,7 @@ class GridView: UIView{
             for _ in 0..<grid.height{
                 let tile = GridViewTile(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
                 tile.tileColor = gridColor
+                tile.isOpaque = false
                 thisStack.append(tile)
             }
             let thisStackView = UIStackView(arrangedSubviews: thisStack)
@@ -137,12 +138,10 @@ class GridView: UIView{
             return
         }
         tile.tileColor = color
-        UIView.animate(withDuration: GVConstants.animationDuration) {
-            if self.grid.cell(x: x, y: y){
-                tile.opacity = GVConstants.opacityLevelOn
-            }else{
-                tile.opacity = GVConstants.opacityLevelOff
-            }
+        if self.grid.cell(x: x, y: y){
+            tile.opacity = GVConstants.opacityLevelOn
+        }else{
+            tile.opacity = GVConstants.opacityLevelOff
         }
     }
     

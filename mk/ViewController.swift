@@ -211,6 +211,7 @@ class ViewController: UIViewController {
         }
         addSynthCount = 0
         grids[0].grid.enabled = true
+        grids[1].grid.enabled = true
         do{
             try AudioKit.start()
         }catch{

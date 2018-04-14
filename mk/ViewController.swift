@@ -182,6 +182,7 @@ class ViewController: UIViewController {
     private func buildGrids(_ number: Int){
         do{
             try AudioKit.stop()
+            print("AudioKit stopped")
         }catch{
             print("AudioKit failed to stop")
         }
@@ -193,6 +194,7 @@ class ViewController: UIViewController {
             oscillators[i].detach()
         }
         grids = [GridView]()
+        oscillators = [AKPolyphonicNode]()
         for _ in 0..<number{
             let tempGrid = randomGrid(Int(arc4random_uniform(25))+1)
             let tempGridView = GridView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height), grid: tempGrid)
@@ -212,7 +214,9 @@ class ViewController: UIViewController {
         addSynthCount = 0
         grids[0].grid.enabled = true
         do{
+            print("Trying start")
             try AudioKit.start()
+            print("Started")
         }catch{
             fatalError("AudioKit failed to start")
         }

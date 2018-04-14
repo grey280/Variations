@@ -138,11 +138,22 @@ class GridView: UIView{
             return
         }
         tile.tileColor = color
-        if self.grid.cell(x: x, y: y){
-            tile.opacity = GVConstants.opacityLevelOn
-        }else{
-            tile.opacity = GVConstants.opacityLevelOff
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: GVConstants.animationDuration, delay: 0, options: [.beginFromCurrentState, .allowAnimatedContent, .curveEaseInOut], animations: {
+                if self.grid.cell(x: x, y: y){
+                    tile.opacity = GVConstants.opacityLevelOn
+                }else{
+                    tile.opacity = GVConstants.opacityLevelOff
+                }
+            }) { (compl) in
+                if self.grid.cell(x: x, y: y){
+                    tile.opacity = GVConstants.opacityLevelOn
+                }else{
+                    tile.opacity = GVConstants.opacityLevelOff
+                }
+            }
         }
+        
     }
     
     /// Run when a `Grid` iteration completes to keep the view in line with the model

@@ -233,6 +233,13 @@ class ViewController: UIViewController {
         }catch{
             fatalError("AudioKit failed to start")
         }
+        
+        let didRotate: (Notification) -> Void = { notification in
+            for grid in self.grids{
+                grid.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+            }
+        }
+        NotificationCenter.default.addObserver(forName: .UIDeviceOrientationDidChange, object: nil, queue: .main, using: didRotate)
     }
     
     /// Hide the status bar; it doesn't look super good with it displayed, after all.

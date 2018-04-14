@@ -180,6 +180,11 @@ class ViewController: UIViewController {
     ///
     /// - Parameter number: number of grids to build
     private func buildGrids(_ number: Int){
+        do{
+            try AudioKit.stop()
+        }catch{
+            print("AudioKit failed to stop")
+        }
         for i in 0..<grids.count{
             grids[i].removeFromSuperview()
         }
@@ -187,6 +192,7 @@ class ViewController: UIViewController {
             // Verify that this is actually detaching all the nodes from the mixer like it's supposed to be, otherwise that could be both a heck of a memory leak *and* a nice mismash of sound
             oscillators[i].detach()
         }
+        grids = [GridView]()
         for _ in 0..<number{
             let tempGrid = randomGrid(Int(arc4random_uniform(25))+1)
             let tempGridView = GridView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height), grid: tempGrid)
@@ -205,6 +211,11 @@ class ViewController: UIViewController {
         }
         addSynthCount = 0
         grids[0].grid.enabled = true
+        do{
+            try AudioKit.start()
+        }catch{
+            fatalError("AudioKit failed to start")
+        }
     }
     
     // MARK: - ViewController Globals
@@ -212,8 +223,6 @@ class ViewController: UIViewController {
     /// Set up the view to run
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        buildGrids(8)
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
         self.view.addGestureRecognizer(tapRecognizer)
@@ -228,11 +237,6 @@ class ViewController: UIViewController {
         
         AudioKit.output = mixerNode
         AKSettings.playbackWhileMuted = true // We don't want to force the user to flip the mute switch to hear anything
-        do{
-            try AudioKit.start()
-        }catch{
-            fatalError("AudioKit failed to start")
-        }
         
         let didRotate: (Notification) -> Void = { notification in
             for grid in self.grids{
@@ -240,6 +244,8 @@ class ViewController: UIViewController {
             }
         }
         NotificationCenter.default.addObserver(forName: .UIDeviceOrientationDidChange, object: nil, queue: .main, using: didRotate)
+        
+        buildGrids(8)
     }
     
     /// Hide the status bar; it doesn't look super good with it displayed, after all.

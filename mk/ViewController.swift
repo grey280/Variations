@@ -182,15 +182,13 @@ class ViewController: UIViewController {
     private func buildGrids(_ number: Int){
         do{
             try AudioKit.stop()
-            print("AudioKit stopped")
         }catch{
-            print("AudioKit failed to stop")
+            print("AudioKit failed to stop; that's probably an issue")
         }
         for i in 0..<grids.count{
             grids[i].removeFromSuperview()
         }
-        for i in 0..<oscillators.count{ // TODO: Avoid potential memory leak
-            // Verify that this is actually detaching all the nodes from the mixer like it's supposed to be, otherwise that could be both a heck of a memory leak *and* a nice mismash of sound
+        for i in 0..<oscillators.count{
             oscillators[i].detach()
         }
         grids = [GridView]()
@@ -214,9 +212,7 @@ class ViewController: UIViewController {
         addSynthCount = 0
         grids[0].grid.enabled = true
         do{
-            print("Trying start")
             try AudioKit.start()
-            print("Started")
         }catch{
             fatalError("AudioKit failed to start")
         }

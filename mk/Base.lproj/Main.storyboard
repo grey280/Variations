@@ -30,10 +30,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="114.69265367316342"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="FqE-Wn-FOG">
             <objects>
-                <viewController id="mjy-N1-YVf" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="formSheet" id="mjy-N1-YVf" customClass="SettingsViewController" customModule="mk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XEs-mI-d8Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,12 +103,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D50-8P-dbu">
+                                <rect key="frame" x="15" y="177" width="344" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButton:" destination="mjy-N1-YVf" eventType="touchUpInside" id="TvV-Vc-Zlu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jbX-13-Xog" firstAttribute="centerY" secondItem="qBb-E1-85S" secondAttribute="centerY" id="1U8-1f-KzG"/>
                             <constraint firstItem="djz-oh-yNM" firstAttribute="leading" secondItem="qe7-y3-SOb" secondAttribute="trailing" constant="8" id="97L-9m-3Ub"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="G80-Xs-g9U" secondAttribute="trailing" constant="16" id="Dcj-Mk-o4S"/>
+                            <constraint firstItem="D50-8P-dbu" firstAttribute="centerX" secondItem="KJ4-WB-SU9" secondAttribute="centerX" id="F11-Uk-MsR"/>
+                            <constraint firstItem="D50-8P-dbu" firstAttribute="top" secondItem="qBb-E1-85S" secondAttribute="bottom" constant="8" id="H7r-cp-fe3"/>
                             <constraint firstItem="ZLy-6D-Yam" firstAttribute="centerY" secondItem="2BV-Ha-298" secondAttribute="centerY" id="Lny-FW-d0X"/>
                             <constraint firstItem="ZLy-6D-Yam" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="N2m-BY-7RP"/>
                             <constraint firstItem="8A8-t3-6B5" firstAttribute="leading" secondItem="djz-oh-yNM" secondAttribute="trailing" constant="8" id="Nv7-eR-3Ti"/>
@@ -130,9 +140,15 @@
                             <constraint firstItem="2BV-Ha-298" firstAttribute="width" secondItem="G80-Xs-g9U" secondAttribute="width" id="o0y-uY-zoe"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="XY8-f1-srV" secondAttribute="trailing" constant="19" id="syp-O3-A59"/>
                             <constraint firstItem="jbX-13-Xog" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="xSB-N7-qUW"/>
+                            <constraint firstItem="D50-8P-dbu" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="15" id="xuA-a6-8aq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KJ4-WB-SU9"/>
                     </view>
+                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="durationLabel" destination="djz-oh-yNM" id="o9l-1Q-Jcs"/>
+                        <outlet property="gridsLabel" destination="9K8-Ay-mkn" id="xFP-aE-JPc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1y-MS-y0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

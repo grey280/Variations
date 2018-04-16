@@ -30,6 +30,8 @@ class SettingsViewController: UIViewController {
     ///
     /// - Parameter sender: durationStepper
     @IBAction func durationStepped(_ sender: UIStepper) {
+        UserDefaults.standard.set(sender.value, forKey: constants.defaults.chordDuration)
+        durationLabel.text = "\(sender.value)"
     }
     
     /// Triggered when the grid stepper is used
@@ -61,6 +63,14 @@ class SettingsViewController: UIViewController {
         }
         gridsLabel.text = "\(gridCount)"
         gridStepper.value = Double(gridCount)
+        
+        var timeInterval = UserDefaults.standard.double(forKey: constants.defaults.chordDuration)
+        if timeInterval == 0{
+            UserDefaults.standard.set(constants.defaultValues.chordDuration, forKey: constants.defaults.chordDuration)
+            timeInterval = constants.defaultValues.chordDuration
+        }
+        durationStepper.value = timeInterval
+        durationLabel.text = "\(timeInterval)"
         
         
         let swipDownGR = UISwipeGestureRecognizer(target: self, action: #selector(doneButton(_:)))

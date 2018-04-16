@@ -113,8 +113,9 @@ class ViewController: UIViewController {
     ///
     /// - Returns: the chord we're currently playing
     func getChord() -> GridConverter.chord{
+        // TODO: This would be where we implement using multiple chords
         // let freeMode = false // Later we'll need this as a setting so we can have chords other than I IV V I
-        let gridParity = grids[0].grid.parity() // TODO: Error handling
+        let gridParity = grids[0].grid.parity()
         // in case this function is called before grids has been initialized properly
         let columnParity = grids[0].grid.columnParity()
         if gridParity && columnParity{
@@ -147,6 +148,9 @@ class ViewController: UIViewController {
     
     /// Fire a 'tick' on all the grids at once, and switch the oscillators to playing the new notes
     func tick(){
+        guard grids.count > 1 else{
+            return
+        }
         for i in 0..<grids.count{
             grids[i].grid.tick()
         }
@@ -231,7 +235,7 @@ class ViewController: UIViewController {
             timeInterval = constants.defaultValues.chordDuration
         }
         timer.invalidate() // Wipe it out, then reset it to the new one
-        timer = Timer(timeInterval: timeInterval, repeats: true, block: { (timer) in
+        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: { (timer) in
             self.tick()
         })
         
@@ -271,11 +275,10 @@ class ViewController: UIViewController {
             timeInterval = constants.defaultValues.chordDuration
         }
         
-        timer = Timer(timeInterval: timeInterval, repeats: true, block: { (timer) in
+        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: { (timer) in
             self.tick()
         })
         
-        RunLoop.current.add(timer, forMode: RunLoopMode.defaultRunLoopMode)
         
         AudioKit.output = mixerNode
         AKSettings.playbackWhileMuted = true // We don't want to force the user to flip the mute switch to hear anything

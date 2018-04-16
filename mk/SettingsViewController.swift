@@ -26,6 +26,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var gridStepper: UIStepper!
     
     // MARK: - Functions
+    @IBAction func chordSwitched(_ sender: UISwitch) {
+        UserDefaults.standard.set(sender.isOn, forKey: constants.defaults.allChordsEnabled)
+    }
     /// Triggered when the duration stepper is used
     ///
     /// - Parameter sender: durationStepper
@@ -64,6 +67,7 @@ class SettingsViewController: UIViewController {
         gridsLabel.text = "\(gridCount)"
         gridStepper.value = Double(gridCount)
         
+        // Load the current duration
         var timeInterval = UserDefaults.standard.double(forKey: constants.defaults.chordDuration)
         if timeInterval == 0{
             UserDefaults.standard.set(constants.defaultValues.chordDuration, forKey: constants.defaults.chordDuration)
@@ -71,6 +75,11 @@ class SettingsViewController: UIViewController {
         }
         durationStepper.value = timeInterval
         durationLabel.text = "\(timeInterval)"
+        
+        // Load which chord mode we're in
+        let useAllChords = UserDefaults.standard.bool(forKey: constants.defaults.allChordsEnabled)
+        chordSwitch.setOn(useAllChords, animated: false)
+        
         
         
         let swipDownGR = UISwipeGestureRecognizer(target: self, action: #selector(doneButton(_:)))

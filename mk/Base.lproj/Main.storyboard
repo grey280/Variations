@@ -58,6 +58,9 @@
                             </stepper>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XY8-f1-srV">
                                 <rect key="frame" x="307" y="128.5" width="51" height="31"/>
+                                <connections>
+                                    <action selector="chordSwitched:" destination="mjy-N1-YVf" eventType="valueChanged" id="sYa-fI-EUu"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grids:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLy-6D-Yam">
                                 <rect key="frame" x="16" y="248" width="45.5" height="20.5"/>
@@ -96,7 +99,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D50-8P-dbu">
-                                <rect key="frame" x="15" y="410.5" width="345" height="33"/>
+                                <rect key="frame" x="15" y="354.5" width="345" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
@@ -104,39 +107,28 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When off, will only play I IV or V." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVh-XC-7RL">
-                                <rect key="frame" x="37" y="162.5" width="193" height="16"/>
+                                <rect key="frame" x="37" y="162.5" width="322" height="16"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How long between chord changes." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baV-LC-Tlz">
-                                <rect key="frame" x="37" y="219.5" width="210" height="16"/>
+                                <rect key="frame" x="37" y="219.5" width="322" height="16"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7F-J4-BZ4">
-                                <rect key="frame" x="37" y="276.5" width="254.5" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7F-J4-BZ4">
+                                <rect key="frame" x="37" y="276.5" width="322" height="70"/>
                                 <string key="text">How many grids to have running at a time.
-Must be between 2 and 16.</string>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Changes take effect the next time you reset all the grids. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHG-VH-u0y">
-                                <rect key="frame" x="16" y="318.5" width="345" height="42.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Next time you open the app, or you can reset them all early by swiping down on them.)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRh-rL-FqG">
-                                <rect key="frame" x="37" y="368.5" width="322" height="34"/>
+Must be between 2 and 16.
+Changes take effect next time you reset the grids by swiping down, or the next time you open the app.</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQB-do-Tx7">
-                                <rect key="frame" x="16" y="32" width="345" height="64.5"/>
+                                <rect key="frame" x="16" y="32" width="343" height="64.5"/>
                                 <string key="text">Tap on the grids to let the Game of Life play out. Swipe down on them to start fresh. Swipe up on them to access these settings.</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
@@ -145,43 +137,40 @@ Must be between 2 and 16.</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="VRh-rL-FqG" firstAttribute="trailing" secondItem="KJ4-WB-SU9" secondAttribute="trailing" constant="-16" id="2ji-dV-iha"/>
-                            <constraint firstItem="QHG-VH-u0y" firstAttribute="top" secondItem="t7F-J4-BZ4" secondAttribute="bottom" constant="8" id="6vL-i5-dUp"/>
                             <constraint firstItem="djz-oh-yNM" firstAttribute="leading" secondItem="qe7-y3-SOb" secondAttribute="trailing" constant="8" id="97L-9m-3Ub"/>
                             <constraint firstItem="aQB-do-Tx7" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="AA0-nR-eka"/>
                             <constraint firstItem="PVh-XC-7RL" firstAttribute="top" secondItem="gl3-lS-9u2" secondAttribute="bottom" constant="8" id="B7H-WR-MLK"/>
                             <constraint firstItem="baV-LC-Tlz" firstAttribute="leading" secondItem="PVh-XC-7RL" secondAttribute="leading" id="C4Y-dq-AVQ"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="G80-Xs-g9U" secondAttribute="trailing" constant="16" id="Dcj-Mk-o4S"/>
                             <constraint firstItem="D50-8P-dbu" firstAttribute="centerX" secondItem="KJ4-WB-SU9" secondAttribute="centerX" id="F11-Uk-MsR"/>
+                            <constraint firstItem="t7F-J4-BZ4" firstAttribute="trailing" secondItem="KJ4-WB-SU9" secondAttribute="trailing" constant="-16" id="KLq-Cm-XbE"/>
                             <constraint firstItem="ZLy-6D-Yam" firstAttribute="centerY" secondItem="2BV-Ha-298" secondAttribute="centerY" id="Lny-FW-d0X"/>
                             <constraint firstItem="XY8-f1-srV" firstAttribute="top" secondItem="aQB-do-Tx7" secondAttribute="bottom" constant="32" id="Mze-MD-XSf"/>
                             <constraint firstItem="ZLy-6D-Yam" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="N2m-BY-7RP"/>
                             <constraint firstItem="8A8-t3-6B5" firstAttribute="leading" secondItem="djz-oh-yNM" secondAttribute="trailing" constant="8" id="Nv7-eR-3Ti"/>
                             <constraint firstItem="2BV-Ha-298" firstAttribute="top" secondItem="baV-LC-Tlz" secondAttribute="bottom" constant="8" id="O0W-2C-tDg"/>
+                            <constraint firstItem="baV-LC-Tlz" firstAttribute="width" secondItem="t7F-J4-BZ4" secondAttribute="width" id="OIK-cR-Sa9"/>
                             <constraint firstItem="8A8-t3-6B5" firstAttribute="centerY" secondItem="djz-oh-yNM" secondAttribute="centerY" id="RIq-NV-T5Y"/>
                             <constraint firstItem="qe7-y3-SOb" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="Rrj-GF-hBD"/>
-                            <constraint firstItem="QHG-VH-u0y" firstAttribute="width" secondItem="D50-8P-dbu" secondAttribute="width" id="UsL-ez-khM"/>
                             <constraint firstItem="qe7-y3-SOb" firstAttribute="centerY" secondItem="G80-Xs-g9U" secondAttribute="centerY" id="WRC-bp-PqZ"/>
                             <constraint firstItem="t7F-J4-BZ4" firstAttribute="leading" secondItem="baV-LC-Tlz" secondAttribute="leading" id="XUP-st-OoK"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="2BV-Ha-298" secondAttribute="trailing" constant="17" id="Y8u-k8-SFh"/>
                             <constraint firstItem="9K8-Ay-mkn" firstAttribute="centerY" secondItem="ZLy-6D-Yam" secondAttribute="centerY" id="c7x-et-ael"/>
                             <constraint firstItem="G80-Xs-g9U" firstAttribute="top" secondItem="PVh-XC-7RL" secondAttribute="bottom" constant="8" id="cdr-vh-40A"/>
                             <constraint firstItem="gl3-lS-9u2" firstAttribute="centerY" secondItem="XY8-f1-srV" secondAttribute="centerY" id="eoQ-je-fSW"/>
-                            <constraint firstItem="VRh-rL-FqG" firstAttribute="top" secondItem="QHG-VH-u0y" secondAttribute="bottom" constant="8" id="fb7-ko-I6D"/>
                             <constraint firstItem="djz-oh-yNM" firstAttribute="centerY" secondItem="qe7-y3-SOb" secondAttribute="centerY" id="gS4-Ta-3ZC"/>
                             <constraint firstItem="gl3-lS-9u2" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="hJ2-7A-gdP"/>
-                            <constraint firstItem="D50-8P-dbu" firstAttribute="top" secondItem="VRh-rL-FqG" secondAttribute="bottom" constant="8" id="j0o-96-7MC"/>
                             <constraint firstItem="9K8-Ay-mkn" firstAttribute="leading" secondItem="ZLy-6D-Yam" secondAttribute="trailing" constant="8" id="jf6-tr-ovO"/>
                             <constraint firstItem="baV-LC-Tlz" firstAttribute="top" secondItem="qe7-y3-SOb" secondAttribute="bottom" constant="8" id="n7R-jU-mMZ"/>
                             <constraint firstItem="PVh-XC-7RL" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="37" id="nzz-Ln-W3y"/>
                             <constraint firstItem="2BV-Ha-298" firstAttribute="width" secondItem="G80-Xs-g9U" secondAttribute="width" id="o0y-uY-zoe"/>
-                            <constraint firstItem="aQB-do-Tx7" firstAttribute="width" secondItem="QHG-VH-u0y" secondAttribute="width" id="pjU-aX-IZh"/>
+                            <constraint firstItem="D50-8P-dbu" firstAttribute="top" secondItem="t7F-J4-BZ4" secondAttribute="bottom" constant="8" id="oXt-j0-RGF"/>
+                            <constraint firstItem="aQB-do-Tx7" firstAttribute="trailing" secondItem="KJ4-WB-SU9" secondAttribute="trailing" constant="-16" id="qOq-ia-CXr"/>
                             <constraint firstItem="aQB-do-Tx7" firstAttribute="top" secondItem="KJ4-WB-SU9" secondAttribute="top" constant="12" id="qvp-T6-81w"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="XY8-f1-srV" secondAttribute="trailing" constant="19" id="syp-O3-A59"/>
                             <constraint firstItem="t7F-J4-BZ4" firstAttribute="top" secondItem="ZLy-6D-Yam" secondAttribute="bottom" constant="8" id="tV0-38-fLu"/>
-                            <constraint firstItem="VRh-rL-FqG" firstAttribute="leading" secondItem="t7F-J4-BZ4" secondAttribute="leading" id="uDg-Bz-Hlj"/>
-                            <constraint firstItem="QHG-VH-u0y" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="x4m-yl-SgU"/>
                             <constraint firstItem="D50-8P-dbu" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="15" id="xuA-a6-8aq"/>
+                            <constraint firstItem="PVh-XC-7RL" firstAttribute="width" secondItem="t7F-J4-BZ4" secondAttribute="width" id="zYy-e8-ySI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KJ4-WB-SU9"/>
                     </view>

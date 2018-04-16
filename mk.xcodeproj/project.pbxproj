@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2D1040EE204F48F30053475F /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1040ED204F48F30053475F /* Grid.swift */; };
+		2D3CFB2220854171008E10F6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3CFB2120854171008E10F6 /* SettingsViewController.swift */; };
+		2D3CFB24208554AB008E10F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3CFB23208554AB008E10F6 /* Constants.swift */; };
 		2D4A0EFC2012C39D00E4E526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4A0EFB2012C39D00E4E526 /* AppDelegate.swift */; };
 		2D4A0EFE2012C39D00E4E526 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4A0EFD2012C39D00E4E526 /* ViewController.swift */; };
 		2D4A0F012012C39D00E4E526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D4A0EFF2012C39D00E4E526 /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		2D1040ED204F48F30053475F /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		2D3CFB2120854171008E10F6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2D3CFB23208554AB008E10F6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2D4A0EF82012C39D00E4E526 /* mk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D4A0EFB2012C39D00E4E526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D4A0EFD2012C39D00E4E526 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,9 +121,11 @@
 				2D4A0EFD2012C39D00E4E526 /* ViewController.swift */,
 				2D1040EC204F48DF0053475F /* Structures */,
 				2D4A0EFF2012C39D00E4E526 /* Main.storyboard */,
+				2D3CFB23208554AB008E10F6 /* Constants.swift */,
 				2D4A0F022012C39D00E4E526 /* Assets.xcassets */,
 				2D4A0F042012C39D00E4E526 /* LaunchScreen.storyboard */,
 				2D4A0F072012C39D00E4E526 /* Info.plist */,
+				2D3CFB2120854171008E10F6 /* SettingsViewController.swift */,
 			);
 			path = mk;
 			sourceTree = "<group>";
@@ -251,7 +257,9 @@
 				2D4A0EFE2012C39D00E4E526 /* ViewController.swift in Sources */,
 				2D4A0EFC2012C39D00E4E526 /* AppDelegate.swift in Sources */,
 				2DD56B7520697E2500BC35AF /* GridView.swift in Sources */,
+				2D3CFB24208554AB008E10F6 /* Constants.swift in Sources */,
 				2D1040EE204F48F30053475F /* Grid.swift in Sources */,
+				2D3CFB2220854171008E10F6 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

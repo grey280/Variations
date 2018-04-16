@@ -114,7 +114,7 @@ class GridView: UIView{
         guard let yAxis = stack.arrangedSubviews[x] as? UIStackView else{
             return
         }
-        guard let tile = yAxis.arrangedSubviews[y] as? GridViewTile else{
+        guard let tile = yAxis.arrangedSubviews[grid.height-y-1] as? GridViewTile else{
             return
         }
         UIView.animate(withDuration: GVConstants.animationDuration) {
@@ -137,7 +137,7 @@ class GridView: UIView{
         guard let yAxis = stack.arrangedSubviews[x] as? UIStackView else{
             return
         }
-        guard let tile = yAxis.arrangedSubviews[y] as? GridViewTile else{
+        guard let tile = yAxis.arrangedSubviews[grid.height-y-1] as? GridViewTile else{
             return
         }
         tile.tileColor = color

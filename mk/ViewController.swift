@@ -21,6 +21,9 @@ class ViewController: UIViewController {
     /// The primary mixer node; outputs to AudioKit out, so it's the audio out for everything
     var mixerNode = AKMixer()
     
+    /// The global timer for running grid ticks
+    var timer = Timer()
+    
     /// A global instance of GridConverter for use everywhere
     let gc = GridConverter()
     
@@ -110,10 +113,28 @@ class ViewController: UIViewController {
     ///
     /// - Returns: the chord we're currently playing
     func getChord() -> GridConverter.chord{
-        // let freeMode = false // Later we'll need this as a setting so we can have chords other than I IV V I
-        let gridParity = grids[0].grid.parity() // TODO: Error handling
-        // in case this function is called before grids has been initialized properly
+        let freeMode = UserDefaults.standard.bool(forKey: constants.defaults.allChordsEnabled)
+        let gridParity = grids[0].grid.parity()
         let columnParity = grids[0].grid.columnParity()
+        if freeMode{
+            let rowParity = grids[0].grid.rowParity()
+            switch (gridParity, columnParity, rowParity){
+            case (true, true, true), (false, false, false):
+                return .I
+            case (true, true, false):
+                return .ii
+            case (true, false, true):
+                return .iii
+            case (true, false, false):
+                return .IV
+            case (false, true, true):
+                return .V
+            case (false, true, false):
+                return .vi
+            case (false, false, true):
+                return .viio
+            }
+        }
         if gridParity && columnParity{
             return .I
         } else if gridParity{
@@ -142,8 +163,27 @@ class ViewController: UIViewController {
     /// Counter for the additive synthesis system
     private var addSynthCount = 0
     
+    /// Set up the timer - used because we do this often
+    func configureTimer(){
+        var timeInterval = UserDefaults.standard.double(forKey: constants.defaults.chordDuration)
+        if timer.timeInterval == timeInterval{
+            return
+        }
+        if timeInterval == 0{
+            UserDefaults.standard.set(constants.defaultValues.chordDuration, forKey: constants.defaults.chordDuration)
+            timeInterval = constants.defaultValues.chordDuration
+        }
+        timer.invalidate() // Wipe it out, then reset it to the new one
+        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: { (timer) in
+            self.tick()
+        })
+    }
+    
     /// Fire a 'tick' on all the grids at once, and switch the oscillators to playing the new notes
     func tick(){
+        guard grids.count > 1 else{
+            return
+        }
         for i in 0..<grids.count{
             grids[i].grid.tick()
         }
@@ -157,23 +197,31 @@ class ViewController: UIViewController {
             }
         }
         let currentChord = getChord()
+//        let useAllChords = UserDefaults.standard.bool(forKey: constants.defaults.allChordsEnabled)
         for i in 1..<grids.count{
             for j in 0..<128{ // Stop playing *all* notes, not just the ones that you *think* were already playing. Fixes the bug that cropped up from iterations happening between ticks.
                 oscillators[i].stop(noteNumber: MIDINoteNumber(j))
             }
             let actives = grids[i].grid.column()
             let activeNotes = gc.convert(actives, chord: currentChord)
+//            var activeNotes: [Int]
+//            if useAllChords{
+//                activeNotes = gc.convert(actives)
+//            }else{
+//                activeNotes = gc.convert(actives, chord: currentChord)
+//            }
             for note in activeNotes{
                 oscillators[i].play(noteNumber: MIDINoteNumber(note), velocity: velocity(width: grids[i].grid.width, current: grids[i].grid.activeColumn))
             }
         }
+        configureTimer()
     }
     
     // MARK: - Configuration
     
     /// Wrapper for `buildGrids`
     @objc private func resetGrids(){
-        buildGrids(8)
+        buildGrids()
     }
     
     /// Build the given number of grids, including configuring the oscillators
@@ -211,12 +259,31 @@ class ViewController: UIViewController {
         }
         addSynthCount = 0
         grids[0].grid.enabled = true
+        grids[0].iterationComplete()
         grids[1].grid.enabled = true
+        grids[1].iterationComplete()
         do{
             try AudioKit.start()
         }catch{
             fatalError("AudioKit failed to start")
         }
+    }
+    
+    /// Wrapper on `buildGrids(_:)` that automatically looks up the number of grids to build
+    func buildGrids(){
+        configureTimer()
+        
+        // Retrieve grid count and implement that
+        var gridCount = UserDefaults.standard.integer(forKey: constants.defaults.gridCount)
+        if gridCount == 0{
+            UserDefaults.standard.set(constants.defaultValues.gridCount, forKey: constants.defaults.gridCount)
+            gridCount = constants.defaultValues.gridCount
+        }
+        buildGrids(gridCount)
+    }
+    
+    @objc func openSettings(){
+        self.performSegue(withIdentifier: "openSettings", sender: self)
     }
     
     // MARK: - ViewController Globals
@@ -232,9 +299,11 @@ class ViewController: UIViewController {
         swipeRecognizer.direction = .down
         self.view.addGestureRecognizer(swipeRecognizer)
         
-        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { (timer) in
-            self.tick()
-        }
+        let settingsRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.openSettings))
+        settingsRecognizer.direction = .up
+        self.view.addGestureRecognizer(settingsRecognizer)
+        
+        configureTimer()
         
         AudioKit.output = mixerNode
         AKSettings.playbackWhileMuted = true // We don't want to force the user to flip the mute switch to hear anything
@@ -246,7 +315,7 @@ class ViewController: UIViewController {
         }
         NotificationCenter.default.addObserver(forName: .UIDeviceOrientationDidChange, object: nil, queue: .main, using: didRotate)
         
-        buildGrids(8)
+        buildGrids()
     }
     
     /// Hide the status bar; it doesn't look super good with it displayed, after all.

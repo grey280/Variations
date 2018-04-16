@@ -19,4 +19,10 @@ struct constants{
         /// The number of grids to display on-screen
         static let gridCount = "gridCount"
     }
+    
+    /// Constants to use for default values, so we don't have any magic numbers
+    struct defaultValues{
+        /// Default number of grids to have on-screen
+        static let gridCount = 8
+    }
 }

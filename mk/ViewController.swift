@@ -173,7 +173,7 @@ class ViewController: UIViewController {
     
     /// Wrapper for `buildGrids`
     @objc private func resetGrids(){
-        buildGrids(8)
+        buildGrids()
     }
     
     /// Build the given number of grids, including configuring the oscillators
@@ -219,6 +219,16 @@ class ViewController: UIViewController {
         }
     }
     
+    /// Wrapper on `buildGrids(_:)` that automatically looks up the number of grids to build
+    func buildGrids(){
+        var gridCount = UserDefaults.standard.integer(forKey: constants.defaults.gridCount)
+        if gridCount == 0{
+            UserDefaults.standard.set(constants.defaultValues.gridCount, forKey: constants.defaults.gridCount)
+            gridCount = constants.defaultValues.gridCount
+        }
+        buildGrids(gridCount)
+    }
+    
     @objc func openSettings(){
         self.performSegue(withIdentifier: "openSettings", sender: self)
     }
@@ -254,7 +264,7 @@ class ViewController: UIViewController {
         }
         NotificationCenter.default.addObserver(forName: .UIDeviceOrientationDidChange, object: nil, queue: .main, using: didRotate)
         
-        buildGrids(8)
+        buildGrids()
     }
     
     /// Hide the status bar; it doesn't look super good with it displayed, after all.

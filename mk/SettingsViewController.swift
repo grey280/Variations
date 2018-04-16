@@ -36,6 +36,8 @@ class SettingsViewController: UIViewController {
     ///
     /// - Parameter sender: gridStepper
     @IBAction func gridStepped(_ sender: UIStepper) {
+        UserDefaults.standard.set(Int(sender.value), forKey: constants.defaults.gridCount)
+        gridsLabel.text = "\(Int(sender.value))"
     }
     
     /// Handle the 'done' button being pressed
@@ -50,6 +52,16 @@ class SettingsViewController: UIViewController {
     /// Prep for display; adds gesture recognizer, pull current settings and fill data to be accurate
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Load the current grid count
+        var gridCount = UserDefaults.standard.integer(forKey: constants.defaults.gridCount)
+        if gridCount == 0{
+            UserDefaults.standard.set(constants.defaultValues.gridCount, forKey: constants.defaults.gridCount)
+            gridCount = constants.defaultValues.gridCount
+        }
+        gridsLabel.text = "\(gridCount)"
+        gridStepper.value = Double(gridCount)
+        
         
         let swipDownGR = UISwipeGestureRecognizer(target: self, action: #selector(doneButton(_:)))
         swipDownGR.direction = .down

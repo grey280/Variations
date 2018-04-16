@@ -219,6 +219,10 @@ class ViewController: UIViewController {
         }
     }
     
+    @objc func openSettings(){
+        self.performSegue(withIdentifier: "openSettings", sender: self)
+    }
+    
     // MARK: - ViewController Globals
     
     /// Set up the view to run
@@ -231,6 +235,10 @@ class ViewController: UIViewController {
         let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.resetGrids))
         swipeRecognizer.direction = .down
         self.view.addGestureRecognizer(swipeRecognizer)
+        
+        let settingsRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.openSettings))
+        settingsRecognizer.direction = .up
+        self.view.addGestureRecognizer(settingsRecognizer)
         
         Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { (timer) in
             self.tick()

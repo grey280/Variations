@@ -38,9 +38,6 @@ class SettingsViewController: UIViewController {
     @IBAction func gridStepped(_ sender: UIStepper) {
     }
     
-    
-    
-    
     /// Handle the 'done' button being pressed
     ///
     /// - Parameter sender: ignored

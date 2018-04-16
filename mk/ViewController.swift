@@ -21,6 +21,9 @@ class ViewController: UIViewController {
     /// The primary mixer node; outputs to AudioKit out, so it's the audio out for everything
     var mixerNode = AKMixer()
     
+    /// The global timer for running grid ticks
+    var timer = Timer()
+    
     /// A global instance of GridConverter for use everywhere
     let gc = GridConverter()
     
@@ -221,6 +224,18 @@ class ViewController: UIViewController {
     
     /// Wrapper on `buildGrids(_:)` that automatically looks up the number of grids to build
     func buildGrids(){
+        // Reset timer to proper timing
+        var timeInterval = UserDefaults.standard.double(forKey: constants.defaults.chordDuration)
+        if timeInterval == 0{
+            UserDefaults.standard.set(constants.defaultValues.chordDuration, forKey: constants.defaults.chordDuration)
+            timeInterval = constants.defaultValues.chordDuration
+        }
+        timer.invalidate() // Wipe it out, then reset it to the new one
+        timer = Timer(timeInterval: timeInterval, repeats: true, block: { (timer) in
+            self.tick()
+        })
+        
+        // Retrieve grid count and implement that
         var gridCount = UserDefaults.standard.integer(forKey: constants.defaults.gridCount)
         if gridCount == 0{
             UserDefaults.standard.set(constants.defaultValues.gridCount, forKey: constants.defaults.gridCount)
@@ -250,9 +265,17 @@ class ViewController: UIViewController {
         settingsRecognizer.direction = .up
         self.view.addGestureRecognizer(settingsRecognizer)
         
-        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { (timer) in
-            self.tick()
+        var timeInterval = UserDefaults.standard.double(forKey: constants.defaults.chordDuration)
+        if timeInterval == 0{
+            UserDefaults.standard.set(constants.defaultValues.chordDuration, forKey: constants.defaults.chordDuration)
+            timeInterval = constants.defaultValues.chordDuration
         }
+        
+        timer = Timer(timeInterval: timeInterval, repeats: true, block: { (timer) in
+            self.tick()
+        })
+        
+        RunLoop.current.add(timer, forMode: RunLoopMode.defaultRunLoopMode)
         
         AudioKit.output = mixerNode
         AKSettings.playbackWhileMuted = true // We don't want to force the user to flip the mute switch to hear anything

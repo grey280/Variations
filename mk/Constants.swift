@@ -24,5 +24,7 @@ struct constants{
     struct defaultValues{
         /// Default number of grids to have on-screen
         static let gridCount = 8
+        /// Default duration to allow each chord to play for
+        static let chordDuration = 3.0
     }
 }

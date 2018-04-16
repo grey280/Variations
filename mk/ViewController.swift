@@ -113,11 +113,28 @@ class ViewController: UIViewController {
     ///
     /// - Returns: the chord we're currently playing
     func getChord() -> GridConverter.chord{
-        // TODO: This would be where we implement using multiple chords
-        // let freeMode = false // Later we'll need this as a setting so we can have chords other than I IV V I
+        let freeMode = UserDefaults.standard.bool(forKey: constants.defaults.allChordsEnabled)
         let gridParity = grids[0].grid.parity()
-        // in case this function is called before grids has been initialized properly
         let columnParity = grids[0].grid.columnParity()
+        if freeMode{
+            let rowParity = grids[0].grid.rowParity()
+            switch (gridParity, columnParity, rowParity){
+            case (true, true, true), (false, false, false):
+                return .I
+            case (true, true, false):
+                return .ii
+            case (true, false, true):
+                return .iii
+            case (true, false, false):
+                return .IV
+            case (false, true, true):
+                return .V
+            case (false, true, false):
+                return .vi
+            case (false, false, true):
+                return .viio
+            }
+        }
         if gridParity && columnParity{
             return .I
         } else if gridParity{
@@ -164,12 +181,19 @@ class ViewController: UIViewController {
             }
         }
         let currentChord = getChord()
+//        let useAllChords = UserDefaults.standard.bool(forKey: constants.defaults.allChordsEnabled)
         for i in 1..<grids.count{
             for j in 0..<128{ // Stop playing *all* notes, not just the ones that you *think* were already playing. Fixes the bug that cropped up from iterations happening between ticks.
                 oscillators[i].stop(noteNumber: MIDINoteNumber(j))
             }
             let actives = grids[i].grid.column()
             let activeNotes = gc.convert(actives, chord: currentChord)
+//            var activeNotes: [Int]
+//            if useAllChords{
+//                activeNotes = gc.convert(actives)
+//            }else{
+//                activeNotes = gc.convert(actives, chord: currentChord)
+//            }
             for note in activeNotes{
                 oscillators[i].play(noteNumber: MIDINoteNumber(note), velocity: velocity(width: grids[i].grid.width, current: grids[i].grid.activeColumn))
             }

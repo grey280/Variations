@@ -163,6 +163,22 @@ class ViewController: UIViewController {
     /// Counter for the additive synthesis system
     private var addSynthCount = 0
     
+    /// Set up the timer - used because we do this often
+    func configureTimer(){
+        var timeInterval = UserDefaults.standard.double(forKey: constants.defaults.chordDuration)
+        if timer.timeInterval == timeInterval{
+            return
+        }
+        if timeInterval == 0{
+            UserDefaults.standard.set(constants.defaultValues.chordDuration, forKey: constants.defaults.chordDuration)
+            timeInterval = constants.defaultValues.chordDuration
+        }
+        timer.invalidate() // Wipe it out, then reset it to the new one
+        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: { (timer) in
+            self.tick()
+        })
+    }
+    
     /// Fire a 'tick' on all the grids at once, and switch the oscillators to playing the new notes
     func tick(){
         guard grids.count > 1 else{
@@ -198,6 +214,7 @@ class ViewController: UIViewController {
                 oscillators[i].play(noteNumber: MIDINoteNumber(note), velocity: velocity(width: grids[i].grid.width, current: grids[i].grid.activeColumn))
             }
         }
+        configureTimer()
     }
     
     // MARK: - Configuration
@@ -254,16 +271,7 @@ class ViewController: UIViewController {
     
     /// Wrapper on `buildGrids(_:)` that automatically looks up the number of grids to build
     func buildGrids(){
-        // Reset timer to proper timing
-        var timeInterval = UserDefaults.standard.double(forKey: constants.defaults.chordDuration)
-        if timeInterval == 0{
-            UserDefaults.standard.set(constants.defaultValues.chordDuration, forKey: constants.defaults.chordDuration)
-            timeInterval = constants.defaultValues.chordDuration
-        }
-        timer.invalidate() // Wipe it out, then reset it to the new one
-        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: { (timer) in
-            self.tick()
-        })
+        configureTimer()
         
         // Retrieve grid count and implement that
         var gridCount = UserDefaults.standard.integer(forKey: constants.defaults.gridCount)
@@ -295,16 +303,7 @@ class ViewController: UIViewController {
         settingsRecognizer.direction = .up
         self.view.addGestureRecognizer(settingsRecognizer)
         
-        var timeInterval = UserDefaults.standard.double(forKey: constants.defaults.chordDuration)
-        if timeInterval == 0{
-            UserDefaults.standard.set(constants.defaultValues.chordDuration, forKey: constants.defaults.chordDuration)
-            timeInterval = constants.defaultValues.chordDuration
-        }
-        
-        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: { (timer) in
-            self.tick()
-        })
-        
+        configureTimer()
         
         AudioKit.output = mixerNode
         AKSettings.playbackWhileMuted = true // We don't want to force the user to flip the mute switch to hear anything

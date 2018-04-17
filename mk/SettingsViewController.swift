@@ -135,7 +135,18 @@ class SettingsViewController: UIViewController {
         let useAllChords = UserDefaults.standard.bool(forKey: constants.defaults.allChordsEnabled)
         chordSwitch.setOn(useAllChords, animated: false)
         
-        
+        // Set up the random count
+        if UserDefaults.standard.bool(forKey: constants.defaults.randomCountInitalized){
+            let rVal = UserDefaults.standard.integer(forKey: constants.defaults.randomCount)
+            randomStepper.value = Double(rVal)
+            randomLabel.text = "\(rVal)"
+        }else{
+            UserDefaults.standard.set(constants.defaultValues.randomCount, forKey: constants.defaults.randomCount)
+            UserDefaults.standard.set(true, forKey: constants.defaults.randomCountInitalized)
+            let rVal = constants.defaultValues.randomCount
+            randomStepper.value = Double(rVal)
+            randomLabel.text = "\(rVal)"
+        }
         
         let swipDownGR = UISwipeGestureRecognizer(target: self, action: #selector(doneButton(_:)))
         swipDownGR.direction = .down

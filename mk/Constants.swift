@@ -27,4 +27,33 @@ struct constants{
         /// Default duration to allow each chord to play for
         static let chordDuration = 3.0
     }
+    
+    /// Configuration states for the change thing
+    struct configs{
+        /// "Meditate" mode - a calm experience
+        struct meditate{
+            /// Number of grids to operate
+            static let gridCount = 4
+            /// Length of time ot let chords stay
+            static let chordDuration = 5.0
+            /// Whether or not all chords are in use
+            static let allChordsEnabled = false
+        }
+        struct original{
+            /// Number of grids to operate
+            static let gridCount = 8
+            /// Length of time ot let chords stay
+            static let chordDuration = 3.0
+            /// Whether or not all chords are in use
+            static let allChordsEnabled = false
+        }
+        struct energy{
+            /// Number of grids to operate
+            static let gridCount = 6
+            /// Length of time ot let chords stay
+            static let chordDuration = 0.5
+            /// Whether or not all chords are in use
+            static let allChordsEnabled = true
+        }
+    }
 }

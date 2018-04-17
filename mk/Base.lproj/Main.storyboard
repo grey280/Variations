@@ -98,14 +98,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D50-8P-dbu">
-                                <rect key="frame" x="15" y="354.5" width="345" height="33"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Done"/>
-                                <connections>
-                                    <action selector="doneButton:" destination="mjy-N1-YVf" eventType="touchUpInside" id="TvV-Vc-Zlu"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When off, will only play I IV or V." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVh-XC-7RL">
                                 <rect key="frame" x="37" y="162.5" width="322" height="16"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
@@ -134,19 +126,50 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kms-ts-zn5">
+                                <rect key="frame" x="16" y="354" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Meditate"/>
+                                    <segment title="Original"/>
+                                    <segment title="Energy"/>
+                                </segments>
+                                <connections>
+                                    <action selector="defaultChosen:" destination="mjy-N1-YVf" eventType="valueChanged" id="FrX-q5-gKf"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Switching to the default settings will overwrite your current settings. This change cannot be undone." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DI-r3-NjL">
+                                <rect key="frame" x="37" y="390" width="322" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D50-8P-dbu">
+                                <rect key="frame" x="15" y="432" width="345" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButton:" destination="mjy-N1-YVf" eventType="touchUpInside" id="TvV-Vc-Zlu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="djz-oh-yNM" firstAttribute="leading" secondItem="qe7-y3-SOb" secondAttribute="trailing" constant="8" id="97L-9m-3Ub"/>
+                            <constraint firstItem="kms-ts-zn5" firstAttribute="top" secondItem="t7F-J4-BZ4" secondAttribute="bottom" constant="8" id="9qQ-Z8-vuj"/>
                             <constraint firstItem="aQB-do-Tx7" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="AA0-nR-eka"/>
                             <constraint firstItem="PVh-XC-7RL" firstAttribute="top" secondItem="gl3-lS-9u2" secondAttribute="bottom" constant="8" id="B7H-WR-MLK"/>
                             <constraint firstItem="baV-LC-Tlz" firstAttribute="leading" secondItem="PVh-XC-7RL" secondAttribute="leading" id="C4Y-dq-AVQ"/>
+                            <constraint firstItem="0DI-r3-NjL" firstAttribute="width" secondItem="t7F-J4-BZ4" secondAttribute="width" id="CpM-bd-6Ff"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="G80-Xs-g9U" secondAttribute="trailing" constant="16" id="Dcj-Mk-o4S"/>
                             <constraint firstItem="D50-8P-dbu" firstAttribute="centerX" secondItem="KJ4-WB-SU9" secondAttribute="centerX" id="F11-Uk-MsR"/>
+                            <constraint firstItem="kms-ts-zn5" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="HX4-jE-0tp"/>
+                            <constraint firstItem="0DI-r3-NjL" firstAttribute="leading" secondItem="t7F-J4-BZ4" secondAttribute="leading" id="I2v-8N-ECI"/>
                             <constraint firstItem="t7F-J4-BZ4" firstAttribute="trailing" secondItem="KJ4-WB-SU9" secondAttribute="trailing" constant="-16" id="KLq-Cm-XbE"/>
+                            <constraint firstItem="kms-ts-zn5" firstAttribute="centerX" secondItem="KJ4-WB-SU9" secondAttribute="centerX" id="LKy-du-dOa"/>
                             <constraint firstItem="ZLy-6D-Yam" firstAttribute="centerY" secondItem="2BV-Ha-298" secondAttribute="centerY" id="Lny-FW-d0X"/>
                             <constraint firstItem="XY8-f1-srV" firstAttribute="top" secondItem="aQB-do-Tx7" secondAttribute="bottom" constant="32" id="Mze-MD-XSf"/>
                             <constraint firstItem="ZLy-6D-Yam" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="N2m-BY-7RP"/>
+                            <constraint firstItem="D50-8P-dbu" firstAttribute="top" secondItem="0DI-r3-NjL" secondAttribute="bottom" constant="8" id="N4h-I5-1PA"/>
                             <constraint firstItem="8A8-t3-6B5" firstAttribute="leading" secondItem="djz-oh-yNM" secondAttribute="trailing" constant="8" id="Nv7-eR-3Ti"/>
                             <constraint firstItem="2BV-Ha-298" firstAttribute="top" secondItem="baV-LC-Tlz" secondAttribute="bottom" constant="8" id="O0W-2C-tDg"/>
                             <constraint firstItem="baV-LC-Tlz" firstAttribute="width" secondItem="t7F-J4-BZ4" secondAttribute="width" id="OIK-cR-Sa9"/>
@@ -159,12 +182,12 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                             <constraint firstItem="G80-Xs-g9U" firstAttribute="top" secondItem="PVh-XC-7RL" secondAttribute="bottom" constant="8" id="cdr-vh-40A"/>
                             <constraint firstItem="gl3-lS-9u2" firstAttribute="centerY" secondItem="XY8-f1-srV" secondAttribute="centerY" id="eoQ-je-fSW"/>
                             <constraint firstItem="djz-oh-yNM" firstAttribute="centerY" secondItem="qe7-y3-SOb" secondAttribute="centerY" id="gS4-Ta-3ZC"/>
+                            <constraint firstItem="0DI-r3-NjL" firstAttribute="top" secondItem="kms-ts-zn5" secondAttribute="bottom" constant="8" id="gyR-Nn-6P8"/>
                             <constraint firstItem="gl3-lS-9u2" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="hJ2-7A-gdP"/>
                             <constraint firstItem="9K8-Ay-mkn" firstAttribute="leading" secondItem="ZLy-6D-Yam" secondAttribute="trailing" constant="8" id="jf6-tr-ovO"/>
                             <constraint firstItem="baV-LC-Tlz" firstAttribute="top" secondItem="qe7-y3-SOb" secondAttribute="bottom" constant="8" id="n7R-jU-mMZ"/>
                             <constraint firstItem="PVh-XC-7RL" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="37" id="nzz-Ln-W3y"/>
                             <constraint firstItem="2BV-Ha-298" firstAttribute="width" secondItem="G80-Xs-g9U" secondAttribute="width" id="o0y-uY-zoe"/>
-                            <constraint firstItem="D50-8P-dbu" firstAttribute="top" secondItem="t7F-J4-BZ4" secondAttribute="bottom" constant="8" id="oXt-j0-RGF"/>
                             <constraint firstItem="aQB-do-Tx7" firstAttribute="trailing" secondItem="KJ4-WB-SU9" secondAttribute="trailing" constant="-16" id="qOq-ia-CXr"/>
                             <constraint firstItem="aQB-do-Tx7" firstAttribute="top" secondItem="KJ4-WB-SU9" secondAttribute="top" constant="12" id="qvp-T6-81w"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="XY8-f1-srV" secondAttribute="trailing" constant="19" id="syp-O3-A59"/>

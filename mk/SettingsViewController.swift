@@ -56,24 +56,30 @@ class SettingsViewController: UIViewController {
         case 0:
             UserDefaults.standard.set(constants.configs.meditate.gridCount, forKey: constants.defaults.gridCount)
             gridsLabel.text = "\(constants.configs.meditate.gridCount)"
+            gridStepper.value = Double(constants.configs.meditate.gridCount)
             UserDefaults.standard.set(constants.configs.meditate.allChordsEnabled, forKey: constants.defaults.allChordsEnabled)
             chordSwitch.setOn(constants.configs.meditate.allChordsEnabled, animated: true)
             UserDefaults.standard.set(constants.configs.meditate.chordDuration, forKey: constants.defaults.chordDuration)
             durationLabel.text = "\(constants.configs.meditate.chordDuration)"
+            durationStepper.value = constants.configs.meditate.chordDuration
         case 1:
             UserDefaults.standard.set(constants.configs.original.gridCount, forKey: constants.defaults.gridCount)
             gridsLabel.text = "\(constants.configs.original.gridCount)"
+            gridStepper.value = Double(constants.configs.original.gridCount)
             UserDefaults.standard.set(constants.configs.original.allChordsEnabled, forKey: constants.defaults.allChordsEnabled)
             chordSwitch.setOn(constants.configs.original.allChordsEnabled, animated: true)
             UserDefaults.standard.set(constants.configs.original.chordDuration, forKey: constants.defaults.chordDuration)
             durationLabel.text = "\(constants.configs.original.chordDuration)"
+            durationStepper.value = constants.configs.original.chordDuration
         case 2:
             UserDefaults.standard.set(constants.configs.energy.gridCount, forKey: constants.defaults.gridCount)
             gridsLabel.text = "\(constants.configs.energy.gridCount)"
+            gridStepper.value = Double(constants.configs.energy.gridCount)
             UserDefaults.standard.set(constants.configs.energy.allChordsEnabled, forKey: constants.defaults.allChordsEnabled)
             chordSwitch.setOn(constants.configs.energy.allChordsEnabled, animated: true)
             UserDefaults.standard.set(constants.configs.energy.chordDuration, forKey: constants.defaults.chordDuration)
             durationLabel.text = "\(constants.configs.energy.chordDuration)"
+            durationStepper.value = constants.configs.energy.chordDuration
         default:
             break; // shouldn't ever happen but whatever
         }

@@ -88,7 +88,13 @@ class ViewController: UIViewController {
     
     /// Iterate all grids at once, including randomization
     func iterate(){
-        iterate(2)
+        if UserDefaults.standard.bool(forKey: constants.defaults.randomCountInitalized){
+            iterate(UserDefaults.standard.integer(forKey: constants.defaults.randomCount))
+        }else{
+            UserDefaults.standard.set(constants.defaultValues.randomCount, forKey: constants.defaults.randomCount)
+            UserDefaults.standard.set(true, forKey: constants.defaults.randomCountInitalized)
+            iterate(constants.defaultValues.randomCount)
+        }
     }
     
     /// Iterate all grids at once, including the given number of randomly flipped tiles

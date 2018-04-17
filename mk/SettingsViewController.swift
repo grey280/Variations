@@ -31,6 +31,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var randomStepper: UIStepper!
     
     // MARK: - Functions
+    /// Handle the 'use all chords' switch being tapped
+    ///
+    /// - Parameter sender: `chordSwitch`
     @IBAction func chordSwitched(_ sender: UISwitch) {
         UserDefaults.standard.set(sender.isOn, forKey: constants.defaults.allChordsEnabled)
     }

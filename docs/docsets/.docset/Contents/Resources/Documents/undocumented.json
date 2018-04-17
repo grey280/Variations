@@ -1,6 +1,33 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/greypatterson/Coding/mk/mk/Constants.swift",
+      "line": 50,
+      "symbol": "constants.configs.original",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/greypatterson/Coding/mk/mk/Constants.swift",
+      "line": 60,
+      "symbol": "constants.configs.energy",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/greypatterson/Coding/mk/mk/SettingsViewController.swift",
+      "line": 34,
+      "symbol": "SettingsViewController.chordSwitched(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/greypatterson/Coding/mk/mk/ViewController.swift",
+      "line": 291,
+      "symbol": "ViewController.openSettings()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
   ],
-  "source_directory": "/Users/greypatterson/Documents/More/Bitbucket/mk"
+  "source_directory": "/Users/greypatterson/Coding/mk"
 }

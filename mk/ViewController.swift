@@ -288,6 +288,7 @@ class ViewController: UIViewController {
         buildGrids(gridCount)
     }
     
+    /// Open the settings screen
     @objc func openSettings(){
         self.performSegue(withIdentifier: "openSettings", sender: self)
     }

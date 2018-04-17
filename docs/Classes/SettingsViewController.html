@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>GridView Class Reference</title>
+    <title>SettingsViewController Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/GridView" class="dashAnchor"></a>
-    <a title="GridView Class Reference"></a>
+    <a name="//apple_ref/swift/Class/SettingsViewController" class="dashAnchor"></a>
+    <a title="SettingsViewController Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (100% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        GridView Class Reference
+        SettingsViewController Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -81,25 +81,32 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>GridView</h1>
+            <h1>SettingsViewController</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">GridView</span><span class="p">:</span> <span class="kt">UIView</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">SettingsViewController</span><span class="p">:</span> <span class="kt">UIViewController</span></code></pre>
 
                 </div>
               </div>
-            <p>Display a <code><a href="../Classes/Grid.html">Grid</a></code></p>
+            <p>View controller for handling settings</p>
 
           </section>
           <section class="section task-group-section">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Variables"></a>
+                <a name="//apple_ref/swift/Section/Variables" class="dashAnchor"></a>
+                <a href="#/Variables">
+                  <h3 class="section-name">Variables</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:2mk8GridViewC11GVConstantsV"></a>
-                    <a name="//apple_ref/swift/Struct/GVConstants" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk8GridViewC11GVConstantsV">GVConstants</a>
+                    <a name="/c:@M@mk@objc(cs)SettingsViewController(py)durationLabel"></a>
+                    <a name="//apple_ref/swift/Property/durationLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@mk@objc(cs)SettingsViewController(py)durationLabel">durationLabel</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -107,15 +114,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Global constants for the grid view stuff</p>
+                        <p>Label showing the duration, in seconds, of each chord</p>
 
-                        <a href="../Classes/GridView/GVConstants.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">GVConstants</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">durationLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -125,9 +131,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:2mk8GridViewC0bC4TileC"></a>
-                    <a name="//apple_ref/swift/Class/GridViewTile" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk8GridViewC0bC4TileC">GridViewTile</a>
+                    <a name="/c:@M@mk@objc(cs)SettingsViewController(py)gridsLabel"></a>
+                    <a name="//apple_ref/swift/Property/gridsLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@mk@objc(cs)SettingsViewController(py)gridsLabel">gridsLabel</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -135,15 +141,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Provides helper functions on top of UIView for drawing grid tiles</p>
+                        <p>Label showing the number of grids to have; minimum is 2, maximum is as yet undetermined</p>
 
-                        <a href="../Classes/GridView/GridViewTile.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">GridViewTile</span><span class="p">:</span> <span class="kt">UIView</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">gridsLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -153,9 +158,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:2mk8GridViewC4gridAA0B0Cvp"></a>
-                    <a name="//apple_ref/swift/Property/grid" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk8GridViewC4gridAA0B0Cvp">grid</a>
+                    <a name="/c:@M@mk@objc(cs)SettingsViewController(py)randomLabel"></a>
+                    <a name="//apple_ref/swift/Property/randomLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@mk@objc(cs)SettingsViewController(py)randomLabel">randomLabel</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -163,14 +168,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The <code><a href="../Classes/Grid.html">Grid</a></code> used as the backing model</p>
+                        <p>Label showing the number of cells to randomly toggle per tap</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">grid</span><span class="p">:</span> <span class="kt"><a href="../Classes/Grid.html">Grid</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">randomLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -180,9 +185,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:2mk8GridViewC9gridColorSo7UIColorCvp"></a>
-                    <a name="//apple_ref/swift/Property/gridColor" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk8GridViewC9gridColorSo7UIColorCvp">gridColor</a>
+                    <a name="/c:@M@mk@objc(cs)SettingsViewController(py)chordSwitch"></a>
+                    <a name="//apple_ref/swift/Property/chordSwitch" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@mk@objc(cs)SettingsViewController(py)chordSwitch">chordSwitch</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -190,14 +195,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The color of the cells in the grid</p>
+                        <p>Whether or not to use all the chords or just the I IV V I set</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">gridColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">red</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">chordSwitch</span><span class="p">:</span> <span class="kt">UISwitch</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -207,9 +212,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:2mk8GridViewC5stack33_212D0365958457671EF83A8D94910993LLSQySo07UIStackC0CGvp"></a>
-                    <a name="//apple_ref/swift/Property/stack" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk8GridViewC5stack33_212D0365958457671EF83A8D94910993LLSQySo07UIStackC0CGvp">stack</a>
+                    <a name="/c:@M@mk@objc(cs)SettingsViewController(py)durationStepper"></a>
+                    <a name="//apple_ref/swift/Property/durationStepper" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@mk@objc(cs)SettingsViewController(py)durationStepper">durationStepper</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -217,14 +222,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The stack in which we&rsquo;re storing everything; indexed as [x][y]</p>
+                        <p>Stepper for inputting the duration of each chord</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">fileprivate</span> <span class="k">var</span> <span class="nv">stack</span><span class="p">:</span> <span class="kt">UIStackView</span><span class="o">!</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">durationStepper</span><span class="p">:</span> <span class="kt">UIStepper</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -234,9 +239,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:2mk8GridViewCACSC6CGRectV5frame_AA0B0C4gridtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(frame:grid:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk8GridViewCACSC6CGRectV5frame_AA0B0C4gridtcfc">init(frame:grid:)</a>
+                    <a name="/c:@M@mk@objc(cs)SettingsViewController(py)gridStepper"></a>
+                    <a name="//apple_ref/swift/Property/gridStepper" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@mk@objc(cs)SettingsViewController(py)gridStepper">gridStepper</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -244,14 +249,79 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Create a GridView</p>
+                        <p>Stepper used for inputting the number of grids to use</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">,</span> <span class="nv">grid</span><span class="p">:</span> <span class="kt"><a href="../Classes/Grid.html">Grid</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">gridStepper</span><span class="p">:</span> <span class="kt">UIStepper</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@mk@objc(cs)SettingsViewController(py)randomStepper"></a>
+                    <a name="//apple_ref/swift/Property/randomStepper" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@mk@objc(cs)SettingsViewController(py)randomStepper">randomStepper</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stepper used for controlling the number of random cells per iteration</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">randomStepper</span><span class="p">:</span> <span class="kt">UIStepper</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Functions"></a>
+                <a name="//apple_ref/swift/Section/Functions" class="dashAnchor"></a>
+                <a href="#/Functions">
+                  <h3 class="section-name">Functions</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@mk@objc(cs)SettingsViewController(im)chordSwitched:"></a>
+                    <a name="//apple_ref/swift/Method/chordSwitched(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@mk@objc(cs)SettingsViewController(im)chordSwitched:">chordSwitched(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handle the &lsquo;use all chords&rsquo; switch being tapped</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">chordSwitched</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UISwitch</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -262,24 +332,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>frame</em>
+                                <em>sender</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>the frame in which the GridView will be displayed</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>grid</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>an instance of <code><a href="../Classes/Grid.html">Grid</a></code> to be used as the model; will automatically fill settings based on that</p>
+                                  <p><code><a href="../Classes/SettingsViewController.html#/c:@M@mk@objc(cs)SettingsViewController(py)chordSwitch">chordSwitch</a></code></p>
                                 </div>
                               </td>
                             </tr>
@@ -292,9 +350,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:2mk8GridViewCACSC6CGRectV5frame_AA0B0C4gridSo7UIColorC5colortcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(frame:grid:color:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk8GridViewCACSC6CGRectV5frame_AA0B0C4gridSo7UIColorC5colortcfc">init(frame:grid:color:)</a>
+                    <a name="/c:@M@mk@objc(cs)SettingsViewController(im)durationStepped:"></a>
+                    <a name="//apple_ref/swift/Method/durationStepped(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@mk@objc(cs)SettingsViewController(im)durationStepped:">durationStepped(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -302,14 +360,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Create a GridView with a given color</p>
+                        <p>Triggered when the duration stepper is used</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">,</span> <span class="nv">grid</span><span class="p">:</span> <span class="kt"><a href="../Classes/Grid.html">Grid</a></span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">durationStepped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIStepper</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -320,36 +378,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>frame</em>
+                                <em>sender</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>the frame in which the GridView will be displayed</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>grid</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>an instance of <code><a href="../Classes/Grid.html">Grid</a></code> to be used as the model; will automatically fill settings based on that</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>color</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>the color that all the tiles should have</p>
+                                  <p>durationStepper</p>
                                 </div>
                               </td>
                             </tr>
@@ -362,9 +396,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:2mk8GridViewC4cellySi1x_Si1ySb4livetF"></a>
-                    <a name="//apple_ref/swift/Method/cell(x:y:live:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk8GridViewC4cellySi1x_Si1ySb4livetF">cell(x:y:live:)</a>
+                    <a name="/c:@M@mk@objc(cs)SettingsViewController(im)gridStepped:"></a>
+                    <a name="//apple_ref/swift/Method/gridStepped(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@mk@objc(cs)SettingsViewController(im)gridStepped:">gridStepped(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -372,14 +406,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Set a tile to live or not</p>
+                        <p>Triggered when the grid stepper is used</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">cell</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">live</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">gridStepped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIStepper</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -390,36 +424,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>x</em>
+                                <em>sender</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>x-coordinate of tile</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>y</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>y-coordinate of tile</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>live</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>whether the tile is live or not</p>
+                                  <p>gridStepper</p>
                                 </div>
                               </td>
                             </tr>
@@ -432,9 +442,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:2mk8GridViewC4cellySi1x_Si1ySo7UIColorC5colortF"></a>
-                    <a name="//apple_ref/swift/Method/cell(x:y:color:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk8GridViewC4cellySi1x_Si1ySo7UIColorC5colortF">cell(x:y:color:)</a>
+                    <a name="/c:@M@mk@objc(cs)SettingsViewController(im)doneButton:"></a>
+                    <a name="//apple_ref/swift/Method/doneButton(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@mk@objc(cs)SettingsViewController(im)doneButton:">doneButton(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -442,14 +452,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Set a tile&rsquo;s background color</p>
+                        <p>Handle the &lsquo;done&rsquo; button being pressed</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">cell</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">doneButton</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -460,36 +470,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>x</em>
+                                <em>sender</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>x-coordinate of tile</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>y</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>y-coordinate of tile</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>color</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>color to set the tile to</p>
+                                  <p>ignored</p>
                                 </div>
                               </td>
                             </tr>
@@ -502,9 +488,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:2mk8GridViewC17iterationCompleteyyF"></a>
-                    <a name="//apple_ref/swift/Method/iterationComplete()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk8GridViewC17iterationCompleteyyF">iterationComplete()</a>
+                    <a name="/c:@M@mk@objc(cs)SettingsViewController(im)defaultChosen:"></a>
+                    <a name="//apple_ref/swift/Method/defaultChosen(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@mk@objc(cs)SettingsViewController(im)defaultChosen:">defaultChosen(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -512,41 +498,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Run when a <code><a href="../Classes/Grid.html">Grid</a></code> iteration completes to keep the view in line with the model</p>
+                        <p>Handle one of the default configurations being chosen</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">iterationComplete</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@mk@objc(cs)GridView(im)initWithCoder:"></a>
-                    <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@mk@objc(cs)GridView(im)initWithCoder:">init(coder:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Initialize from an encoded version</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">defaultChosen</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UISegmentedControl</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -557,12 +516,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>aDecoder</em>
+                                <em>sender</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>an instance of <code>NSCoder</code> to use for decoding</p>
+                                  <p>the UISegmentedControl containing the configuration profiles</p>
                                 </div>
                               </td>
                             </tr>
@@ -575,9 +534,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@mk@objc(cs)GridView(im)encodeWithCoder:"></a>
-                    <a name="//apple_ref/swift/Method/encode(with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@mk@objc(cs)GridView(im)encodeWithCoder:">encode(with:)</a>
+                    <a name="/c:@M@mk@objc(cs)SettingsViewController(im)randomStepped:"></a>
+                    <a name="//apple_ref/swift/Method/randomStepped(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@mk@objc(cs)SettingsViewController(im)randomStepped:">randomStepped(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -585,14 +544,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Encode the GridView; required by UIKit</p>
+                        <p>Handle the &lsquo;random cells&rsquo; stepper being used</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">with</span> <span class="nv">aCoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">randomStepped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIStepper</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -603,17 +562,55 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>aCoder</em>
+                                <em>sender</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>an instance of <code>NSCoder</code> to use for encoding</p>
+                                  <p><code><a href="../Classes/SettingsViewController.html#/c:@M@mk@objc(cs)SettingsViewController(py)randomStepper">randomStepper</a></code></p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Setup"></a>
+                <a name="//apple_ref/swift/Section/Setup" class="dashAnchor"></a>
+                <a href="#/Setup">
+                  <h3 class="section-name">Setup</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@mk@objc(cs)SettingsViewController(im)viewDidLoad"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@mk@objc(cs)SettingsViewController(im)viewDidLoad">viewDidLoad()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Prep for display; adds gesture recognizer, pull current settings and fill data to be accurate</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>

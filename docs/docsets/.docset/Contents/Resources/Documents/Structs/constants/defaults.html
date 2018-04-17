@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>chord Enumeration Reference</title>
+    <title>defaults Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/chord" class="dashAnchor"></a>
-    <a title="chord Enumeration Reference"></a>
+    <a name="//apple_ref/swift/Struct/defaults" class="dashAnchor"></a>
+    <a title="defaults Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../../index.html"> Docs</a> (100% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../../index.html"> Reference</a>
         <img id="carat" src="../../img/carat.png" />
-        chord Enumeration Reference
+        defaults Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -81,24 +81,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>chord</h1>
+            <h1>defaults</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="n">chord</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="n">defaults</span></code></pre>
 
                 </div>
               </div>
-            <p>Which chord are we looking at?</p>
-
-<ul>
-<li>I: Tonic</li>
-<li>ii: Supertonic</li>
-<li>iii: Mediant</li>
-<li>IV: Subdominant</li>
-<li>V: Dominant</li>
-<li>vi: Submediant</li>
-<li>viio: Leading tone</li>
-</ul>
+            <p>Constants for use with UserDefaults</p>
 
           </section>
           <section class="section task-group-section">
@@ -107,9 +97,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:2mk13GridConverterC5chordO1IA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/I" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk13GridConverterC5chordO1IA2EmF">I</a>
+                    <a name="/s:2mk9constantsV8defaultsV16allChordsEnabledSSvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/allChordsEnabled" class="dashAnchor"></a>
+                    <a class="token" href="#/s:2mk9constantsV8defaultsV16allChordsEnabledSSvpZ">allChordsEnabled</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -117,30 +107,26 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Tonic</p>
+                        <p>Whether or not the user has opted to use all chords (true) or only the I IV V I set (false)</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">I</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">allChordsEnabled</span> <span class="o">=</span> <span class="s">"allChordsEnabled"</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:2mk13GridConverterC5chordO2iiA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/ii" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk13GridConverterC5chordO2iiA2EmF">ii</a>
+                    <a name="/s:2mk9constantsV8defaultsV13chordDurationSSvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/chordDuration" class="dashAnchor"></a>
+                    <a class="token" href="#/s:2mk9constantsV8defaultsV13chordDurationSSvpZ">chordDuration</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -148,30 +134,26 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Supertonic</p>
+                        <p>The amount of time to allow each chord to play for, in seconds</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">ii</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">chordDuration</span> <span class="o">=</span> <span class="s">"chordDuration"</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:2mk13GridConverterC5chordO3iiiA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/iii" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk13GridConverterC5chordO3iiiA2EmF">iii</a>
+                    <a name="/s:2mk9constantsV8defaultsV9gridCountSSvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/gridCount" class="dashAnchor"></a>
+                    <a class="token" href="#/s:2mk9constantsV8defaultsV9gridCountSSvpZ">gridCount</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -179,30 +161,26 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Mediant</p>
+                        <p>The number of grids to display on-screen</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">iii</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">gridCount</span> <span class="o">=</span> <span class="s">"gridCount"</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:2mk13GridConverterC5chordO2IVA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/IV" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk13GridConverterC5chordO2IVA2EmF">IV</a>
+                    <a name="/s:2mk9constantsV8defaultsV11randomCountSSvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/randomCount" class="dashAnchor"></a>
+                    <a class="token" href="#/s:2mk9constantsV8defaultsV11randomCountSSvpZ">randomCount</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -210,30 +188,26 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Subdominant</p>
+                        <p>Number of cells to randomly toggle per iteration</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">IV</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">randomCount</span> <span class="o">=</span> <span class="s">"randomCount"</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:2mk13GridConverterC5chordO1VA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/V" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk13GridConverterC5chordO1VA2EmF">V</a>
+                    <a name="/s:2mk9constantsV8defaultsV21randomCountInitalizedSSvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/randomCountInitalized" class="dashAnchor"></a>
+                    <a class="token" href="#/s:2mk9constantsV8defaultsV21randomCountInitalizedSSvpZ">randomCountInitalized</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -241,76 +215,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Dominant</p>
+                        <p>Whether or not <code><a href="../../Structs/constants/defaults.html#/s:2mk9constantsV8defaultsV11randomCountSSvpZ">randomCount</a></code> has been initialized</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">V</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:2mk13GridConverterC5chordO2viA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/vi" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk13GridConverterC5chordO2viA2EmF">vi</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Submediant</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">vi</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:2mk13GridConverterC5chordO4viioA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/viio" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk13GridConverterC5chordO4viioA2EmF">viio</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Leading tone</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">viio</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">randomCountInitalized</span> <span class="o">=</span> <span class="s">"randomCountInitialized"</span></code></pre>
 
                         </div>
                       </div>

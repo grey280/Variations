@@ -47,6 +47,7 @@ struct constants{
             /// Number of cells to randomly toggle per iteration
             static let randomCount = 0
         }
+        /// The original settings; duplicate values of `constants.defaultValues` for ease of access
         struct original{
             /// Number of grids to operate
             static let gridCount = 8
@@ -57,6 +58,7 @@ struct constants{
             /// Number of cells to randomly toggle per iteration
             static let randomCount = 2
         }
+        /// A high energy mode
         struct energy{
             /// Number of grids to operate
             static let gridCount = 6

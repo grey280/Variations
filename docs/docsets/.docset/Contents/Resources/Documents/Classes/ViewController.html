@@ -52,7 +52,27 @@
                 <a href="../Classes/GridView/GridViewTile.html">– GridViewTile</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/SettingsViewController.html">SettingsViewController</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/ViewController.html">ViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/constants.html">constants</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/constants/defaults.html">– defaults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/constants/defaultValues.html">– defaultValues</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/constants/configs.html">– configs</a>
               </li>
             </ul>
           </li>
@@ -156,6 +176,33 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">mixerNode</span> <span class="o">=</span> <span class="kt">AKMixer</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:2mk14ViewControllerC5timerSo5TimerCvp"></a>
+                    <a name="//apple_ref/swift/Property/timer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:2mk14ViewControllerC5timerSo5TimerCvp">timer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The global timer for running grid ticks</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">timer</span> <span class="o">=</span> <span class="kt">Timer</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -565,6 +612,33 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:2mk14ViewControllerC14configureTimeryyF"></a>
+                    <a name="//apple_ref/swift/Method/configureTimer()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:2mk14ViewControllerC14configureTimeryyF">configureTimer()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set up the timer - used because we do this often</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">configureTimer</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:2mk14ViewControllerC4tickyyF"></a>
                     <a name="//apple_ref/swift/Method/tick()" class="dashAnchor"></a>
                     <a class="token" href="#/s:2mk14ViewControllerC4tickyyF">tick()</a>
@@ -673,6 +747,60 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:2mk14ViewControllerC10buildGridsyyF"></a>
+                    <a name="//apple_ref/swift/Method/buildGrids()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:2mk14ViewControllerC10buildGridsyyF">buildGrids()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Wrapper on <code><a href="../Classes/ViewController.html#/s:2mk14ViewControllerC10buildGrids33_B60B47663541E1A916697742F95ADBE9LLySiF">buildGrids(_:)</a></code> that automatically looks up the number of grids to build</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">buildGrids</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@mk@objc(cs)ViewController(im)openSettings"></a>
+                    <a name="//apple_ref/swift/Method/openSettings()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@mk@objc(cs)ViewController(im)openSettings">openSettings()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Open the settings screen</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">openSettings</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
             <div class="task-group">
@@ -743,7 +871,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-04-13)</p>
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-04-17)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

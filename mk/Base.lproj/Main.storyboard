@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" autorepeat="NO" value="8" minimumValue="2" maximumValue="16" translatesAutoresizingMaskIntoConstraints="NO" id="2BV-Ha-298">
-                                <rect key="frame" x="264" y="243.5" width="94" height="29"/>
+                                <rect key="frame" x="264" y="345.5" width="94" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2BV-Ha-298" secondAttribute="height" multiplier="94:29" id="B8Y-W1-nHH"/>
                                 </constraints>
@@ -47,7 +47,7 @@
                                 </connections>
                             </stepper>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minimumValue="0.5" maximumValue="60" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="G80-Xs-g9U">
-                                <rect key="frame" x="265" y="186.5" width="94" height="29"/>
+                                <rect key="frame" x="265" y="288.5" width="94" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="94" id="G5G-iy-WYz"/>
                                     <constraint firstAttribute="width" secondItem="G80-Xs-g9U" secondAttribute="height" multiplier="94:29" id="Nfe-ep-Reh"/>
@@ -57,61 +57,61 @@
                                 </connections>
                             </stepper>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XY8-f1-srV">
-                                <rect key="frame" x="307" y="128.5" width="51" height="31"/>
+                                <rect key="frame" x="307" y="230.5" width="51" height="31"/>
                                 <connections>
                                     <action selector="chordSwitched:" destination="mjy-N1-YVf" eventType="valueChanged" id="sYa-fI-EUu"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grids:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLy-6D-Yam">
-                                <rect key="frame" x="16" y="248" width="45.5" height="20.5"/>
+                                <rect key="frame" x="16" y="350.5" width="45.5" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9K8-Ay-mkn">
-                                <rect key="frame" x="69" y="248" width="10.5" height="21"/>
+                                <rect key="frame" x="69" y="350.5" width="10.5" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8A8-t3-6B5">
-                                <rect key="frame" x="112" y="191" width="65" height="20.5"/>
+                                <rect key="frame" x="112" y="293.5" width="65" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qe7-y3-SOb">
-                                <rect key="frame" x="16" y="191" width="70" height="20.5"/>
+                                <rect key="frame" x="16" y="293.5" width="70" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djz-oh-yNM">
-                                <rect key="frame" x="94" y="191" width="10.5" height="20.5"/>
+                                <rect key="frame" x="94" y="293.5" width="10.5" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use all chords:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gl3-lS-9u2">
-                                <rect key="frame" x="16" y="134" width="113.5" height="20.5"/>
+                                <rect key="frame" x="16" y="236.5" width="113.5" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When off, will only play I IV or V." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVh-XC-7RL">
-                                <rect key="frame" x="37" y="162.5" width="322" height="16"/>
+                                <rect key="frame" x="37" y="264.5" width="322" height="16"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How long between chord changes." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baV-LC-Tlz">
-                                <rect key="frame" x="37" y="219.5" width="322" height="16"/>
+                                <rect key="frame" x="37" y="321.5" width="322" height="16"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7F-J4-BZ4">
-                                <rect key="frame" x="37" y="276.5" width="322" height="70"/>
+                                <rect key="frame" x="37" y="378.5" width="322" height="70"/>
                                 <string key="text">How many grids to have running at a time.
 Must be between 2 and 16.
 Changes take effect next time you reset the grids by swiping down, or the next time you open the app.</string>
@@ -126,8 +126,16 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D50-8P-dbu">
+                                <rect key="frame" x="15" y="614" width="345" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButton:" destination="mjy-N1-YVf" eventType="touchUpInside" id="TvV-Vc-Zlu"/>
+                                </connections>
+                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kms-ts-zn5">
-                                <rect key="frame" x="16" y="354" width="343" height="29"/>
+                                <rect key="frame" x="16" y="128.5" width="343" height="29"/>
                                 <segments>
                                     <segment title="Meditate"/>
                                     <segment title="Original"/>
@@ -137,27 +145,19 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                                     <action selector="defaultChosen:" destination="mjy-N1-YVf" eventType="valueChanged" id="FrX-q5-gKf"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Switching to the default settings will overwrite your current settings. This change cannot be undone." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DI-r3-NjL">
-                                <rect key="frame" x="37" y="390" width="322" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Switching to one of these profiles will overwrite your current settings. This change cannot be undone." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DI-r3-NjL">
+                                <rect key="frame" x="37" y="164.5" width="322" height="34"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D50-8P-dbu">
-                                <rect key="frame" x="15" y="432" width="345" height="33"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Done"/>
-                                <connections>
-                                    <action selector="doneButton:" destination="mjy-N1-YVf" eventType="touchUpInside" id="TvV-Vc-Zlu"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="djz-oh-yNM" firstAttribute="leading" secondItem="qe7-y3-SOb" secondAttribute="trailing" constant="8" id="97L-9m-3Ub"/>
-                            <constraint firstItem="kms-ts-zn5" firstAttribute="top" secondItem="t7F-J4-BZ4" secondAttribute="bottom" constant="8" id="9qQ-Z8-vuj"/>
                             <constraint firstItem="aQB-do-Tx7" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="AA0-nR-eka"/>
                             <constraint firstItem="PVh-XC-7RL" firstAttribute="top" secondItem="gl3-lS-9u2" secondAttribute="bottom" constant="8" id="B7H-WR-MLK"/>
+                            <constraint firstItem="XY8-f1-srV" firstAttribute="top" secondItem="0DI-r3-NjL" secondAttribute="bottom" constant="32" id="BQr-Wp-060"/>
                             <constraint firstItem="baV-LC-Tlz" firstAttribute="leading" secondItem="PVh-XC-7RL" secondAttribute="leading" id="C4Y-dq-AVQ"/>
                             <constraint firstItem="0DI-r3-NjL" firstAttribute="width" secondItem="t7F-J4-BZ4" secondAttribute="width" id="CpM-bd-6Ff"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="G80-Xs-g9U" secondAttribute="trailing" constant="16" id="Dcj-Mk-o4S"/>
@@ -167,9 +167,7 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                             <constraint firstItem="t7F-J4-BZ4" firstAttribute="trailing" secondItem="KJ4-WB-SU9" secondAttribute="trailing" constant="-16" id="KLq-Cm-XbE"/>
                             <constraint firstItem="kms-ts-zn5" firstAttribute="centerX" secondItem="KJ4-WB-SU9" secondAttribute="centerX" id="LKy-du-dOa"/>
                             <constraint firstItem="ZLy-6D-Yam" firstAttribute="centerY" secondItem="2BV-Ha-298" secondAttribute="centerY" id="Lny-FW-d0X"/>
-                            <constraint firstItem="XY8-f1-srV" firstAttribute="top" secondItem="aQB-do-Tx7" secondAttribute="bottom" constant="32" id="Mze-MD-XSf"/>
                             <constraint firstItem="ZLy-6D-Yam" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="N2m-BY-7RP"/>
-                            <constraint firstItem="D50-8P-dbu" firstAttribute="top" secondItem="0DI-r3-NjL" secondAttribute="bottom" constant="8" id="N4h-I5-1PA"/>
                             <constraint firstItem="8A8-t3-6B5" firstAttribute="leading" secondItem="djz-oh-yNM" secondAttribute="trailing" constant="8" id="Nv7-eR-3Ti"/>
                             <constraint firstItem="2BV-Ha-298" firstAttribute="top" secondItem="baV-LC-Tlz" secondAttribute="bottom" constant="8" id="O0W-2C-tDg"/>
                             <constraint firstItem="baV-LC-Tlz" firstAttribute="width" secondItem="t7F-J4-BZ4" secondAttribute="width" id="OIK-cR-Sa9"/>
@@ -177,7 +175,9 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                             <constraint firstItem="qe7-y3-SOb" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="Rrj-GF-hBD"/>
                             <constraint firstItem="qe7-y3-SOb" firstAttribute="centerY" secondItem="G80-Xs-g9U" secondAttribute="centerY" id="WRC-bp-PqZ"/>
                             <constraint firstItem="t7F-J4-BZ4" firstAttribute="leading" secondItem="baV-LC-Tlz" secondAttribute="leading" id="XUP-st-OoK"/>
+                            <constraint firstItem="KJ4-WB-SU9" firstAttribute="bottom" secondItem="D50-8P-dbu" secondAttribute="bottom" constant="20" id="XgL-UU-4WJ"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="2BV-Ha-298" secondAttribute="trailing" constant="17" id="Y8u-k8-SFh"/>
+                            <constraint firstItem="kms-ts-zn5" firstAttribute="top" secondItem="aQB-do-Tx7" secondAttribute="bottom" constant="32" id="bwE-9z-gwP"/>
                             <constraint firstItem="9K8-Ay-mkn" firstAttribute="centerY" secondItem="ZLy-6D-Yam" secondAttribute="centerY" id="c7x-et-ael"/>
                             <constraint firstItem="G80-Xs-g9U" firstAttribute="top" secondItem="PVh-XC-7RL" secondAttribute="bottom" constant="8" id="cdr-vh-40A"/>
                             <constraint firstItem="gl3-lS-9u2" firstAttribute="centerY" secondItem="XY8-f1-srV" secondAttribute="centerY" id="eoQ-je-fSW"/>

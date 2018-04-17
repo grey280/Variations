@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" autorepeat="NO" value="8" minimumValue="2" maximumValue="16" translatesAutoresizingMaskIntoConstraints="NO" id="2BV-Ha-298">
-                                <rect key="frame" x="264" y="345.5" width="94" height="29"/>
+                                <rect key="frame" x="265" y="345.5" width="94" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2BV-Ha-298" secondAttribute="height" multiplier="94:29" id="B8Y-W1-nHH"/>
                                 </constraints>
@@ -151,6 +151,31 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random cells per tap:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQX-M9-PNr">
+                                <rect key="frame" x="16" y="460.5" width="167" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebl-mi-Ov8">
+                                <rect key="frame" x="187" y="460.5" width="10" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="51Q-2h-VUp">
+                                <rect key="frame" x="265" y="456.5" width="94" height="29"/>
+                                <connections>
+                                    <action selector="randomStepped:" destination="mjy-N1-YVf" eventType="valueChanged" id="3er-4Y-MOI"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhA-qp-1BJ">
+                                <rect key="frame" x="37" y="489" width="322" height="70"/>
+                                <string key="text">Number of cells to randomly toggle every time you tap the screen. These won't always be visible; depending on which cells get toggled, they may 'die' before you see them.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -173,15 +198,19 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                             <constraint firstItem="baV-LC-Tlz" firstAttribute="width" secondItem="t7F-J4-BZ4" secondAttribute="width" id="OIK-cR-Sa9"/>
                             <constraint firstItem="8A8-t3-6B5" firstAttribute="centerY" secondItem="djz-oh-yNM" secondAttribute="centerY" id="RIq-NV-T5Y"/>
                             <constraint firstItem="qe7-y3-SOb" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="Rrj-GF-hBD"/>
+                            <constraint firstItem="Ebl-mi-Ov8" firstAttribute="centerY" secondItem="zQX-M9-PNr" secondAttribute="centerY" id="Tkr-iW-Vvo"/>
                             <constraint firstItem="qe7-y3-SOb" firstAttribute="centerY" secondItem="G80-Xs-g9U" secondAttribute="centerY" id="WRC-bp-PqZ"/>
                             <constraint firstItem="t7F-J4-BZ4" firstAttribute="leading" secondItem="baV-LC-Tlz" secondAttribute="leading" id="XUP-st-OoK"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="bottom" secondItem="D50-8P-dbu" secondAttribute="bottom" constant="20" id="XgL-UU-4WJ"/>
-                            <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="2BV-Ha-298" secondAttribute="trailing" constant="17" id="Y8u-k8-SFh"/>
+                            <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="2BV-Ha-298" secondAttribute="trailing" constant="16" id="Y8u-k8-SFh"/>
+                            <constraint firstItem="zQX-M9-PNr" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="aih-zC-UgO"/>
                             <constraint firstItem="kms-ts-zn5" firstAttribute="top" secondItem="aQB-do-Tx7" secondAttribute="bottom" constant="32" id="bwE-9z-gwP"/>
                             <constraint firstItem="9K8-Ay-mkn" firstAttribute="centerY" secondItem="ZLy-6D-Yam" secondAttribute="centerY" id="c7x-et-ael"/>
                             <constraint firstItem="G80-Xs-g9U" firstAttribute="top" secondItem="PVh-XC-7RL" secondAttribute="bottom" constant="8" id="cdr-vh-40A"/>
+                            <constraint firstItem="NhA-qp-1BJ" firstAttribute="top" secondItem="zQX-M9-PNr" secondAttribute="bottom" constant="7.5" id="ei3-8m-sNd"/>
                             <constraint firstItem="gl3-lS-9u2" firstAttribute="centerY" secondItem="XY8-f1-srV" secondAttribute="centerY" id="eoQ-je-fSW"/>
                             <constraint firstItem="djz-oh-yNM" firstAttribute="centerY" secondItem="qe7-y3-SOb" secondAttribute="centerY" id="gS4-Ta-3ZC"/>
+                            <constraint firstItem="51Q-2h-VUp" firstAttribute="top" secondItem="t7F-J4-BZ4" secondAttribute="bottom" constant="8" id="gtT-gq-QGi"/>
                             <constraint firstItem="0DI-r3-NjL" firstAttribute="top" secondItem="kms-ts-zn5" secondAttribute="bottom" constant="8" id="gyR-Nn-6P8"/>
                             <constraint firstItem="gl3-lS-9u2" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="hJ2-7A-gdP"/>
                             <constraint firstItem="9K8-Ay-mkn" firstAttribute="leading" secondItem="ZLy-6D-Yam" secondAttribute="trailing" constant="8" id="jf6-tr-ovO"/>
@@ -190,9 +219,15 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                             <constraint firstItem="2BV-Ha-298" firstAttribute="width" secondItem="G80-Xs-g9U" secondAttribute="width" id="o0y-uY-zoe"/>
                             <constraint firstItem="aQB-do-Tx7" firstAttribute="trailing" secondItem="KJ4-WB-SU9" secondAttribute="trailing" constant="-16" id="qOq-ia-CXr"/>
                             <constraint firstItem="aQB-do-Tx7" firstAttribute="top" secondItem="KJ4-WB-SU9" secondAttribute="top" constant="12" id="qvp-T6-81w"/>
+                            <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="51Q-2h-VUp" secondAttribute="trailing" constant="16" id="r2f-2K-W0h"/>
+                            <constraint firstItem="zQX-M9-PNr" firstAttribute="centerY" secondItem="51Q-2h-VUp" secondAttribute="centerY" id="r4n-Ty-QWI"/>
+                            <constraint firstItem="Ebl-mi-Ov8" firstAttribute="leading" secondItem="zQX-M9-PNr" secondAttribute="trailing" constant="4" id="rDm-bT-C7K"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="XY8-f1-srV" secondAttribute="trailing" constant="19" id="syp-O3-A59"/>
+                            <constraint firstItem="NhA-qp-1BJ" firstAttribute="leading" secondItem="t7F-J4-BZ4" secondAttribute="leading" id="t7x-aG-tgF"/>
                             <constraint firstItem="t7F-J4-BZ4" firstAttribute="top" secondItem="ZLy-6D-Yam" secondAttribute="bottom" constant="8" id="tV0-38-fLu"/>
                             <constraint firstItem="D50-8P-dbu" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="15" id="xuA-a6-8aq"/>
+                            <constraint firstItem="NhA-qp-1BJ" firstAttribute="width" secondItem="t7F-J4-BZ4" secondAttribute="width" id="yTn-Yp-dJ4"/>
+                            <constraint firstItem="51Q-2h-VUp" firstAttribute="width" secondItem="2BV-Ha-298" secondAttribute="width" id="ylB-tW-aSW"/>
                             <constraint firstItem="PVh-XC-7RL" firstAttribute="width" secondItem="t7F-J4-BZ4" secondAttribute="width" id="zYy-e8-ySI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KJ4-WB-SU9"/>
@@ -204,6 +239,8 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                         <outlet property="durationStepper" destination="G80-Xs-g9U" id="LMS-kb-Xeb"/>
                         <outlet property="gridStepper" destination="2BV-Ha-298" id="NM1-7n-d9R"/>
                         <outlet property="gridsLabel" destination="9K8-Ay-mkn" id="xFP-aE-JPc"/>
+                        <outlet property="randomLabel" destination="Ebl-mi-Ov8" id="rvm-em-f4V"/>
+                        <outlet property="randomStepper" destination="51Q-2h-VUp" id="0xr-TP-g4E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1y-MS-y0U" userLabel="First Responder" sceneMemberID="firstResponder"/>

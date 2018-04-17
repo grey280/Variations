@@ -18,12 +18,17 @@ class SettingsViewController: UIViewController {
     /// Label showing the number of grids to have; minimum is 2, maximum is as yet undetermined
     @IBOutlet weak var gridsLabel: UILabel!
     
+    /// Label showing the number of cells to randomly toggle per tap
+    @IBOutlet weak var randomLabel: UILabel!
+    
     /// Whether or not to use all the chords or just the I IV V I set
     @IBOutlet weak var chordSwitch: UISwitch!
     /// Stepper for inputting the duration of each chord
     @IBOutlet weak var durationStepper: UIStepper!
     /// Stepper used for inputting the number of grids to use
     @IBOutlet weak var gridStepper: UIStepper!
+    /// Stepper used for controlling the number of random cells per iteration
+    @IBOutlet weak var randomStepper: UIStepper!
     
     // MARK: - Functions
     @IBAction func chordSwitched(_ sender: UISwitch) {
@@ -51,6 +56,10 @@ class SettingsViewController: UIViewController {
     @objc @IBAction func doneButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    /// Handle one of the default configurations being chosen
+    ///
+    /// - Parameter sender: the UISegmentedControl containing the configuration profiles
     @IBAction func defaultChosen(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex{
         case 0:
@@ -85,6 +94,11 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    /// Handle the 'random cells' stepper being used
+    ///
+    /// - Parameter sender: `randomStepper`
+    @IBAction func randomStepped(_ sender: UIStepper) {
+    }
     
     // MARK: - Setup
     

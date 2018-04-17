@@ -65,7 +65,7 @@ struct constants{
             /// Whether or not all chords are in use
             static let allChordsEnabled = true
             /// Number of cells to randomly toggle per iteration
-            static let randomCount = 10
+            static let randomCount = 20
         }
     }
 }

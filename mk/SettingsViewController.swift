@@ -61,43 +61,50 @@ class SettingsViewController: UIViewController {
     ///
     /// - Parameter sender: the UISegmentedControl containing the configuration profiles
     @IBAction func defaultChosen(_ sender: UISegmentedControl) {
+        var gCount: Int
+        var cSwitch: Bool
+        var dTime: Double
+        var rCount: Int
         switch sender.selectedSegmentIndex{
         case 0:
-            UserDefaults.standard.set(constants.configs.meditate.gridCount, forKey: constants.defaults.gridCount)
-            gridsLabel.text = "\(constants.configs.meditate.gridCount)"
-            gridStepper.value = Double(constants.configs.meditate.gridCount)
-            UserDefaults.standard.set(constants.configs.meditate.allChordsEnabled, forKey: constants.defaults.allChordsEnabled)
-            chordSwitch.setOn(constants.configs.meditate.allChordsEnabled, animated: true)
-            UserDefaults.standard.set(constants.configs.meditate.chordDuration, forKey: constants.defaults.chordDuration)
-            durationLabel.text = "\(constants.configs.meditate.chordDuration)"
-            durationStepper.value = constants.configs.meditate.chordDuration
+            gCount = constants.configs.meditate.gridCount
+            cSwitch = constants.configs.meditate.allChordsEnabled
+            dTime = constants.configs.meditate.chordDuration
+            rCount = constants.configs.meditate.randomCount
         case 1:
-            UserDefaults.standard.set(constants.configs.original.gridCount, forKey: constants.defaults.gridCount)
-            gridsLabel.text = "\(constants.configs.original.gridCount)"
-            gridStepper.value = Double(constants.configs.original.gridCount)
-            UserDefaults.standard.set(constants.configs.original.allChordsEnabled, forKey: constants.defaults.allChordsEnabled)
-            chordSwitch.setOn(constants.configs.original.allChordsEnabled, animated: true)
-            UserDefaults.standard.set(constants.configs.original.chordDuration, forKey: constants.defaults.chordDuration)
-            durationLabel.text = "\(constants.configs.original.chordDuration)"
-            durationStepper.value = constants.configs.original.chordDuration
+            gCount = constants.configs.original.gridCount
+            cSwitch = constants.configs.original.allChordsEnabled
+            dTime = constants.configs.original.chordDuration
+            rCount = constants.configs.original.randomCount
         case 2:
-            UserDefaults.standard.set(constants.configs.energy.gridCount, forKey: constants.defaults.gridCount)
-            gridsLabel.text = "\(constants.configs.energy.gridCount)"
-            gridStepper.value = Double(constants.configs.energy.gridCount)
-            UserDefaults.standard.set(constants.configs.energy.allChordsEnabled, forKey: constants.defaults.allChordsEnabled)
-            chordSwitch.setOn(constants.configs.energy.allChordsEnabled, animated: true)
-            UserDefaults.standard.set(constants.configs.energy.chordDuration, forKey: constants.defaults.chordDuration)
-            durationLabel.text = "\(constants.configs.energy.chordDuration)"
-            durationStepper.value = constants.configs.energy.chordDuration
+            gCount = constants.configs.energy.gridCount
+            cSwitch = constants.configs.energy.allChordsEnabled
+            dTime = constants.configs.energy.chordDuration
+            rCount = constants.configs.energy.randomCount
         default:
-            break; // shouldn't ever happen but whatever
+            return
         }
+        UserDefaults.standard.set(gCount, forKey: constants.defaults.gridCount)
+        gridsLabel.text = "\(gCount)"
+        gridStepper.value = Double(gCount)
+        UserDefaults.standard.set(cSwitch, forKey: constants.defaults.allChordsEnabled)
+        chordSwitch.setOn(cSwitch, animated: true)
+        UserDefaults.standard.set(dTime, forKey: constants.defaults.chordDuration)
+        durationLabel.text = "\(dTime)"
+        durationStepper.value = dTime
+        UserDefaults.standard.set(rCount, forKey: constants.defaults.randomCount)
+        UserDefaults.standard.set(true, forKey: constants.defaults.randomCountInitalized)
+        randomLabel.text = "\(rCount)"
+        randomStepper.value = Double(rCount)
     }
     
     /// Handle the 'random cells' stepper being used
     ///
     /// - Parameter sender: `randomStepper`
     @IBAction func randomStepped(_ sender: UIStepper) {
+        UserDefaults.standard.set(Int(sender.value), forKey: constants.defaults.randomCount)
+        UserDefaults.standard.set(true, forKey: constants.defaults.randomCountInitalized)
+        randomLabel.text = "\(Int(sender.value))"
     }
     
     // MARK: - Setup

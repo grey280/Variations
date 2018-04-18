@@ -112,9 +112,31 @@ class SettingsViewController: UIViewController {
     
     // MARK: - Setup
     
+    /// Use the status bar with the light text
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
+    
+    /// Disable rotation on this view
+    override var shouldAutorotate: Bool{
+        return false
+    }
+    
     /// Prep for display; adds gesture recognizer, pull current settings and fill data to be accurate
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+//        self.view.setNeedsLayout()
+        
+        
+//        let radius = self.view.frame.width / 20
+//        let rect = CGRect(x: 0, y: 22, width: self.view.frame.width, height: self.view.frame.height - 44)
+//        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: .allCorners, cornerRadii: CGSize(width: radius, height: radius))
+//        let maskView = CAShapeLayer()
+//        maskView.path = path.cgPath
+//        maskView.fillColor = UIColor.white.cgColor
+//        self.view.layer.mask = maskView
+        
         
         // Load the current grid count
         var gridCount = UserDefaults.standard.integer(forKey: constants.defaults.gridCount)

@@ -127,7 +127,7 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D50-8P-dbu">
-                                <rect key="frame" x="15" y="614" width="345" height="33"/>
+                                <rect key="frame" x="15" y="602" width="345" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
@@ -201,7 +201,7 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                             <constraint firstItem="Ebl-mi-Ov8" firstAttribute="centerY" secondItem="zQX-M9-PNr" secondAttribute="centerY" id="Tkr-iW-Vvo"/>
                             <constraint firstItem="qe7-y3-SOb" firstAttribute="centerY" secondItem="G80-Xs-g9U" secondAttribute="centerY" id="WRC-bp-PqZ"/>
                             <constraint firstItem="t7F-J4-BZ4" firstAttribute="leading" secondItem="baV-LC-Tlz" secondAttribute="leading" id="XUP-st-OoK"/>
-                            <constraint firstItem="KJ4-WB-SU9" firstAttribute="bottom" secondItem="D50-8P-dbu" secondAttribute="bottom" constant="20" id="XgL-UU-4WJ"/>
+                            <constraint firstItem="KJ4-WB-SU9" firstAttribute="bottom" secondItem="D50-8P-dbu" secondAttribute="bottom" constant="32" id="XgL-UU-4WJ"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="2BV-Ha-298" secondAttribute="trailing" constant="16" id="Y8u-k8-SFh"/>
                             <constraint firstItem="zQX-M9-PNr" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="aih-zC-UgO"/>
                             <constraint firstItem="kms-ts-zn5" firstAttribute="top" secondItem="aQB-do-Tx7" secondAttribute="bottom" constant="32" id="bwE-9z-gwP"/>

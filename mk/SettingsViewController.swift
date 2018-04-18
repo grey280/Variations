@@ -113,9 +113,9 @@ class SettingsViewController: UIViewController {
     // MARK: - Setup
     
     /// Use the status bar with the light text
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        return .lightContent
-    }
+//    override var preferredStatusBarStyle: UIStatusBarStyle{
+//        return .lightContent
+//    }
     
     /// Disable rotation on this view
     override var shouldAutorotate: Bool{

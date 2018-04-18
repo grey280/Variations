@@ -36,13 +36,75 @@
                     <view key="view" contentMode="scaleToFill" id="pGl-sJ-rZe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHp-PX-LMZ">
+                                <rect key="frame" x="37" y="602" width="301" height="33"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Got it!"/>
+                                <connections>
+                                    <action selector="doneButton:" destination="mjy-N1-YVf" eventType="touchUpInside" id="kuD-X5-SQ7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Variations on the Theme of Life" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WF1-5g-nuW">
+                                <rect key="frame" x="16" y="28" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TapIcon" translatesAutoresizingMaskIntoConstraints="NO" id="B2T-mi-4gM">
+                                <rect key="frame" x="31" y="116" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="B2T-mi-4gM" secondAttribute="height" multiplier="1:1" id="GzM-Se-tJo"/>
+                                    <constraint firstAttribute="height" constant="60" id="kUG-jG-Hj4"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRD-pt-SFj">
+                                <rect key="frame" x="99" y="116" width="163" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In the Game of Life, each grid cell follows specific rules about whether it will live or die." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jz1-3n-ghx">
+                                <rect key="frame" x="16" y="56" width="343" height="42.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to watch these rules play out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gp0-Wa-h6h">
+                                <rect key="frame" x="111" y="152" width="220" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Jz1-3n-ghx" firstAttribute="centerX" secondItem="Beq-Po-nB4" secondAttribute="centerX" id="0aC-St-BLI"/>
+                            <constraint firstItem="Jz1-3n-ghx" firstAttribute="leading" secondItem="Beq-Po-nB4" secondAttribute="leading" constant="16" id="8Ns-79-heL"/>
+                            <constraint firstItem="Gp0-Wa-h6h" firstAttribute="top" secondItem="eRD-pt-SFj" secondAttribute="bottom" constant="4" id="BKP-oj-1IN"/>
+                            <constraint firstItem="mHp-PX-LMZ" firstAttribute="centerX" secondItem="Beq-Po-nB4" secondAttribute="centerX" id="Cf9-eH-iqt"/>
+                            <constraint firstItem="Jz1-3n-ghx" firstAttribute="top" secondItem="WF1-5g-nuW" secondAttribute="bottom" constant="7.5" id="Wfi-Sm-Ib6"/>
+                            <constraint firstItem="WF1-5g-nuW" firstAttribute="leading" secondItem="Beq-Po-nB4" secondAttribute="leading" constant="16" id="YNU-NW-OUt"/>
+                            <constraint firstItem="WF1-5g-nuW" firstAttribute="centerX" secondItem="Beq-Po-nB4" secondAttribute="centerX" id="feg-uG-hbe"/>
+                            <constraint firstItem="Gp0-Wa-h6h" firstAttribute="leading" secondItem="B2T-mi-4gM" secondAttribute="trailing" constant="20" id="fiX-1S-RgO"/>
+                            <constraint firstItem="eRD-pt-SFj" firstAttribute="leading" secondItem="B2T-mi-4gM" secondAttribute="trailing" constant="8" id="gDR-7L-QKf"/>
+                            <constraint firstItem="Beq-Po-nB4" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gp0-Wa-h6h" secondAttribute="trailing" constant="8" id="gcG-1y-oi3"/>
+                            <constraint firstItem="eRD-pt-SFj" firstAttribute="top" secondItem="B2T-mi-4gM" secondAttribute="top" id="hOj-rp-eJq"/>
+                            <constraint firstItem="mHp-PX-LMZ" firstAttribute="leading" secondItem="Beq-Po-nB4" secondAttribute="leading" constant="37" id="kMu-pb-M8S"/>
+                            <constraint firstItem="B2T-mi-4gM" firstAttribute="leading" secondItem="Beq-Po-nB4" secondAttribute="leading" constant="31" id="lfZ-zw-KH4"/>
+                            <constraint firstItem="WF1-5g-nuW" firstAttribute="top" secondItem="Beq-Po-nB4" secondAttribute="top" constant="8" id="m0J-P2-6BC"/>
+                            <constraint firstItem="Beq-Po-nB4" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eRD-pt-SFj" secondAttribute="trailing" constant="8" id="sEb-1g-u3L"/>
+                            <constraint firstItem="B2T-mi-4gM" firstAttribute="top" secondItem="Jz1-3n-ghx" secondAttribute="bottom" constant="17.5" id="uAn-Kp-TE3"/>
+                            <constraint firstItem="Beq-Po-nB4" firstAttribute="bottom" secondItem="mHp-PX-LMZ" secondAttribute="bottom" constant="32" id="xK8-a8-Hur"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Beq-Po-nB4"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8R9-mY-ivC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1070" y="937"/>
+            <point key="canvasLocation" x="1070" y="884"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="FqE-Wn-FOG">
@@ -274,4 +336,7 @@ Changes take effect next time you reset the grids by swiping down, or the next t
             <point key="canvasLocation" x="1069.5999999999999" y="114.69265367316342"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TapIcon" width="246" height="246"/>
+    </resources>
 </document>

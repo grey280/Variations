@@ -29,6 +29,21 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="114.69265367316342"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="tus-0s-33o">
+            <objects>
+                <viewController id="Lff-Mp-GZL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pGl-sJ-rZe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Beq-Po-nB4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8R9-mY-ivC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1070" y="937"/>
+        </scene>
         <!--Settings View Controller-->
         <scene sceneID="FqE-Wn-FOG">
             <objects>
@@ -127,8 +142,10 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D50-8P-dbu">
-                                <rect key="frame" x="15" y="602" width="345" height="33"/>
+                                <rect key="frame" x="37" y="602" width="301" height="33"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="doneButton:" destination="mjy-N1-YVf" eventType="touchUpInside" id="TvV-Vc-Zlu"/>
@@ -204,6 +221,7 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="0DI-r3-NjL" secondAttribute="trailing" constant="16" id="WQh-fk-EL1"/>
                             <constraint firstItem="qe7-y3-SOb" firstAttribute="centerY" secondItem="G80-Xs-g9U" secondAttribute="centerY" id="WRC-bp-PqZ"/>
                             <constraint firstItem="t7F-J4-BZ4" firstAttribute="leading" secondItem="baV-LC-Tlz" secondAttribute="leading" id="XUP-st-OoK"/>
+                            <constraint firstItem="D50-8P-dbu" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="37" id="Xfk-wc-9J6"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="bottom" secondItem="D50-8P-dbu" secondAttribute="bottom" constant="32" id="XgL-UU-4WJ"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="2BV-Ha-298" secondAttribute="trailing" constant="16" id="Y8u-k8-SFh"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="PVh-XC-7RL" secondAttribute="trailing" constant="16" id="ZmX-WC-ll0"/>
@@ -233,7 +251,6 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                             <constraint firstItem="NhA-qp-1BJ" firstAttribute="leading" secondItem="t7F-J4-BZ4" secondAttribute="leading" id="t7x-aG-tgF"/>
                             <constraint firstItem="t7F-J4-BZ4" firstAttribute="top" secondItem="ZLy-6D-Yam" secondAttribute="bottom" constant="8" id="tV0-38-fLu"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="NhA-qp-1BJ" secondAttribute="trailing" constant="16" id="xO9-bO-i1l"/>
-                            <constraint firstItem="D50-8P-dbu" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="15" id="xuA-a6-8aq"/>
                             <constraint firstItem="NhA-qp-1BJ" firstAttribute="width" secondItem="t7F-J4-BZ4" secondAttribute="width" id="yTn-Yp-dJ4"/>
                             <constraint firstItem="51Q-2h-VUp" firstAttribute="width" secondItem="2BV-Ha-298" secondAttribute="width" id="ylB-tW-aSW"/>
                             <constraint firstItem="PVh-XC-7RL" firstAttribute="width" secondItem="t7F-J4-BZ4" secondAttribute="width" id="zYy-e8-ySI"/>
@@ -243,6 +260,7 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="chordSwitch" destination="XY8-f1-srV" id="WtW-IB-13E"/>
+                        <outlet property="doneButton" destination="D50-8P-dbu" id="u8J-Nb-89N"/>
                         <outlet property="durationLabel" destination="djz-oh-yNM" id="o9l-1Q-Jcs"/>
                         <outlet property="durationStepper" destination="G80-Xs-g9U" id="LMS-kb-Xeb"/>
                         <outlet property="gridStepper" destination="2BV-Ha-298" id="NM1-7n-d9R"/>

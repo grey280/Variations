@@ -15,6 +15,8 @@ class SettingsViewController: UIViewController {
     /// Label showing the duration, in seconds, of each chord
     @IBOutlet weak var durationLabel: UILabel!
     
+    /// The 'done' button - we need the connection so we can give it a border radius
+    @IBOutlet weak var doneButton: UIButton!
     /// Label showing the number of grids to have; minimum is 2, maximum is as yet undetermined
     @IBOutlet weak var gridsLabel: UILabel!
     
@@ -126,6 +128,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+        doneButton.layer.cornerRadius = 8
 //        self.view.setNeedsLayout()
         
         

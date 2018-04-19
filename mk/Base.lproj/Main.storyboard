@@ -23,7 +23,8 @@
                     </view>
                     <connections>
                         <segue destination="mjy-N1-YVf" kind="presentation" identifier="openSettings" modalPresentationStyle="formSheet" id="FOf-Td-lrh"/>
-                        <segue destination="Lff-Mp-GZL" kind="presentation" identifier="openOnboarding" modalPresentationStyle="fullScreen" id="bPQ-H3-NTT"/>
+                        <segue destination="Lff-Mp-GZL" kind="presentation" identifier="openOnboarding" animates="NO" modalPresentationStyle="fullScreen" id="bPQ-H3-NTT"/>
+                        <segue destination="Lff-Mp-GZL" kind="presentation" identifier="openOnboardingAnimated" modalPresentationStyle="fullScreen" id="Nli-CI-2a7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -397,7 +398,8 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                         <outlet property="gridsLabel" destination="9K8-Ay-mkn" id="xFP-aE-JPc"/>
                         <outlet property="randomLabel" destination="Ebl-mi-Ov8" id="rvm-em-f4V"/>
                         <outlet property="randomStepper" destination="51Q-2h-VUp" id="0xr-TP-g4E"/>
-                        <segue destination="Lff-Mp-GZL" kind="presentation" identifier="openOnboarding" modalPresentationStyle="fullScreen" id="BNp-lf-brR"/>
+                        <segue destination="Lff-Mp-GZL" kind="presentation" identifier="openOnboarding" animates="NO" modalPresentationStyle="fullScreen" id="BNp-lf-brR"/>
+                        <segue destination="Lff-Mp-GZL" kind="presentation" identifier="openOnboardingAnimated" modalPresentationStyle="fullScreen" id="JsC-Ob-lRz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1y-MS-y0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -411,6 +413,6 @@ Changes take effect next time you reset the grids by swiping down, or the next t
         <image name="TapIcon" width="246" height="246"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BNp-lf-brR"/>
+        <segue reference="Nli-CI-2a7"/>
     </inferredMetricsTieBreakers>
 </document>

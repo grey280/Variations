@@ -40,7 +40,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHp-PX-LMZ">
-                                <rect key="frame" x="37" y="602" width="301" height="33"/>
+                                <rect key="frame" x="37" y="622" width="301" height="33"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -117,7 +117,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The grids create music. Interact as much or as little as you'd like." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrR-Ff-Dm9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="950" text="The grids create music. Interact as much or as little as you'd like." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrR-Ff-Dm9">
                                 <rect key="frame" x="16" y="459" width="343" height="42.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
@@ -136,6 +136,7 @@
                             <constraint firstItem="Gp0-Wa-h6h" firstAttribute="top" secondItem="eRD-pt-SFj" secondAttribute="bottom" constant="4" id="BKP-oj-1IN"/>
                             <constraint firstItem="mHp-PX-LMZ" firstAttribute="centerX" secondItem="Beq-Po-nB4" secondAttribute="centerX" id="Cf9-eH-iqt"/>
                             <constraint firstItem="ebQ-zx-87b" firstAttribute="leading" secondItem="eRD-pt-SFj" secondAttribute="leading" id="Eai-FG-hxL"/>
+                            <constraint firstItem="mHp-PX-LMZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="yrR-Ff-Dm9" secondAttribute="bottom" constant="8" id="HTf-yj-b6F"/>
                             <constraint firstItem="2Cq-eh-F0C" firstAttribute="top" secondItem="B2T-mi-4gM" secondAttribute="bottom" constant="12" id="Hm8-Wg-PSw"/>
                             <constraint firstItem="ebQ-zx-87b" firstAttribute="top" secondItem="2Cq-eh-F0C" secondAttribute="bottom" constant="-59.5" id="N5g-4j-zbt"/>
                             <constraint firstItem="nEJ-rZ-Fsx" firstAttribute="top" secondItem="ebQ-zx-87b" secondAttribute="bottom" constant="4" id="PCj-DC-KxZ"/>
@@ -151,19 +152,20 @@
                             <constraint firstItem="eRD-pt-SFj" firstAttribute="leading" secondItem="B2T-mi-4gM" secondAttribute="trailing" constant="8" id="gDR-7L-QKf"/>
                             <constraint firstItem="Beq-Po-nB4" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gp0-Wa-h6h" secondAttribute="trailing" constant="8" id="gcG-1y-oi3"/>
                             <constraint firstItem="eRD-pt-SFj" firstAttribute="top" secondItem="B2T-mi-4gM" secondAttribute="top" id="hOj-rp-eJq"/>
+                            <constraint firstItem="d0y-Fv-5WT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2Cq-eh-F0C" secondAttribute="bottom" constant="8" id="iBZ-fl-e5a"/>
                             <constraint firstItem="nEJ-rZ-Fsx" firstAttribute="leading" secondItem="Gp0-Wa-h6h" secondAttribute="leading" id="in0-do-tRn"/>
                             <constraint firstItem="yrR-Ff-Dm9" firstAttribute="centerX" secondItem="Beq-Po-nB4" secondAttribute="centerX" id="jEX-xn-1F3"/>
                             <constraint firstItem="mHp-PX-LMZ" firstAttribute="leading" secondItem="Beq-Po-nB4" secondAttribute="leading" constant="37" id="kMu-pb-M8S"/>
-                            <constraint firstItem="d0y-Fv-5WT" firstAttribute="top" secondItem="2Cq-eh-F0C" secondAttribute="bottom" constant="36" id="kMy-vU-Yze"/>
+                            <constraint firstItem="d0y-Fv-5WT" firstAttribute="top" secondItem="2Cq-eh-F0C" secondAttribute="bottom" priority="900" constant="36" id="kMy-vU-Yze"/>
                             <constraint firstItem="B2T-mi-4gM" firstAttribute="leading" secondItem="Beq-Po-nB4" secondAttribute="leading" constant="31" id="lfZ-zw-KH4"/>
                             <constraint firstItem="WF1-5g-nuW" firstAttribute="top" secondItem="Beq-Po-nB4" secondAttribute="top" constant="8" id="m0J-P2-6BC"/>
                             <constraint firstItem="d0y-Fv-5WT" firstAttribute="top" secondItem="Gc9-1r-YHs" secondAttribute="bottom" constant="-32.5" id="mtb-A8-Gse"/>
                             <constraint firstItem="GM6-bm-4td" firstAttribute="top" secondItem="Gc9-1r-YHs" secondAttribute="bottom" constant="4" id="n2P-Ju-55x"/>
                             <constraint firstItem="Beq-Po-nB4" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eRD-pt-SFj" secondAttribute="trailing" constant="8" id="sEb-1g-u3L"/>
                             <constraint firstItem="B2T-mi-4gM" firstAttribute="top" secondItem="Jz1-3n-ghx" secondAttribute="bottom" constant="17.5" id="uAn-Kp-TE3"/>
-                            <constraint firstItem="yrR-Ff-Dm9" firstAttribute="top" secondItem="d0y-Fv-5WT" secondAttribute="bottom" constant="18" id="wcL-gh-ntg"/>
+                            <constraint firstItem="yrR-Ff-Dm9" firstAttribute="top" secondItem="d0y-Fv-5WT" secondAttribute="bottom" priority="900" constant="18" id="wcL-gh-ntg"/>
                             <constraint firstItem="2Cq-eh-F0C" firstAttribute="centerX" secondItem="B2T-mi-4gM" secondAttribute="centerX" id="wgZ-vE-23r"/>
-                            <constraint firstItem="Beq-Po-nB4" firstAttribute="bottom" secondItem="mHp-PX-LMZ" secondAttribute="bottom" constant="32" id="xK8-a8-Hur"/>
+                            <constraint firstItem="Beq-Po-nB4" firstAttribute="bottom" secondItem="mHp-PX-LMZ" secondAttribute="bottom" constant="12" id="xK8-a8-Hur"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Beq-Po-nB4"/>
                     </view>
@@ -293,7 +295,7 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                                     <action selector="defaultChosen:" destination="mjy-N1-YVf" eventType="valueChanged" id="FrX-q5-gKf"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Switching to one of these profiles will overwrite your current settings. This change cannot be undone." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DI-r3-NjL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Switching to one of these profiles will overwrite your current settings. This change cannot be undone." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DI-r3-NjL">
                                 <rect key="frame" x="37" y="164.5" width="322" height="34"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <nil key="textColor"/>
@@ -331,7 +333,7 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                             <constraint firstItem="aQB-do-Tx7" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="AA0-nR-eka"/>
                             <constraint firstItem="G80-Xs-g9U" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8A8-t3-6B5" secondAttribute="trailing" constant="8" id="B3H-6T-neX"/>
                             <constraint firstItem="PVh-XC-7RL" firstAttribute="top" secondItem="gl3-lS-9u2" secondAttribute="bottom" constant="8" id="B7H-WR-MLK"/>
-                            <constraint firstItem="XY8-f1-srV" firstAttribute="top" secondItem="0DI-r3-NjL" secondAttribute="bottom" constant="32" id="BQr-Wp-060"/>
+                            <constraint firstItem="XY8-f1-srV" firstAttribute="top" secondItem="0DI-r3-NjL" secondAttribute="bottom" priority="900" constant="32" id="BQr-Wp-060"/>
                             <constraint firstItem="baV-LC-Tlz" firstAttribute="leading" secondItem="PVh-XC-7RL" secondAttribute="leading" id="C4Y-dq-AVQ"/>
                             <constraint firstItem="0DI-r3-NjL" firstAttribute="width" secondItem="t7F-J4-BZ4" secondAttribute="width" id="CpM-bd-6Ff"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="G80-Xs-g9U" secondAttribute="trailing" constant="16" id="Dcj-Mk-o4S"/>
@@ -339,6 +341,7 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                             <constraint firstItem="kms-ts-zn5" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="HX4-jE-0tp"/>
                             <constraint firstItem="0DI-r3-NjL" firstAttribute="leading" secondItem="t7F-J4-BZ4" secondAttribute="leading" id="I2v-8N-ECI"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="baV-LC-Tlz" secondAttribute="trailing" constant="16" id="I48-Xb-qvN"/>
+                            <constraint firstItem="D50-8P-dbu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="NhA-qp-1BJ" secondAttribute="bottom" constant="4" id="JXj-ZV-ipI"/>
                             <constraint firstItem="t7F-J4-BZ4" firstAttribute="trailing" secondItem="KJ4-WB-SU9" secondAttribute="trailing" constant="-16" id="KLq-Cm-XbE"/>
                             <constraint firstItem="kms-ts-zn5" firstAttribute="centerX" secondItem="KJ4-WB-SU9" secondAttribute="centerX" id="LKy-du-dOa"/>
                             <constraint firstItem="ZLy-6D-Yam" firstAttribute="centerY" secondItem="2BV-Ha-298" secondAttribute="centerY" id="Lny-FW-d0X"/>
@@ -349,6 +352,7 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                             <constraint firstItem="8A8-t3-6B5" firstAttribute="centerY" secondItem="djz-oh-yNM" secondAttribute="centerY" id="RIq-NV-T5Y"/>
                             <constraint firstItem="qe7-y3-SOb" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="Rrj-GF-hBD"/>
                             <constraint firstItem="Ebl-mi-Ov8" firstAttribute="centerY" secondItem="zQX-M9-PNr" secondAttribute="centerY" id="Tkr-iW-Vvo"/>
+                            <constraint firstItem="kms-ts-zn5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aQB-do-Tx7" secondAttribute="bottom" constant="4" id="VhO-3L-6G6"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="0DI-r3-NjL" secondAttribute="trailing" constant="16" id="WQh-fk-EL1"/>
                             <constraint firstItem="qe7-y3-SOb" firstAttribute="centerY" secondItem="G80-Xs-g9U" secondAttribute="centerY" id="WRC-bp-PqZ"/>
                             <constraint firstItem="t7F-J4-BZ4" firstAttribute="leading" secondItem="baV-LC-Tlz" secondAttribute="leading" id="XUP-st-OoK"/>
@@ -356,8 +360,9 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="bottom" secondItem="D50-8P-dbu" secondAttribute="bottom" constant="32" id="XgL-UU-4WJ"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="2BV-Ha-298" secondAttribute="trailing" constant="16" id="Y8u-k8-SFh"/>
                             <constraint firstItem="KJ4-WB-SU9" firstAttribute="trailing" secondItem="PVh-XC-7RL" secondAttribute="trailing" constant="16" id="ZmX-WC-ll0"/>
+                            <constraint firstItem="XY8-f1-srV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0DI-r3-NjL" secondAttribute="bottom" constant="4" id="aQf-wo-Dwu"/>
                             <constraint firstItem="zQX-M9-PNr" firstAttribute="leading" secondItem="KJ4-WB-SU9" secondAttribute="leading" constant="16" id="aih-zC-UgO"/>
-                            <constraint firstItem="kms-ts-zn5" firstAttribute="top" secondItem="aQB-do-Tx7" secondAttribute="bottom" constant="32" id="bwE-9z-gwP"/>
+                            <constraint firstItem="kms-ts-zn5" firstAttribute="top" secondItem="aQB-do-Tx7" secondAttribute="bottom" priority="900" constant="32" id="bwE-9z-gwP"/>
                             <constraint firstItem="9K8-Ay-mkn" firstAttribute="centerY" secondItem="ZLy-6D-Yam" secondAttribute="centerY" id="c7x-et-ael"/>
                             <constraint firstItem="G80-Xs-g9U" firstAttribute="top" secondItem="PVh-XC-7RL" secondAttribute="bottom" constant="8" id="cdr-vh-40A"/>
                             <constraint firstItem="NhA-qp-1BJ" firstAttribute="top" secondItem="zQX-M9-PNr" secondAttribute="bottom" constant="7.5" id="ei3-8m-sNd"/>
@@ -413,6 +418,6 @@ Changes take effect next time you reset the grids by swiping down, or the next t
         <image name="TapIcon" width="246" height="246"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Nli-CI-2a7"/>
+        <segue reference="BNp-lf-brR"/>
     </inferredMetricsTieBreakers>
 </document>

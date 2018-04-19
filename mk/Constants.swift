@@ -22,6 +22,8 @@ struct constants{
         static let randomCount = "randomCount"
         /// Whether or not `randomCount` has been initialized
         static let randomCountInitalized = "randomCountInitialized"
+        /// Whether or not the user has been shown the onboarding flow
+        static let beenShownOnboarding = "beenShownOnboarding"
     }
     
     /// Constants to use for default values, so we don't have any magic numbers

@@ -325,6 +325,16 @@ class ViewController: UIViewController {
         buildGrids()
     }
     
+    /// Fires when the view appears. We use it to set off the 'welcome' segue when the user opens the app for the first time
+    ///
+    /// - Parameter animated: whether or not it's animated. Ignored.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !UserDefaults.standard.bool(forKey: constants.defaults.beenShownOnboarding){
+            self.performSegue(withIdentifier: "openOnboarding", sender: self)
+        }
+    }
+    
     /// Hide the status bar; it doesn't look super good with it displayed, after all.
     override var prefersStatusBarHidden: Bool{
         return true

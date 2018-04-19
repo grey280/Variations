@@ -28,6 +28,6 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         gotItButton.layer.cornerRadius = constants.defaultValues.buttonCornerRadius
         UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
-        
+        UserDefaults.standard.set(true, forKey: constants.defaults.beenShownOnboarding)
     }
 }

@@ -23,26 +23,157 @@
                     </view>
                     <connections>
                         <segue destination="mjy-N1-YVf" kind="presentation" identifier="openSettings" modalPresentationStyle="formSheet" id="FOf-Td-lrh"/>
+                        <segue destination="Lff-Mp-GZL" kind="presentation" identifier="openOnboarding" animates="NO" modalPresentationStyle="fullScreen" id="bPQ-H3-NTT"/>
+                        <segue destination="Lff-Mp-GZL" kind="presentation" identifier="openOnboardingAnimated" modalPresentationStyle="fullScreen" id="Nli-CI-2a7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="114.69265367316342"/>
         </scene>
-        <!--View Controller-->
+        <!--Onboarding View Controller-->
         <scene sceneID="tus-0s-33o">
             <objects>
-                <viewController id="Lff-Mp-GZL" sceneMemberID="viewController">
+                <viewController id="Lff-Mp-GZL" customClass="OnboardingViewController" customModule="mk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pGl-sJ-rZe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHp-PX-LMZ">
+                                <rect key="frame" x="37" y="602" width="301" height="33"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Got it!"/>
+                                <connections>
+                                    <action selector="doneButton:" destination="mjy-N1-YVf" eventType="touchUpInside" id="kuD-X5-SQ7"/>
+                                    <action selector="gotItPress:" destination="Lff-Mp-GZL" eventType="touchUpInside" id="GZq-fG-Fzo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Variations on the Theme of Life" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WF1-5g-nuW">
+                                <rect key="frame" x="16" y="28" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TapIcon" translatesAutoresizingMaskIntoConstraints="NO" id="B2T-mi-4gM">
+                                <rect key="frame" x="31" y="116" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="B2T-mi-4gM" secondAttribute="height" multiplier="1:1" id="GzM-Se-tJo"/>
+                                    <constraint firstAttribute="height" constant="60" id="kUG-jG-Hj4"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the screen" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRD-pt-SFj">
+                                <rect key="frame" x="99" y="116" width="163" height="31.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to watch these rules play out" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gp0-Wa-h6h">
+                                <rect key="frame" x="111" y="151.5" width="220" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In the Game of Life, each grid cell follows specific rules about whether it will live or die." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jz1-3n-ghx">
+                                <rect key="frame" x="16" y="56" width="343" height="42.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SwipeUp" translatesAutoresizingMaskIntoConstraints="NO" id="2Cq-eh-F0C">
+                                <rect key="frame" x="31" y="188" width="60" height="108.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2Cq-eh-F0C" secondAttribute="height" multiplier="5:9" id="y6f-iF-fq1"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SwipeDown" translatesAutoresizingMaskIntoConstraints="NO" id="d0y-Fv-5WT">
+                                <rect key="frame" x="31" y="332.5" width="60" height="108.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="d0y-Fv-5WT" secondAttribute="height" multiplier="5:9" id="nu0-oJ-zsN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebQ-zx-87b">
+                                <rect key="frame" x="99" y="237" width="103.5" height="31.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to adjust the settings" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEJ-rZ-Fsx">
+                                <rect key="frame" x="111" y="272.5" width="161.5" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe down" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gc9-1r-YHs">
+                                <rect key="frame" x="99" y="333.5" width="136.5" height="31.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to reset the grids" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM6-bm-4td">
+                                <rect key="frame" x="111" y="369" width="131" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The grids create music. Interact as much or as little as you'd like." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrR-Ff-Dm9">
+                                <rect key="frame" x="16" y="459" width="343" height="42.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GM6-bm-4td" firstAttribute="leading" secondItem="nEJ-rZ-Fsx" secondAttribute="leading" id="0B2-vi-A0o"/>
+                            <constraint firstItem="Jz1-3n-ghx" firstAttribute="centerX" secondItem="Beq-Po-nB4" secondAttribute="centerX" id="0aC-St-BLI"/>
+                            <constraint firstItem="Beq-Po-nB4" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GM6-bm-4td" secondAttribute="trailing" constant="8" id="4gf-1E-yF4"/>
+                            <constraint firstItem="Gp0-Wa-h6h" firstAttribute="leading" secondItem="eRD-pt-SFj" secondAttribute="leading" constant="12" id="69Y-bF-Tkw"/>
+                            <constraint firstItem="Beq-Po-nB4" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gc9-1r-YHs" secondAttribute="trailing" constant="8" id="7bK-P0-xhS"/>
+                            <constraint firstItem="Jz1-3n-ghx" firstAttribute="leading" secondItem="Beq-Po-nB4" secondAttribute="leading" constant="16" id="8Ns-79-heL"/>
+                            <constraint firstItem="2Cq-eh-F0C" firstAttribute="width" secondItem="B2T-mi-4gM" secondAttribute="width" id="B4l-0C-uqe"/>
+                            <constraint firstItem="Gp0-Wa-h6h" firstAttribute="top" secondItem="eRD-pt-SFj" secondAttribute="bottom" constant="4" id="BKP-oj-1IN"/>
+                            <constraint firstItem="mHp-PX-LMZ" firstAttribute="centerX" secondItem="Beq-Po-nB4" secondAttribute="centerX" id="Cf9-eH-iqt"/>
+                            <constraint firstItem="ebQ-zx-87b" firstAttribute="leading" secondItem="eRD-pt-SFj" secondAttribute="leading" id="Eai-FG-hxL"/>
+                            <constraint firstItem="2Cq-eh-F0C" firstAttribute="top" secondItem="B2T-mi-4gM" secondAttribute="bottom" constant="12" id="Hm8-Wg-PSw"/>
+                            <constraint firstItem="ebQ-zx-87b" firstAttribute="top" secondItem="2Cq-eh-F0C" secondAttribute="bottom" constant="-59.5" id="N5g-4j-zbt"/>
+                            <constraint firstItem="nEJ-rZ-Fsx" firstAttribute="top" secondItem="ebQ-zx-87b" secondAttribute="bottom" constant="4" id="PCj-DC-KxZ"/>
+                            <constraint firstItem="d0y-Fv-5WT" firstAttribute="centerX" secondItem="2Cq-eh-F0C" secondAttribute="centerX" id="QWA-Ka-r7G"/>
+                            <constraint firstItem="Beq-Po-nB4" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ebQ-zx-87b" secondAttribute="trailing" constant="8" id="Su8-ua-hOv"/>
+                            <constraint firstItem="Beq-Po-nB4" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nEJ-rZ-Fsx" secondAttribute="trailing" constant="8" id="VeT-FG-gck"/>
+                            <constraint firstItem="Jz1-3n-ghx" firstAttribute="top" secondItem="WF1-5g-nuW" secondAttribute="bottom" constant="7.5" id="Wfi-Sm-Ib6"/>
+                            <constraint firstItem="d0y-Fv-5WT" firstAttribute="width" secondItem="2Cq-eh-F0C" secondAttribute="width" id="Xn2-6t-Yrf"/>
+                            <constraint firstItem="WF1-5g-nuW" firstAttribute="leading" secondItem="Beq-Po-nB4" secondAttribute="leading" constant="16" id="YNU-NW-OUt"/>
+                            <constraint firstItem="Gc9-1r-YHs" firstAttribute="leading" secondItem="ebQ-zx-87b" secondAttribute="leading" id="YQ3-d4-YPg"/>
+                            <constraint firstItem="yrR-Ff-Dm9" firstAttribute="leading" secondItem="Beq-Po-nB4" secondAttribute="leading" constant="16" id="Znb-l3-Ir8"/>
+                            <constraint firstItem="WF1-5g-nuW" firstAttribute="centerX" secondItem="Beq-Po-nB4" secondAttribute="centerX" id="feg-uG-hbe"/>
+                            <constraint firstItem="eRD-pt-SFj" firstAttribute="leading" secondItem="B2T-mi-4gM" secondAttribute="trailing" constant="8" id="gDR-7L-QKf"/>
+                            <constraint firstItem="Beq-Po-nB4" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gp0-Wa-h6h" secondAttribute="trailing" constant="8" id="gcG-1y-oi3"/>
+                            <constraint firstItem="eRD-pt-SFj" firstAttribute="top" secondItem="B2T-mi-4gM" secondAttribute="top" id="hOj-rp-eJq"/>
+                            <constraint firstItem="nEJ-rZ-Fsx" firstAttribute="leading" secondItem="Gp0-Wa-h6h" secondAttribute="leading" id="in0-do-tRn"/>
+                            <constraint firstItem="yrR-Ff-Dm9" firstAttribute="centerX" secondItem="Beq-Po-nB4" secondAttribute="centerX" id="jEX-xn-1F3"/>
+                            <constraint firstItem="mHp-PX-LMZ" firstAttribute="leading" secondItem="Beq-Po-nB4" secondAttribute="leading" constant="37" id="kMu-pb-M8S"/>
+                            <constraint firstItem="d0y-Fv-5WT" firstAttribute="top" secondItem="2Cq-eh-F0C" secondAttribute="bottom" constant="36" id="kMy-vU-Yze"/>
+                            <constraint firstItem="B2T-mi-4gM" firstAttribute="leading" secondItem="Beq-Po-nB4" secondAttribute="leading" constant="31" id="lfZ-zw-KH4"/>
+                            <constraint firstItem="WF1-5g-nuW" firstAttribute="top" secondItem="Beq-Po-nB4" secondAttribute="top" constant="8" id="m0J-P2-6BC"/>
+                            <constraint firstItem="d0y-Fv-5WT" firstAttribute="top" secondItem="Gc9-1r-YHs" secondAttribute="bottom" constant="-32.5" id="mtb-A8-Gse"/>
+                            <constraint firstItem="GM6-bm-4td" firstAttribute="top" secondItem="Gc9-1r-YHs" secondAttribute="bottom" constant="4" id="n2P-Ju-55x"/>
+                            <constraint firstItem="Beq-Po-nB4" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eRD-pt-SFj" secondAttribute="trailing" constant="8" id="sEb-1g-u3L"/>
+                            <constraint firstItem="B2T-mi-4gM" firstAttribute="top" secondItem="Jz1-3n-ghx" secondAttribute="bottom" constant="17.5" id="uAn-Kp-TE3"/>
+                            <constraint firstItem="yrR-Ff-Dm9" firstAttribute="top" secondItem="d0y-Fv-5WT" secondAttribute="bottom" constant="18" id="wcL-gh-ntg"/>
+                            <constraint firstItem="2Cq-eh-F0C" firstAttribute="centerX" secondItem="B2T-mi-4gM" secondAttribute="centerX" id="wgZ-vE-23r"/>
+                            <constraint firstItem="Beq-Po-nB4" firstAttribute="bottom" secondItem="mHp-PX-LMZ" secondAttribute="bottom" constant="32" id="xK8-a8-Hur"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Beq-Po-nB4"/>
                     </view>
+                    <connections>
+                        <outlet property="gotItButton" destination="mHp-PX-LMZ" id="Y4d-6S-adO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8R9-mY-ivC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1070" y="937"/>
+            <point key="canvasLocation" x="1069.5" y="883.5"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="FqE-Wn-FOG">
@@ -267,6 +398,8 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                         <outlet property="gridsLabel" destination="9K8-Ay-mkn" id="xFP-aE-JPc"/>
                         <outlet property="randomLabel" destination="Ebl-mi-Ov8" id="rvm-em-f4V"/>
                         <outlet property="randomStepper" destination="51Q-2h-VUp" id="0xr-TP-g4E"/>
+                        <segue destination="Lff-Mp-GZL" kind="presentation" identifier="openOnboarding" animates="NO" modalPresentationStyle="fullScreen" id="BNp-lf-brR"/>
+                        <segue destination="Lff-Mp-GZL" kind="presentation" identifier="openOnboardingAnimated" modalPresentationStyle="fullScreen" id="JsC-Ob-lRz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1y-MS-y0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -274,4 +407,12 @@ Changes take effect next time you reset the grids by swiping down, or the next t
             <point key="canvasLocation" x="1069.5999999999999" y="114.69265367316342"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SwipeDown" width="246" height="447"/>
+        <image name="SwipeUp" width="246" height="447"/>
+        <image name="TapIcon" width="246" height="246"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Nli-CI-2a7"/>
+    </inferredMetricsTieBreakers>
 </document>

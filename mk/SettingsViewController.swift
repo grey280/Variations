@@ -128,7 +128,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
-        doneButton.layer.cornerRadius = 8
+        doneButton.layer.cornerRadius = constants.defaultValues.buttonCornerRadius
 //        self.view.setNeedsLayout()
         
         

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>constants Structure Reference</title>
+    <title>OnboardingViewController Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/constants" class="dashAnchor"></a>
-    <a title="constants Structure Reference"></a>
+    <a name="//apple_ref/swift/Class/OnboardingViewController" class="dashAnchor"></a>
+    <a title="OnboardingViewController Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (100% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        constants Structure Reference
+        OnboardingViewController Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -84,14 +84,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>constants</h1>
+            <h1>OnboardingViewController</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="n">constants</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">OnboardingViewController</span><span class="p">:</span> <span class="kt">UIViewController</span></code></pre>
 
                 </div>
               </div>
-            <p>Constants for use throughout the app</p>
+            <p>The &lsquo;onboarding&rsquo; screen</p>
 
           </section>
           <section class="section task-group-section">
@@ -100,9 +100,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:2mk9constantsV8defaultsV"></a>
-                    <a name="//apple_ref/swift/Struct/defaults" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk9constantsV8defaultsV">defaults</a>
+                    <a name="/c:@M@mk@objc(cs)OnboardingViewController(py)shouldAutorotate"></a>
+                    <a name="//apple_ref/swift/Property/shouldAutorotate" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@mk@objc(cs)OnboardingViewController(py)shouldAutorotate">shouldAutorotate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -110,15 +110,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Constants for use with UserDefaults</p>
+                        <p>Disable rotation on this view</p>
 
-                        <a href="../Structs/constants/defaults.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="n">defaults</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="k">var</span> <span class="nv">shouldAutorotate</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -128,9 +127,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:2mk9constantsV13defaultValuesV"></a>
-                    <a name="//apple_ref/swift/Struct/defaultValues" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk9constantsV13defaultValuesV">defaultValues</a>
+                    <a name="/c:@M@mk@objc(cs)OnboardingViewController(py)gotItButton"></a>
+                    <a name="//apple_ref/swift/Property/gotItButton" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@mk@objc(cs)OnboardingViewController(py)gotItButton">gotItButton</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -138,15 +137,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Constants to use for default values, so we don&rsquo;t have any magic numbers</p>
+                        <p>The &lsquo;got it!&rsquo; button</p>
 
-                        <a href="../Structs/constants/defaultValues.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="n">defaultValues</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">gotItButton</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -156,9 +154,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:2mk9constantsV7configsV"></a>
-                    <a name="//apple_ref/swift/Struct/configs" class="dashAnchor"></a>
-                    <a class="token" href="#/s:2mk9constantsV7configsV">configs</a>
+                    <a name="/c:@M@mk@objc(cs)OnboardingViewController(im)gotItPress:"></a>
+                    <a name="//apple_ref/swift/Method/gotItPress(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@mk@objc(cs)OnboardingViewController(im)gotItPress:">gotItPress(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -166,15 +164,60 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Configuration states for the change thing</p>
+                        <p>Handle the &lsquo;got it&rsquo; button being pressed</p>
 
-                        <a href="../Structs/constants/configs.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="n">configs</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">gotItPress</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sender</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/OnboardingViewController.html#/c:@M@mk@objc(cs)OnboardingViewController(py)gotItButton">gotItButton</a></code></p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@mk@objc(cs)OnboardingViewController(im)viewDidLoad"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@mk@objc(cs)OnboardingViewController(im)viewDidLoad">viewDidLoad()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set things up!</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>

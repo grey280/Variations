@@ -16,6 +16,7 @@
 		2D4A0F032012C39D00E4E526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D4A0F022012C39D00E4E526 /* Assets.xcassets */; };
 		2D4A0F062012C39D00E4E526 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D4A0F042012C39D00E4E526 /* LaunchScreen.storyboard */; };
 		2D4A707C2051F0A8000B81CD /* GridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4A707B2051F0A8000B81CD /* GridTests.swift */; };
+		2DD052692088242B0030C585 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD052682088242B0030C585 /* OnboardingViewController.swift */; };
 		2DD56B7520697E2500BC35AF /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD56B7420697E2500BC35AF /* GridView.swift */; };
 		2DF59000206EADB100EA6EBF /* GridConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF58FFF206EADB100EA6EBF /* GridConverter.swift */; };
 		2DF59002206ECBE800EA6EBF /* GridConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF59001206ECBE800EA6EBF /* GridConverterTests.swift */; };
@@ -59,6 +60,7 @@
 		2D4A0F0C2012C39D00E4E526 /* mkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D4A0F122012C39D00E4E526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D4A707B2051F0A8000B81CD /* GridTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTests.swift; sourceTree = "<group>"; };
+		2DD052682088242B0030C585 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		2DD56B7420697E2500BC35AF /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		2DF58FFF206EADB100EA6EBF /* GridConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridConverter.swift; sourceTree = "<group>"; };
 		2DF59001206ECBE800EA6EBF /* GridConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridConverterTests.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				2D4A0EFF2012C39D00E4E526 /* Main.storyboard */,
 				2D3CFB23208554AB008E10F6 /* Constants.swift */,
 				2D4A0F022012C39D00E4E526 /* Assets.xcassets */,
+				2DD052682088242B0030C585 /* OnboardingViewController.swift */,
 				2D4A0F042012C39D00E4E526 /* LaunchScreen.storyboard */,
 				2D4A0F072012C39D00E4E526 /* Info.plist */,
 				2D3CFB2120854171008E10F6 /* SettingsViewController.swift */,
@@ -256,6 +259,7 @@
 				2DF59000206EADB100EA6EBF /* GridConverter.swift in Sources */,
 				2D4A0EFE2012C39D00E4E526 /* ViewController.swift in Sources */,
 				2D4A0EFC2012C39D00E4E526 /* AppDelegate.swift in Sources */,
+				2DD052692088242B0030C585 /* OnboardingViewController.swift in Sources */,
 				2DD56B7520697E2500BC35AF /* GridView.swift in Sources */,
 				2D3CFB24208554AB008E10F6 /* Constants.swift in Sources */,
 				2D1040EE204F48F30053475F /* Grid.swift in Sources */,

@@ -6,7 +6,7 @@
 //  Copyright © 2018 Grey Patterson. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// Constants for use throughout the app
 struct constants{
@@ -22,6 +22,8 @@ struct constants{
         static let randomCount = "randomCount"
         /// Whether or not `randomCount` has been initialized
         static let randomCountInitalized = "randomCountInitialized"
+        /// Whether or not the user has been shown the onboarding flow
+        static let beenShownOnboarding = "beenShownOnboarding"
     }
     
     /// Constants to use for default values, so we don't have any magic numbers
@@ -32,6 +34,8 @@ struct constants{
         static let chordDuration = 3.0
         /// Default number of cells to randomly toggle per iteration
         static let randomCount = 2
+        /// Corner radius for buttons, to have a consistent style
+        static let buttonCornerRadius: CGFloat = 8
     }
     
     /// Configuration states for the change thing

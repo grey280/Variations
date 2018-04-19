@@ -23,16 +23,17 @@
                     </view>
                     <connections>
                         <segue destination="mjy-N1-YVf" kind="presentation" identifier="openSettings" modalPresentationStyle="formSheet" id="FOf-Td-lrh"/>
+                        <segue destination="Lff-Mp-GZL" kind="presentation" identifier="openOnboarding" modalPresentationStyle="fullScreen" id="bPQ-H3-NTT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="114.69265367316342"/>
         </scene>
-        <!--View Controller-->
+        <!--Onboarding View Controller-->
         <scene sceneID="tus-0s-33o">
             <objects>
-                <viewController id="Lff-Mp-GZL" sceneMemberID="viewController">
+                <viewController id="Lff-Mp-GZL" customClass="OnboardingViewController" customModule="mk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pGl-sJ-rZe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,6 +46,7 @@
                                 <state key="normal" title="Got it!"/>
                                 <connections>
                                     <action selector="doneButton:" destination="mjy-N1-YVf" eventType="touchUpInside" id="kuD-X5-SQ7"/>
+                                    <action selector="gotItPress:" destination="Lff-Mp-GZL" eventType="touchUpInside" id="GZq-fG-Fzo"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Variations on the Theme of Life" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WF1-5g-nuW">
@@ -164,6 +166,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Beq-Po-nB4"/>
                     </view>
+                    <connections>
+                        <outlet property="gotItButton" destination="mHp-PX-LMZ" id="Y4d-6S-adO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8R9-mY-ivC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -392,6 +397,7 @@ Changes take effect next time you reset the grids by swiping down, or the next t
                         <outlet property="gridsLabel" destination="9K8-Ay-mkn" id="xFP-aE-JPc"/>
                         <outlet property="randomLabel" destination="Ebl-mi-Ov8" id="rvm-em-f4V"/>
                         <outlet property="randomStepper" destination="51Q-2h-VUp" id="0xr-TP-g4E"/>
+                        <segue destination="Lff-Mp-GZL" kind="presentation" identifier="openOnboarding" modalPresentationStyle="fullScreen" id="BNp-lf-brR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1y-MS-y0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -404,4 +410,7 @@ Changes take effect next time you reset the grids by swiping down, or the next t
         <image name="SwipeUp" width="246" height="447"/>
         <image name="TapIcon" width="246" height="246"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="BNp-lf-brR"/>
+    </inferredMetricsTieBreakers>
 </document>

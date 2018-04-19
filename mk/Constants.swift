@@ -6,7 +6,7 @@
 //  Copyright © 2018 Grey Patterson. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// Constants for use throughout the app
 struct constants{
@@ -32,6 +32,8 @@ struct constants{
         static let chordDuration = 3.0
         /// Default number of cells to randomly toggle per iteration
         static let randomCount = 2
+        /// Corner radius for buttons, to have a consistent style
+        static let buttonCornerRadius: CGFloat = 8
     }
     
     /// Configuration states for the change thing

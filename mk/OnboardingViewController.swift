@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// The 'onboarding' screen
 class OnboardingViewController: UIViewController {
     /// Disable rotation on this view
     override var shouldAutorotate: Bool{
